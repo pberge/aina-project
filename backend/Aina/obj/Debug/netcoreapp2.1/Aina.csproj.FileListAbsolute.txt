@@ -1,0 +1,14 @@
+C:\Code\aina-project\backend\Aina\bin\Debug\netcoreapp2.1\Aina.deps.json
+C:\Code\aina-project\backend\Aina\bin\Debug\netcoreapp2.1\Aina.runtimeconfig.json
+C:\Code\aina-project\backend\Aina\bin\Debug\netcoreapp2.1\Aina.runtimeconfig.dev.json
+C:\Code\aina-project\backend\Aina\bin\Debug\netcoreapp2.1\Aina.dll
+C:\Code\aina-project\backend\Aina\bin\Debug\netcoreapp2.1\Aina.pdb
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.csprojAssemblyReference.cache
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.csproj.CoreCompileInputs.cache
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.RazorAssemblyInfo.cache
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.RazorAssemblyInfo.cs
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.AssemblyInfoInputs.cache
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.AssemblyInfo.cs
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.RazorTargetAssemblyInfo.cache
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.dll
+C:\Code\aina-project\backend\Aina\obj\Debug\netcoreapp2.1\Aina.pdb
