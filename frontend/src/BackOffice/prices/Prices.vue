@@ -1,6 +1,6 @@
 <template>
     <div class="prices">
-        <table>
+        <!-- <table>
             <tr>
                 <th/>
                 <th>Casa</th>
@@ -29,7 +29,7 @@
                 <td></td>
                 <td></td>
             </tr>
-      </table>
+      </table> -->
   </div>
 </template>
 
@@ -44,7 +44,9 @@ export default class Prices extends Vue {
 
 }
 </script>
-<style>
+
+<style scoped>
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

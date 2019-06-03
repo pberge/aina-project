@@ -12,6 +12,11 @@ export default new Router({
       name: 'prices',
       component: Prices
     },
+    {
+      path: '/',
+      name: 'home',
+      component: Prices
+    }
     // {
     //   path: '/',
     //   name: 'backOffice',
