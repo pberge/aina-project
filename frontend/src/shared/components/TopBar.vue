@@ -39,7 +39,7 @@ export default class TopBar extends Vue {
 .topbar {
     width: 100%;
     height: 4em;
-		margin: 0;
+	margin: 0;
     background-color: white;
     position: absolute;
     left: 0;
@@ -50,7 +50,6 @@ export default class TopBar extends Vue {
 
 .logo {
     height: 3em;
-    margin-left: 2em;
 }
 
 .link {
