@@ -1,8 +1,9 @@
 <template>
   <div class="topbar row">
     <div class="col-xs-3 col-md-5 start-xs">
-        <router-link to="/">
+        <router-link class="row logo-container" to="/">
             <img class="logo" src="@/assets/logo.png"/>
+            <span class="title">AINA</span>
         </router-link>
     </div>
     <div class="menu row col-xs-9 col-md-7 end-xs">
@@ -39,7 +40,7 @@ export default class TopBar extends Vue {
 .topbar {
     width: 100%;
     height: 4em;
-		margin: 0;
+	margin: 0;
     background-color: white;
     position: absolute;
     left: 0;
@@ -48,9 +49,23 @@ export default class TopBar extends Vue {
     justify-content: center;
 }
 
+.logo-container {
+    align-items: center;
+    width: fit-content;
+}
+
 .logo {
     height: 3em;
     margin-left: 2em;
+}
+
+.title {
+    text-decoration: none;
+    color: #000000;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-left: 1em;
 }
 
 .link {
