@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!-- <router-link to="/prices">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
+    <div v-if="true" class="row"> <!-- if logged -->
+      <SideBar class="col-xs-2"/>
+      <div class="col-xs-10"></div>
+      <router-view class="col-xs-10"/>
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import SideBar from '@/shared/components/SideBar.vue' // @ is an alias to /src
+
+@Component({
+  components: {
+    SideBar
+  }
+})
+export default class App extends Vue {}
+</script>
 
 <style>
 #app {
@@ -28,4 +40,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
 </style>
