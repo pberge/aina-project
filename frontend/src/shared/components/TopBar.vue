@@ -52,6 +52,7 @@ export default class TopBar extends Vue {
 .logo-container {
     align-items: center;
     width: fit-content;
+    text-decoration: none;
 }
 
 .logo {
