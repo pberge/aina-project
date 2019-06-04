@@ -4,8 +4,6 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
-const VueFlexboxgrid = require('vue-flexboxgrid')
-Vue.use(VueFlexboxgrid)
 Vue.config.productionTip = false
 
 new Vue({
