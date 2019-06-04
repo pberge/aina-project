@@ -7,7 +7,7 @@
     </div>
     <div v-if="true"> <!-- if not logged -->
       <TopBar/>
-      <router-view/>
+      <router-view class="view"/>
     </div>
   </div>
 </template>
@@ -54,6 +54,12 @@ html, body {
 
 body {
   margin: 0;
+}
+
+.view {
+  position: absolute;
+  top: 5em;
+  left: 0;
 }
 
 </style>

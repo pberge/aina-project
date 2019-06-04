@@ -24,7 +24,7 @@ export default class TopBar extends Vue {
 
     mounted () {
     	this.menuLinks = [  
-        { 'to': '/', 'tag': 'Home' },
+        { 'to': '/', 'tag': 'Portada' },
         { 'to': '/prices', 'tag': 'Història' },
         { 'to': '/', 'tag': 'Instalacions' },
         { 'to': '/', 'tag': 'Notícies' },
@@ -39,7 +39,7 @@ export default class TopBar extends Vue {
 <style scoped>
 .topbar {
     width: 100%;
-    height: 4em;
+    height: 5em;
 	margin: 0;
     background-color: white;
     position: absolute;

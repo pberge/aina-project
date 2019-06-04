@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
       <img class="photo" src="@/assets/home.jpg"/>
       <div class="title-container row">
 				<span class="title">{{$t("home.title")}}</span>
@@ -16,8 +16,12 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
+.home {
+  text-align: center;
+}
+
 .photo {
-  max-width: 100%;  
+  max-width: 95%;  
 }
 
 .title-container {
