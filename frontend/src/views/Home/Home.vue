@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <div>
       <img class="photo" src="@/assets/home.jpg"/>
       <div class="title-container row">
-				<span class="title">Casa de colònies de Canillo</span>
+				<span class="title">{{$t("home.title")}}</span>
       </div>
   </div>
 </template>
@@ -16,10 +16,6 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
-.home {
-	
-}
-
 .photo {
   max-width: 100%;  
 }
