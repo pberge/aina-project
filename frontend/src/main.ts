@@ -6,10 +6,7 @@ import './registerServiceWorker'
 import Vuei18n from 'vue-i18n'
 import Cat from './translations/cat.json'
 
-<<<<<<< HEAD
-=======
 Vue.use(Vuei18n)
->>>>>>> 4aae1188e13f5562ca44184f916ca1df97c527c9
 Vue.config.productionTip = false
 
 let messages = {
