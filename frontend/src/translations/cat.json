@@ -1,0 +1,14 @@
+{
+    "home": {
+        "title": "Colònies populars de Canillo"
+    },
+    "topbar": {
+        "home": "Portada",
+        "history": "Història",
+        "instalations": "Instalacions",
+        "news": "Notícies",
+        "calendar": "Calendari",
+        "prices": "Preus",
+        "contact": "Contacte"
+    }
+}
