@@ -16,6 +16,11 @@ export default new Router({
       path: '/prices',
       name: 'prices',
       component: Prices
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: BackofficeHome
     }
   ]
 })
