@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Prices from './BackOffice/prices/Prices.vue'
 import Home from './views/Home/Home.vue'
+import News from './views/News/News.vue'
 
 Vue.use(Router)
 
@@ -13,14 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/prices',
-      name: 'prices',
-      component: Prices
-    },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: BackofficeHome
+      path: '/news',
+      name: 'news',
+      component: News
     }
   ]
 })

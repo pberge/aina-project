@@ -60,6 +60,7 @@ body {
   position: absolute;
   top: 5em;
   left: 0;
+  padding: 1em 2em;
 }
 
 </style>
