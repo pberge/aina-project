@@ -1,10 +1,11 @@
 <template>
-    <div class="news-card row">
-        <img class="col-xs-12" src="@/assets/home.jpg">
-        <span class="col-xs-12 title">{{newInfo.title}}</span>
-        <p class="text">{{newInfo.text}}</p>
-        <!-- <span class="read-more">Llegir més</span> -->
+    <div class="news-card">
+        <img src="@/assets/home.jpg">
+        <span class="title">{{newInfo.title}}</span>
+        <span class="text">{{newInfo.text}}</span>
+        <span class="date">{{newInfo.date}}</span>
     </div>
+
 </template>
 
 <script lang="ts">
@@ -14,26 +15,32 @@ import NewCard from '@/shared/objects/newCard'
 @Component
 export default class NewsCard extends Vue {
     @Prop() newInfo: NewCard
-	
 }
 </script>
 
 <style scoped>
 .news-card {
+    display: flex;
+    flex-direction: column;
     max-width: 16em;
+    max-height: 20em;
     margin: 1em;
     font-size: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
-    justify-content: center;
     padding-bottom: 0.5em;
 }
 
 .news-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.news-card:hover img {
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
 img {
@@ -45,16 +52,17 @@ img {
 }
 
 .title {
-    padding: 1em;
+    padding: 1em 1em;
 }
 
 .text {
+    height: 30%;
     padding: 0 1em;
     padding-bottom: 1em;
     margin: 0;
     text-align: justify;
     font-size: 0.8em;
-    background: linear-gradient(to bottom, #000000 40%, #F6F3F3 100%);
+    background: linear-gradient(to bottom, #000000 0%, #F6F3F3 85%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -63,13 +71,11 @@ img {
     background:linear-gradient(transparent 10px, white);
 }
 
-.read-more {
+.date {
     position: absolute;
-    bottom: 1em;
-    border: 1px solid;
-    padding: 0.5em;
-    background-color: white;
-    border-radius: 3px; 
+    left: 2em;
+    bottom: 2em;
+    font-size: 0.5em;
 }
 
 </style>

@@ -1,15 +1,22 @@
 <template>
-  <div id="app">
-    <div v-if="false" class="row"> <!-- if logged -->
-      <SideBar class="col-xs-2"/>
-      <div class="col-xs-10"></div>
-      <router-view class="col-xs-10"/>
-    </div>
-    <div v-if="true"> <!-- if not logged -->
-      <TopBar/>
-      <router-view class="view"/>
-    </div>
-  </div>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+      <div id="app">
+        <div v-if="false" class="row"> <!-- if logged -->
+          <SideBar class="col-xs-2"/>
+          <div class="col-xs-10"></div>
+          <router-view class="col-xs-10"/>
+        </div>
+        <div v-if="true"> <!-- if not logged -->
+          <TopBar/>
+          <router-view class="view"/>
+        </div>
+      </div>
+    </body>
+  </html>
 </template>
 
 <script lang="ts">
