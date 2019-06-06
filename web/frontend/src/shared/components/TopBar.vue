@@ -27,7 +27,7 @@ export default class TopBar extends Vue {
         { 'to': '/', 'tag': 'Portada' },
         { 'to': '/prices', 'tag': 'Història' },
         { 'to': '/', 'tag': 'Instalacions' },
-        { 'to': '/', 'tag': 'Notícies' },
+        { 'to': '/news', 'tag': 'Notícies' },
         { 'to': '/', 'tag': 'Calendari' },
         { 'to': '/prices', 'tag': 'Preus' },
         { 'to': '/', 'tag': 'Contacte' }
