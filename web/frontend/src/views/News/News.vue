@@ -21,11 +21,11 @@ export default class News extends Vue {
 			//call API to get news
 			this.news = [
 				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
-					'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
-					'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
-					'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
-					'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
-					'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
+				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
+				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
+				'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
+				'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
+				'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
 				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
 				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
 				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
