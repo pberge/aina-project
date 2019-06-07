@@ -14,7 +14,7 @@ import NewCard from '@/shared/objects/newCard'
 
 @Component
 export default class NewsCard extends Vue {
-    @Prop() newInfo: NewCard
+    @Prop() newInfo!: NewCard
 }
 </script>
 
