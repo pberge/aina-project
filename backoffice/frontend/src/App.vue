@@ -54,7 +54,8 @@ body {
 .view {
   margin-left: 14em;
   margin-top: 4em;
-  padding: 1em 2em;
+  padding: 2em 1em;
+  width: 100%;
 }
 
 </style>
