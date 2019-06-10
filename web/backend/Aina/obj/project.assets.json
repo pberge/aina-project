@@ -11801,11 +11801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\aina-project\\backend\\Aina\\Aina.csproj",
+      "projectUniqueName": "C:\\Code\\aina-project\\web\\backend\\Aina\\Aina.csproj",
       "projectName": "Aina",
-      "projectPath": "C:\\Code\\aina-project\\backend\\Aina\\Aina.csproj",
+      "projectPath": "C:\\Code\\aina-project\\web\\backend\\Aina\\Aina.csproj",
       "packagesPath": "C:\\Users\\pereb\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\aina-project\\backend\\Aina\\obj\\",
+      "outputPath": "C:\\Code\\aina-project\\web\\backend\\Aina\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
