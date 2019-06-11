@@ -1,4 +1,4 @@
-export default interface Notice {
+export default interface NewModel {
     img: string
     title: string
     text: string

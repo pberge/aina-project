@@ -7,10 +7,10 @@
         <th>Data creació</th>
         <th>Accions</th>
       </tr>
-      <tr v-for="(notice, i) in news" :key="i">
-        <td>{{notice.title}}</td>
-        <td>{{notice.published}}</td>
-        <td>{{notice.date}}</td>
+      <tr v-for="(item, i) in news" :key="i">
+        <td>{{item.title}}</td>
+        <td>{{item.published}}</td>
+        <td>{{item.date}}</td>
       </tr>
     </table>
   </div>
@@ -18,14 +18,14 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import Notice from '@/shared/models/Notice'
+import NewModel from '@/shared/models/NewModel'
 
 @Component({
   components: {
   },
 })
 export default class NewsTable extends Vue {
-  @Prop() news: Notice[]
+  @Prop() news: NewModel[]
 
 }
 </script>

@@ -1,9 +1,16 @@
 <template>
-  <div id="app" class="row">
-    <SideBar/>
-    <TopBar />  
-    <router-view class="view"/>
-  </div>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+      <div id="app" class="row">
+        <SideBar/>
+        <TopBar />  
+        <router-view class="view"/>
+      </div>
+    </body>
+  </html> 
 </template>
 
 <script lang="ts">

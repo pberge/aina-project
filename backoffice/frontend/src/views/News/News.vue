@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <a class="btn btn-ok">Nova notícia</a>
+    <router-link class="btn btn-ok" to="/create-new">Nova notícia</router-link>
     <NewsTable :news="news"/>
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import NewsTable from './components/NewsTable.vue'
-import Notice from '@/shared/models/Notice'
+import NewModel from '@/shared/models/NewModel'
 
 @Component({
   components: {
@@ -16,7 +16,7 @@ import Notice from '@/shared/models/Notice'
   }
 })
 export default class News extends Vue {
-  news: Notice[] = []
+  news: NewModel[] = []
 
   mounted () {
     this.news = [
@@ -35,12 +35,14 @@ export default class News extends Vue {
 }
 
 .btn {
+  color: initial;
   padding: 0.7em;
   border: 1px solid;
   border-radius: 3px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  text-decoration: none;
 }
 
 .btn-ok {
