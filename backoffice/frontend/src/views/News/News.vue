@@ -34,24 +34,6 @@ export default class News extends Vue {
 
 }
 
-.btn {
-  color: initial;
-  padding: 0.7em;
-  border: 1px solid;
-  border-radius: 3px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-}
 
-.btn-ok {
-  border-color: #4caf50;
-}
-
-.btn-ok:hover {
-  background-color: #4CAF50; /* Green */
-  color: white;
-}
 
 </style>

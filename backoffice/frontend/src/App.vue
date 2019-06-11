@@ -30,6 +30,7 @@ export default class App extends Vue {}
 
 <style>
 @import "~flexboxgrid";
+@import "./shared/styles/index.styl";
 @import url('https://fonts.googleapis.com/css?family=Actor');
 
 html, body {
