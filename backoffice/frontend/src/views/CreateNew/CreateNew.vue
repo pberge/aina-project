@@ -2,7 +2,7 @@
   <div class="create-new">
     <div class="title-container">
       <span class="title">Títol</span>
-      <input type="text" class="input-title" v-model="title" placeholder="Títol"/>
+      <input type="text" class="input-title" v-model="message" placeholder="Títol"/>
     </div>
     <div class="text-container">
       <span class="title">Text</span>
@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
+import { State, Action, Getter } from 'vuex-class'
 import NewModel from '@/shared/models/NewModel'
 import TextEditor from './components/TextEditor.vue'
 
@@ -26,17 +27,24 @@ import TextEditor from './components/TextEditor.vue'
   }
 })
 export default class CreateNew extends Vue {
-  title: string = ""
+  @State('title') title: string
+  @Action('setTitle') setTitle: (value: string) => string
   
+  get message() {
+    return this.title
+  }
+
+  set message(title:string) {
+    this.setTitle(title)
+  }
+
   mounted() {
   }
+
 }
 </script>
 
 <style>
-.create-new {
-
-}
 
 .title-container {
   width: 90%;
