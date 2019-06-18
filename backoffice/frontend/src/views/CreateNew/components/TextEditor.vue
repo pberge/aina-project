@@ -131,6 +131,11 @@ import {
   History,
 } from 'tiptap-extensions'
 import { Component, Vue, Watch } from 'vue-property-decorator'
+import { getModule } from "vuex-module-decorators"
+import CreateNewModule from "../CreateNewModule"
+import Store from "@/store"
+
+const createNewState = getModule(CreateNewModule, Store)
 
 @Component({
   components: {
@@ -139,6 +144,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
   }
 })
 export default class TextEditor extends Vue {
+
   editor = new Editor({
     extensions: [
       new Blockquote(),
@@ -158,16 +164,9 @@ export default class TextEditor extends Vue {
       new History(),
     ],
     onUpdate: ({ getHTML }) => {
-      let a = getHTML()
+      createNewState.setText(getHTML())
     },
   })
-
-  mounted () {
-    // this.editor.on('update', ({ getHTML }) => {
-    //   // get new content on update
-    //   const newContent = this.
-    // })
-  }
   
 }
 

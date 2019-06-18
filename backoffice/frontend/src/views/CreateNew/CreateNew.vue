@@ -2,7 +2,7 @@
   <div class="create-new">
     <div class="title-container">
       <span class="title">Títol</span>
-      <input type="text" class="input-title" v-model="message" placeholder="Títol"/>
+      <input type="text" class="input-title" v-model="titleInput" placeholder="Títol">
     </div>
     <div class="text-container">
       <span class="title">Text</span>
@@ -10,45 +10,62 @@
     </div>
     <div>
       <span class="title">Foto</span>
-      <input type="file" />
+      <ImageUploader />
+    </div>
+    <div class="buttons-container row end-xs">
+      <router-link class="btn btn-cancel" to="/news">Cancel·lar</router-link>
+      <a class="btn btn-ok" @click="createNew">Acceptar</a>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
-import { State, Action, Getter } from 'vuex-class'
-import NewModel from '@/shared/models/NewModel'
-import TextEditor from './components/TextEditor.vue'
+import { Component, Vue, Watch } from "vue-property-decorator"
+import NewModel from "@/shared/models/NewModel"
+import TextEditor from "./components/TextEditor.vue"
+import ImageUploader from "./components/ImageUploader.vue"
+import axios from "axios"
+import { getModule } from "vuex-module-decorators"
+import CreateNewModule from "./CreateNewModule"
+import Store from "@/store"
+
+const createNewState = getModule(CreateNewModule, Store)
 
 @Component({
   components: {
-    TextEditor
+    TextEditor,
+    ImageUploader
   }
 })
 export default class CreateNew extends Vue {
-  @State('title') title: string
-  @Action('setTitle') setTitle: (value: string) => string
-  
-  get message() {
-    return this.title
+
+  get titleInput() {
+    return createNewState.title
   }
 
-  set message(title:string) {
-    this.setTitle(title)
+  set titleInput(title: string) {
+    createNewState.setTitle(title)
   }
 
-  mounted() {
-  }
+  createNew() {
+    let newModel: NewModel = {
+      title: createNewState.title,
+      text: createNewState.text,
+      img: createNewState.img,
+      date: "",
+      published: false
+    }
 
+    axios.post("http://localhost:51736/api/news", 
+      newModel)
+  }
 }
 </script>
 
 <style>
-
 .title-container {
   width: 90%;
-  margin-bottom: 2em; 
+  margin-bottom: 2em;
 }
 
 .title {
@@ -69,4 +86,7 @@ export default class CreateNew extends Vue {
   margin-bottom: 2em;
 }
 
+.buttons-container {
+  margin: 0;
+}
 </style>

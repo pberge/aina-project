@@ -1,0 +1,14 @@
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\bin\Debug\netcoreapp2.1\AinaBackoffice.deps.json
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\bin\Debug\netcoreapp2.1\AinaBackoffice.runtimeconfig.json
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\bin\Debug\netcoreapp2.1\AinaBackoffice.runtimeconfig.dev.json
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\bin\Debug\netcoreapp2.1\AinaBackoffice.dll
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\bin\Debug\netcoreapp2.1\AinaBackoffice.pdb
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.csprojAssemblyReference.cache
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.csproj.CoreCompileInputs.cache
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.RazorAssemblyInfo.cache
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.RazorAssemblyInfo.cs
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.AssemblyInfoInputs.cache
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.AssemblyInfo.cs
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.RazorTargetAssemblyInfo.cache
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.dll
+C:\Code\aina-project\backoffice\backend\AinaBackoffice\obj\Debug\netcoreapp2.1\AinaBackoffice.pdb

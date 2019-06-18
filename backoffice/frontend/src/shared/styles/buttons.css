@@ -7,6 +7,7 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     text-decoration: none;
+    margin: 0.2em;
 }
 
 .btn-ok {
@@ -15,5 +16,14 @@
 
 .btn-ok:hover {
     background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.btn-cancel {
+    border-color: #a5a5a5;
+}
+
+.btn-cancel:hover {
+    background-color: #a5a5a5; 
     color: white;
 }
