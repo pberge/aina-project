@@ -2,6 +2,9 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Firebase.js/2.1.2": {
+        "type": "package"
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4337,6 +4340,19 @@
     }
   },
   "libraries": {
+    "Firebase.js/2.1.2": {
+      "sha512": "euutTH70FyFXGg+O3DWIa5HV5GXew4hi8sxjmJ+wcp8Y+yZ6emHDkPYT8m3XlQccrgm251ufEWPcvjBLbSgmWQ==",
+      "type": "package",
+      "path": "firebase.js/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/firebase-debug.js",
+        "content/Scripts/firebase.js",
+        "firebase.js.2.1.2.nupkg.sha512",
+        "firebase.js.nuspec"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -11789,6 +11805,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Firebase.js >= 2.1.2",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
@@ -11835,6 +11852,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Firebase.js": {
+            "target": "Package",
+            "version": "[2.1.2, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",

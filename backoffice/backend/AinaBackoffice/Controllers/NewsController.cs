@@ -27,7 +27,7 @@ namespace AinaBackoffice.Controllers
 
         // POST api/news
         [HttpPost]
-        public ActionResult<string> Post([FromBody] New value)
+        public ActionResult<string> Post(dynamic value)
         {
             return "ok";
         }

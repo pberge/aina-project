@@ -56,8 +56,13 @@ export default class CreateNew extends Vue {
       published: false
     }
 
+    let fd = new FormData()
+    fd.append("image", createNewState.img, createNewState.img.name)
+    fd.append("title", createNewState.title)
+    fd.append("text", createNewState.text)
+
     axios.post("http://localhost:51736/api/news", 
-      newModel)
+      fd)
   }
 }
 </script>
