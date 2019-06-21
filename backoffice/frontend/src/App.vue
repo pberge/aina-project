@@ -1,9 +1,16 @@
 <template>
-  <div id="app" class="row">
-    <SideBar/>
-    <TopBar />  
-    <router-view class="view"/>
-  </div>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+      <div id="app" class="row">
+        <SideBar/>
+        <TopBar />  
+        <router-view class="view"/>
+      </div>
+    </body>
+  </html> 
 </template>
 
 <script lang="ts">
@@ -23,6 +30,7 @@ export default class App extends Vue {}
 
 <style>
 @import "~flexboxgrid";
+@import "./shared/styles/index.styl";
 @import url('https://fonts.googleapis.com/css?family=Actor');
 
 html, body {
@@ -54,7 +62,8 @@ body {
 .view {
   margin-left: 14em;
   margin-top: 4em;
-  padding: 1em 2em;
+  padding: 2em 1em;
+  width: 100%;
 }
 
 </style>
