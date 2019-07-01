@@ -25,9 +25,9 @@ class NewsController {
         response.send(await this.newsService.getNews())
     }
 
-    createNew = (request: express.Request, response: express.Response) => {
+    createNew = async (request: express.Request, response: express.Response) => {
         const newItem: New = request.body;
-        response.send(newItem);
+        response.send(await this.newsService.createNew(newItem));
     }
 }
 

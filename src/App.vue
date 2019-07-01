@@ -5,12 +5,12 @@
     </head>
     <body>
       <div id="app">
-        <div v-if="isLogged" class="row"> 
+        <div v-if="!isLogged" class="row"> 
           <BackofficeSideBar />
           <BackofficeTopBar />
           <router-view class="backoffice-view"/>
         </div>
-        <div v-if="!isLogged"> 
+        <div v-if="isLogged"> 
           <TopBar/>
           <router-view class="view"/>
         </div>
@@ -25,8 +25,8 @@ import BackofficeSideBar from '@/backoffice/shared/components/SideBar.vue' // @ 
 import BackofficeTopBar from '@/backoffice/shared/components/TopBar.vue' // @ is an alias to /src
 import TopBar from '@/shared/components/TopBar.vue'
 import { getModule } from "vuex-module-decorators"
-import AppModule from "@/AppModule"
-import Store from "@/store"
+import AppModule from "./AppModule"
+import Store from "./store"
 
 const appModule = getModule(AppModule, Store)
 

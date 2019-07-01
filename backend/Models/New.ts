@@ -24,5 +24,15 @@ export class New {
     name: 'img'
   })
   public img!: string
+
+  @Column({
+    name: 'creationDate'
+  })
+  public creationDate!: string
+
+  @Column({
+    name: 'published'
+  })
+  public published!: boolean
 }
    

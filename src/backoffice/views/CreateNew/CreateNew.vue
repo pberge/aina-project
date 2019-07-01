@@ -25,9 +25,12 @@ import NewModel from "../../../backoffice/shared/models/NewModel"
 import TextEditor from "./components/TextEditor.vue"
 import ImageUploader from "./components/ImageUploader.vue"
 import axios from "axios"
-import { getModule } from "vuex-module-decorators"
+import { getModule, Action } from "vuex-module-decorators"
 import CreateNewModule from "./CreateNewModule"
 import Store from "../../../store"
+import New from '../../shared/models/NewModel'
+import api from '../../shared/api'
+import moment from "moment"
 
 const createNewState = getModule(CreateNewModule, Store)
 
@@ -47,22 +50,16 @@ export default class CreateNew extends Vue {
     createNewState.setTitle(title)
   }
 
-  createNew() {
-    let newModel: NewModel = {
+  async createNew() {
+    let item: New = {
       title: createNewState.title,
       text: createNewState.text,
       img: createNewState.img,
-      date: "",
-      published: false
+      published: false,
+      creationDate: moment().format()
     }
-
-    let fd = new FormData()
-    fd.append("image", createNewState.img, createNewState.img.name)
-    fd.append("title", createNewState.title)
-    fd.append("text", createNewState.text)
-
-    axios.post("http://localhost:51736/api/news", 
-      fd)
+    let res = await api.News.createNew(item)
+    return res
   }
 }
 </script>

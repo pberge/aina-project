@@ -37,8 +37,4 @@ export default class CreateNewModule extends VuexModule {
         this.context.commit('setImg', img);
         return img
     }
-
-    get random() {
-        return "a"
-    }
 }
