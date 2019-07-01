@@ -1,5 +1,5 @@
 import {Module, VuexModule, Mutation, Action, getModule} from 'vuex-module-decorators'
-import Store from '@/store'
+import Store from '../../../store'
 
 @Module({
     dynamic: true,
