@@ -15,7 +15,7 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 import CreateNewModule from "../CreateNewModule"
-import Store from "@/store"
+import Store from "../../../../store"
 import { getModule } from "vuex-module-decorators"
 
 const createNewState = getModule(CreateNewModule, Store)

@@ -133,7 +133,7 @@ import {
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { getModule } from "vuex-module-decorators"
 import CreateNewModule from "../CreateNewModule"
-import Store from "@/store"
+import Store from "../../../../store"
 
 const createNewState = getModule(CreateNewModule, Store)
 

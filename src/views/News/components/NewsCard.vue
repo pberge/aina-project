@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import NewCard from '@/shared/objects/newCard'
+import NewCard from '../../../shared/models/newCard'
 
 @Component
 export default class NewsCard extends Vue {

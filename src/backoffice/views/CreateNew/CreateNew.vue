@@ -21,13 +21,13 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator"
-import NewModel from "@/backoffice/shared/models/NewModel"
+import NewModel from "../../../backoffice/shared/models/NewModel"
 import TextEditor from "./components/TextEditor.vue"
 import ImageUploader from "./components/ImageUploader.vue"
 import axios from "axios"
 import { getModule } from "vuex-module-decorators"
 import CreateNewModule from "./CreateNewModule"
-import Store from "@/store"
+import Store from "../../../store"
 
 const createNewState = getModule(CreateNewModule, Store)
 

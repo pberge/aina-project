@@ -10,15 +10,15 @@
       <tr v-for="(item, i) in news" :key="i">
         <td>{{item.title}}</td>
         <td>{{item.published}}</td>
-        <td>{{item.date}}</td>
+        <td>{{item.creationdate}}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
-import NewModel from '@/backoffice/shared/models/NewModel'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import NewModel from '../../../shared/models/NewModel'
 
 @Component({
   components: {
@@ -26,6 +26,8 @@ import NewModel from '@/backoffice/shared/models/NewModel'
 })
 export default class NewsTable extends Vue {
   @Prop() news!: NewModel[]
+
+  
 
 }
 </script>

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import newCard from '../../shared/objects/newCard';
+import newCard from '../../shared/models/newCard';
 import NewsCard from './components/NewsCard.vue';
 
 @Component({

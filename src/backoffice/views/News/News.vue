@@ -8,7 +8,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import NewsTable from './components/NewsTable.vue'
-import NewModel from '@/backoffice/shared/models/NewModel'
+import NewModel from '../../shared/models/NewModel'
+import api from '../../shared/api'
 
 @Component({
   components: {
@@ -18,22 +19,16 @@ import NewModel from '@/backoffice/shared/models/NewModel'
 export default class News extends Vue {
   news: NewModel[] = []
 
-  mounted () {
-    this.news = [
-      {'img': '', 'title': 'Preinscripcions online!', 'text': '', 'date': '23/06/2019', 'published': true},
-      {'img': '', 'title': 'Preinscripcions online!', 'text': '', 'date': '', 'published': true},
-      {'img': '', 'title': 'Preinscripcions online!', 'text': '', 'date': '', 'published': true},
-      {'img': '', 'title': 'Preinscripcions online!', 'text': '', 'date': '', 'published': true}
-    ]
+   mounted () {
+    this.getNews()
+  }
+
+  async getNews(){
+    await api.News.getAllNews().then(response => this.news = response.data)
   }
 }
 </script>
 
 <style>
-.news {
-
-}
-
-
 
 </style>
