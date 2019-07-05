@@ -20,21 +20,19 @@ export default class CreateNewModule extends VuexModule {
 
     @Action({commit: 'setTtl'})
     setTitle(title: string) {
-        this.context.commit('setTtl', title);
-
-        console.log("MODULE: ",this.title )
+        this.context.commit('setTtl', title)
         return title
     }
 
     @Action({commit: 'setTxt'})
     setText(text: string) {
-        this.context.commit('setTxt', text);
+        this.context.commit('setTxt', text)
         return text
     }
 
     @Action({commit: 'setImg'})
-    setImage(img: any) {
-        this.context.commit('setImg', img);
-        return img
+    async setImage(img: any) {
+        await this.context.commit('setImg', img)
+        return this.img
     }
 }

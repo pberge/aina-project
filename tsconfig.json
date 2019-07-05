@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "pretty": true,
     "resolveJsonModule": true,
     "target": "es6",
-    // "module": "commonjs",
+    // "module": "commonjs  ",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -15,6 +16,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
     "types": [
       "webpack-env"
     ],
@@ -41,6 +43,12 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "typeRoots": [
+    "typings"
+  ],
+  "files": [
+    "typings/*"
   ]
 }
   

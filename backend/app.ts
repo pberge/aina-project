@@ -25,7 +25,6 @@ class App {
     })
     .then((conection) => {
       console.log("done")
-      
     })
     .catch( (error) => console.log("error"))
     
@@ -38,12 +37,11 @@ class App {
 
     this.initializeMiddlewares()
     this.initializeControllers(controllers)
-
-   
   }
  
   public async initializeMiddlewares() {
-    await this.app.use(bodyParser.json());
+    await this.app.use(bodyParser.urlencoded({ extended: true }))
+    await this.app.use(bodyParser.json()) 
   }
  
   public async initializeControllers(controllers: any) {

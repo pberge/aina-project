@@ -1,4 +1,5 @@
 import { New } from "../Models/New"
+import { NewImage } from "../Models/NewImage"
 import { Repository, EntityRepository, getConnection } from "typeorm";
 import unique from "uniqid"
 
@@ -10,7 +11,7 @@ export default class NewsRepository extends Repository<New>  {
     }
 
 
-    public async saveNew(item: New): Promise<New> {
+    public async saveNew(item: NewImage): Promise<New> {
         await getConnection()
         .createQueryBuilder()
         .insert()
@@ -21,6 +22,6 @@ export default class NewsRepository extends Repository<New>  {
             }
         ])
         .execute()
-        return item
+        return new New
     }
 }

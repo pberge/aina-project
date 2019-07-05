@@ -1,15 +1,19 @@
-import express from 'express'
-import { New } from '../Models/New'
+import * as express from 'express'
+import { NewImage } from '../Models/NewImage'
 import NewsService from '../Services/NewsService'
 import {
     JsonController
-} from 'routing-controllers';
+} from 'routing-controllers'
+import { MulterFile } from "../Models/MulterFile"
+
+const multer = require('multer')
 
 @JsonController('/news')
 class NewsController {
     public path = '/news';
     public router = express.Router();
     public newsService: NewsService
+    public upload = multer()
 
     constructor() {
         this.newsService = new NewsService()
@@ -18,7 +22,7 @@ class NewsController {
 
     public intializeRoutes() {
         this.router.get(this.path, this.getAllNews);
-        this.router.post(this.path, this.createNew);
+        this.router.post(this.path, this.upload.single('img'), this.createNew);
     }
 
     getAllNews = async (request: express.Request, response: express.Response) => {
@@ -26,7 +30,15 @@ class NewsController {
     }
 
     createNew = async (request: express.Request, response: express.Response) => {
-        const newItem: New = request.body;
+        // console.log(request['file'], request.body)
+        const newItem: NewImage = {
+            title: request.body.title,
+            text: request.body.text,
+            img: request.body.img,
+            creationDate: request.body.creationDate,
+            published: request.body.published
+        }
+
         response.send(await this.newsService.createNew(newItem));
     }
 }

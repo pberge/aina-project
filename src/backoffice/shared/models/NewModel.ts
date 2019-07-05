@@ -1,5 +1,5 @@
 export default interface NewModel {
-    img: any
+    img: string
     title: string
     text: string
     creationDate: string
