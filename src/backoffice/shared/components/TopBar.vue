@@ -15,9 +15,10 @@ export default class TopBar extends Vue {}
 
 <style scoped>
 .topbar {
+    z-index: 1;
     position:fixed;
     height: 4em;
-	margin: 0;
+	  margin: 0;
     left: 14em;
     right: 0;
     background-color: white;

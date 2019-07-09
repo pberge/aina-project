@@ -18,9 +18,9 @@ export default class NewsService {
         let url = await new imageUploader().upload(item.img) //upload image
         item.img = url
 
-        // let newsRepository = await getCustomRepository(NewsRepository)
-        // let res = await newsRepository.saveNew(item)
+        let newsRepository = await getCustomRepository(NewsRepository)
+        let res = await newsRepository.saveNew(item)
 
-        return new New//res
+        return res
     }
 }

@@ -22,6 +22,6 @@ export default class NewsRepository extends Repository<New>  {
             }
         ])
         .execute()
-        return new New
+        return new New()
     }
 }

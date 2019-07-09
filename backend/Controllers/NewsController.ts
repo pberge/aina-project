@@ -4,7 +4,6 @@ import NewsService from '../Services/NewsService'
 import {
     JsonController
 } from 'routing-controllers'
-import { MulterFile } from "../Models/MulterFile"
 
 const multer = require('multer')
 
@@ -13,7 +12,7 @@ class NewsController {
     public path = '/news';
     public router = express.Router();
     public newsService: NewsService
-    public upload = multer()
+    public upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
     constructor() {
         this.newsService = new NewsService()
@@ -30,7 +29,6 @@ class NewsController {
     }
 
     createNew = async (request: express.Request, response: express.Response) => {
-        // console.log(request['file'], request.body)
         const newItem: NewImage = {
             title: request.body.title,
             text: request.body.text,

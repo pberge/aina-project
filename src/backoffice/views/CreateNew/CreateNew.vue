@@ -1,5 +1,5 @@
 <template>
-  <div class="create-new">
+  <div class="create-new" :class="{'no-events': isLoading}">
     <div class="title-container">
       <span class="title">Títol</span>
       <input type="text" class="input-title" v-model="titleInput" placeholder="Títol">
@@ -16,6 +16,7 @@
       <router-link class="btn btn-cancel" to="/admin/news">Cancel·lar</router-link>
       <a class="btn btn-ok" @click="createNew">Acceptar</a>
     </div>
+    <Spinner v-if="isLoading"/>
   </div>
 </template>
 
@@ -31,16 +32,20 @@ import Store from "../../../store"
 import New from '../../shared/models/NewModel'
 import api from '../../shared/api'
 import moment from "moment"
+import Spinner from "../../shared/components/Spinner.vue"
 
 const createNewState = getModule(CreateNewModule, Store)
 
 @Component({
   components: {
     TextEditor,
-    ImageUploader
+    ImageUploader,
+    Spinner
   }
 })
 export default class CreateNew extends Vue {
+
+  isLoading: boolean = false
 
   get titleInput() {
     return createNewState.title
@@ -51,6 +56,7 @@ export default class CreateNew extends Vue {
   }
 
   async createNew() {
+    this.isLoading = true
     let item: New = {
       title: createNewState.title,
       text: createNewState.text,
@@ -59,7 +65,9 @@ export default class CreateNew extends Vue {
       creationDate: moment().format()
     }
     let res = await api.News.createNew(item)
-    return res
+    this.isLoading = false
+    
+    this.$router.push("news")
   }
 }
 </script>
@@ -68,6 +76,10 @@ export default class CreateNew extends Vue {
 .title-container {
   width: 90%;
   margin-bottom: 2em;
+}
+
+.no-events {
+  pointer-events: none;
 }
 
 .title {
@@ -91,4 +103,5 @@ export default class CreateNew extends Vue {
 .buttons-container {
   margin: 0;
 }
+
 </style>

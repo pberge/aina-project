@@ -5,6 +5,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import Spinner from './Spinner.vue'
 
 @Component
 export default class SideBar extends Vue {
