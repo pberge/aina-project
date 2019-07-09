@@ -24,4 +24,15 @@ export default class NewsRepository extends Repository<New>  {
         .execute()
         return new New()
     }
+
+    public async deleteNew(id: string): Promise<New> {
+        await getConnection()
+        .createQueryBuilder()
+        .delete()
+        .from("news")
+        .where("id = :id", { id: id })
+        .execute()
+
+        return new New()
+    }
 }

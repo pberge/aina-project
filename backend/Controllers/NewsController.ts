@@ -22,6 +22,7 @@ class NewsController {
     public intializeRoutes() {
         this.router.get(this.path, this.getAllNews);
         this.router.post(this.path, this.upload.single('img'), this.createNew);
+        this.router.delete(this.path, this.deleteNew);
     }
 
     getAllNews = async (request: express.Request, response: express.Response) => {
@@ -38,6 +39,11 @@ class NewsController {
         }
 
         response.send(await this.newsService.createNew(newItem));
+    }
+
+    deleteNew = async (request: express.Request, response: express.Response) => {
+        console.log(request.query.id)
+        response.send(await this.newsService.deleteNew(request.query.id))
     }
 }
 

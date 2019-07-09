@@ -62,7 +62,7 @@ export default class CreateNew extends Vue {
       text: createNewState.text,
       img: createNewState.img,
       published: false,
-      creationDate: moment().format()
+      creationDate: moment().locale("es").format("L")
     }
     let res = await api.News.createNew(item)
     this.isLoading = false

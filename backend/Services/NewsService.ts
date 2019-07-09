@@ -23,4 +23,10 @@ export default class NewsService {
 
         return res
     }
+
+    public async deleteNew(id: string): Promise<New> {
+        let newsRepository = await getCustomRepository(NewsRepository)
+        await newsRepository.deleteNew(id)
+        return new New()
+    }
 }

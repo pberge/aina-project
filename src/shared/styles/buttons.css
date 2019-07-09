@@ -8,6 +8,7 @@
     transition-duration: 0.4s;
     text-decoration: none;
     margin: 0.2em;
+    pointer-events: all !important;
 }
 
 .btn-ok {
@@ -26,4 +27,8 @@
 .btn-cancel:hover {
     background-color: #a5a5a5; 
     color: white;
+}
+
+.no-events {
+    pointer-events: none;
 }
