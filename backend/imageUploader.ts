@@ -21,12 +21,22 @@ class ImageUploader {
             url = image.url
         })
         .catch(function (err: any) {
-            if (err) { console.warn(err); }
+            if (err) { console.warn(err) }
         });
 
         return url
     }
+
+    public async delete(imageUri: string): Promise<void> {
+
+        let splited: string[] = imageUri.split("/") //get image name
+        let imageName: string = splited[splited.length - 1].split(".")[0] //remove extension
+
+        await this.cloudinary.uploader
+        .destroy(imageName)
+        .catch((err:any) => console.log(err))
+    }
  
 }
  
-export default ImageUploader;
+export default ImageUploader

@@ -42,7 +42,6 @@ class NewsController {
     }
 
     deleteNew = async (request: express.Request, response: express.Response) => {
-        console.log(request.query.id)
         response.send(await this.newsService.deleteNew(request.query.id))
     }
 }

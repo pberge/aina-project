@@ -26,6 +26,10 @@ export default class NewsService {
 
     public async deleteNew(id: string): Promise<New> {
         let newsRepository = await getCustomRepository(NewsRepository)
+
+        let item =  await newsRepository.findById(id)
+        await new imageUploader().delete(item.img) //delete image
+
         await newsRepository.deleteNew(id)
         return new New()
     }

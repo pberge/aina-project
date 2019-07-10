@@ -10,6 +10,17 @@ export default class NewsRepository extends Repository<New>  {
         return await getConnection().query('SELECT * FROM "news"')
     }
 
+    public async findById(id: string): Promise<New> {        
+        let res =  await getConnection()
+        .createQueryBuilder()
+        .select()
+        .from("news", "news")
+        .where("id = :id", { id: id })
+        .execute()
+
+        return res[0]
+    }
+
 
     public async saveNew(item: NewImage): Promise<New> {
         await getConnection()

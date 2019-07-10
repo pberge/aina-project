@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 import { IsNotEmpty } from 'class-validator'
 
 @Entity()
 export class New {
-  @PrimaryColumn({
+  @PrimaryGeneratedColumn({
     name: 'id'
   })
   public id!: string
