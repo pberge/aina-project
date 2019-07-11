@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home/Home.vue'
 import News from './views/News/News.vue'
+import NewsDetail from './views/NewDetail/NewsDetail.vue'
 import CreateNew from './backoffice/views/CreateNew/CreateNew.vue'
 import NewsList from './backoffice/views/News/News.vue'
 
@@ -13,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/new-detail/:id',
+      name: 'new-detail',
+      component: NewsDetail
     },
     {
       path: '/news',

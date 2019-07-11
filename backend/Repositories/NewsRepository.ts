@@ -28,7 +28,7 @@ export default class NewsRepository extends Repository<New>  {
         .insert()
         .into("news")
         .values([
-            {   id: unique(),title: item.title, text: item.text, img: item.img,
+            {   id: unique(), title: item.title, text: item.text, img: item.img,
                 creationdate: item.creationDate, published: item.published 
             }
         ])

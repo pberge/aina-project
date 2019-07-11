@@ -1,20 +1,20 @@
 <template>
     <div class="news-card">
-        <img src="@/assets/home.jpg">
+        <img :src="newInfo.img">
         <span class="title">{{newInfo.title}}</span>
         <span class="text">{{newInfo.text}}</span>
-        <span class="date">{{newInfo.date}}</span>
+        <span class="date">{{newInfo.creationdate}}</span>
     </div>
 
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import NewCard from '../../../shared/models/newCard'
+import New from '../../../shared/models/new'
 
 @Component
 export default class NewsCard extends Vue {
-    @Prop() newInfo!: NewCard
+    @Prop() newInfo!: New
 }
 </script>
 

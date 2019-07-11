@@ -10,7 +10,7 @@ import Store from './store'
 export default class AppModule extends VuexModule {
     public logged: boolean = false
 
-    @Mutation setLogged(value: boolean) {this.logged = true}
+    @Mutation setLogged(value: boolean) {this.logged = false}
 
     @Action({commit: 'setLogged'})
     Login(title: string) {

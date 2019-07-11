@@ -28,14 +28,14 @@ export default class News extends Vue {
     this.getNews()
   }
 
-  async getNews(){
+  async getNews () {
     await api.News.getAllNews().then(response => {
-      this.news = response.data
+      this.news = response
       this.isLoading = false
     })
   }
 
-  async deleteNew(id: string) {
+  async deleteNew (id: string) {
     this.isLoading = true
     await api.News.deleteNew(id)
     this.getNews()

@@ -1,13 +1,16 @@
 <template>
 	<div class="news row">
-		<NewsCard v-for="(item, i) in news" :key="i" :newInfo="item"/>
+		<router-link v-for="(item, i) in news" :key="i" :to="getRoute(item.id)" >
+			<NewsCard :newInfo="item" />
+		</router-link>
 	</div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import newCard from '../../shared/models/newCard';
-import NewsCard from './components/NewsCard.vue';
+import New from '../../shared/models/new'
+import NewsCard from './components/NewsCard.vue'
+import api from '../../shared/api'
 
 @Component({
 	components: {
@@ -15,36 +18,14 @@ import NewsCard from './components/NewsCard.vue';
 	}
 })
 export default class News extends Vue {
-	news: newCard[] = []
+	news: New[] = []
 	
-	mounted () {
-			//call API to get news
-			this.news = [
-				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
-				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
-				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
-				'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
-				'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
-				'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
-				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
-				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
-				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
-				'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
-				'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
-				'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
-				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
-				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
-				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
-				'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
-				'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
-				'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
-				{'img': '@/assets/home.jpg', 'title': 'Preinscripcions online!', 'text': 'Des de la Casa de ' +
-				'colònies d’AINA, es comunica que el procés d’inscripció per a les Colònies' +
-				'Populars de Canillo d’aquest estiu 2019 canvia el seu procediment habitual i es '+
-				'durà a terme en format electrònic. Aquest canvi en el procés només serà vàlid '+
-				'per als nens i nenes que s’inscriguin en els torns de colònies destinats a la '+
-				'Casa i a la Borda, és a dir, els infants de 7 a 14 anys.', 'date': '12/02/1998'},
-			]
+	async mounted () {
+		this.news = await api.News.getAllNews()
+	}
+
+	getRoute(id: string) {
+		return "new-detail/"+ id
 	}
 }
 </script>
@@ -53,4 +34,5 @@ export default class News extends Vue {
 .news {
 	justify-content: center;
 }
+
 </style>

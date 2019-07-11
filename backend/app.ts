@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import { createConnection } from 'typeorm'
 import {New} from './Models/New'
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
 
 class App {
   public app: express.Application

@@ -3,6 +3,6 @@ export default interface New {
     title: string
     text: string
     img: string
-    publishedData: string
+    creationdate: string
     published: boolean
 }
