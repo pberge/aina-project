@@ -39,6 +39,6 @@ export default new Router({
       path: '/admin/create-new',
       name: 'createNew',
       component: CreateNew
-    },
+    }
   ]
 })

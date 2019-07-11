@@ -30,7 +30,7 @@ export default class News extends Vue {
 
   async getNews () {
     await api.News.getAllNews().then(response => {
-      this.news = response
+      this.news = response.data
       this.isLoading = false
     })
   }

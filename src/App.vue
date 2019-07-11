@@ -26,9 +26,9 @@ import BackofficeTopBar from '@/backoffice/shared/components/TopBar.vue' // @ is
 import TopBar from '@/shared/components/TopBar.vue'
 import { getModule } from 'vuex-module-decorators'
 import AppModule from './AppModule'
-import Store from './store'
 
-const appModule = getModule(AppModule, Store)
+const store = require('./store')
+const appModule = getModule(AppModule, store)
 
 @Component({
   components: {

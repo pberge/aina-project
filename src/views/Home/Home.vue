@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<img class="photo" src="@/assets/home.jpg"/>
+		<img class="photo" src="@/assets/home1.jpg"/>
 		<div class="title-container row">
 			<span class="title">{{$t("home.title")}}</span>
 		</div>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class Home extends Vue {}

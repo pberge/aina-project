@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import NewModel from '../../../shared/models/NewModel'
 import Modal from '../../../shared/components/Modal.vue'
 

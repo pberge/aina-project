@@ -21,18 +21,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator"
-import NewModel from "../../../backoffice/shared/models/NewModel"
-import TextEditor from "./components/TextEditor.vue"
-import ImageUploader from "./components/ImageUploader.vue"
-import axios from "axios"
-import { getModule, Action } from "vuex-module-decorators"
-import CreateNewModule from "./CreateNewModule"
-import Store from "../../../store"
+import { Component, Vue } from 'vue-property-decorator'
+import TextEditor from './components/TextEditor.vue'
+import ImageUploader from './components/ImageUploader.vue'
+import { getModule } from 'vuex-module-decorators'
+import CreateNewModule from './CreateNewModule'
+import Store from '../../../store'
 import New from '../../shared/models/NewModel'
 import api from '../../shared/api'
-import moment from "moment"
-import Spinner from "../../shared/components/Spinner.vue"
+import moment from 'moment'
+import Spinner from '../../shared/components/Spinner.vue'
 
 const createNewState = getModule(CreateNewModule, Store)
 
@@ -44,7 +42,6 @@ const createNewState = getModule(CreateNewModule, Store)
   }
 })
 export default class CreateNew extends Vue {
-
   isLoading: boolean = false
 
   get titleInput() {
@@ -64,7 +61,7 @@ export default class CreateNew extends Vue {
       published: false,
       creationDate: moment().locale("es").format("L")
     }
-    let res = await api.News.createNew(item)
+    await api.News.createNew(item)
     this.isLoading = false
     
     this.$router.push("news")

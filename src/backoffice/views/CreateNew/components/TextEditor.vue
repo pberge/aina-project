@@ -82,58 +82,54 @@
 </template>
 
 <script lang="ts">
-import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
-// import {
-//   Blockquote,
-//   CodeBlock,
-//   HardBreak,
-//   Heading,
-//   HorizontalRule,
-//   OrderedList,
-//   BulletList,
-//   ListItem,
-//   TodoItem,
-//   TodoList,
-//   Bold,
-//   Code,
-//   Italic,
-//   Link,
-//   Strike,
-//   Underline,
-//   History
-// } from 'tiptap-extensions'
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
+import {
+  Blockquote,
+  HardBreak,
+  Heading,
+  HorizontalRule,
+  OrderedList,
+  BulletList,
+  ListItem,
+  TodoItem,
+  TodoList,
+  Bold,
+  Italic,
+  Link,
+  Strike,
+  Underline,
+  History
+} from 'tiptap-extensions'
+import { Component, Vue } from 'vue-property-decorator'
 import { getModule } from 'vuex-module-decorators'
 import CreateNewModule from '../CreateNewModule'
 import Store from '../../../../store'
 
 const createNewState = getModule(CreateNewModule, Store)
-const tiptapExtensions = require('tiptap-extensions')
-const tiptap = require('tiptap')
 
 @Component({
   components: {
     EditorMenuBar,
-    EditorContent
+    EditorContent,
   }
 })
 export default class TextEditor extends Vue {
-  editor = new tiptap.Editor({
+  editor = new Editor({
     extensions: [
-      new tiptapExtensions.Blockquote(),
-      new tiptapExtensions.BulletList(),
-      new tiptapExtensions.HardBreak(),
-      new tiptapExtensions.Heading({ levels: [1, 2, 3] }),
-      new tiptapExtensions.HorizontalRule(),
-      new tiptapExtensions.ListItem(),
-      new tiptapExtensions.OrderedList(),
-      new tiptapExtensions.TodoItem(),
-      new tiptapExtensions.TodoList(),
-      new tiptapExtensions.Link(),
-      new tiptapExtensions.Bold(),
-      new tiptapExtensions.Italic(),
-      new tiptapExtensions.Strike(),
-      new tiptapExtensions.Underline(),
+      new Blockquote(),
+      new BulletList(),
+      new HardBreak(),
+      new Heading({ levels: [1, 2, 3] }),
+      new HorizontalRule(),
+      new ListItem(),
+      new OrderedList(),
+      new TodoItem(),
+      new TodoList(),
+      new Link(),
+      new Bold(),
+      new Italic(),
+      new Strike(),
+      new Underline(),
       new History()
     ],
     onUpdate: ({ getHTML }: any) => {

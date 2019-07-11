@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import New from '../../shared/models/new'
 import NewsCard from './components/NewsCard.vue'
 import api from '../../shared/api'

@@ -19,7 +19,7 @@ import Store from "../../../../store"
 
 const createNewState = getModule(CreateNewModule, Store)
 
-@Component
+@Component({})
 export default class ImageUploader extends Vue {
 
   image: any = {}
