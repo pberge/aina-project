@@ -110,7 +110,7 @@ const createNewState = getModule(CreateNewModule, Store)
 @Component({
   components: {
     EditorMenuBar,
-    EditorContent,
+    EditorContent
   }
 })
 export default class TextEditor extends Vue {

@@ -33,4 +33,11 @@ export default class NewsService {
         await newsRepository.deleteNew(id)
         return new New()
     }
+
+    public async getNewById(id: string): Promise<New> {
+        let newsRepository = await getCustomRepository(NewsRepository)
+
+        let item =  await newsRepository.findById(id)
+        return item
+    }
 }

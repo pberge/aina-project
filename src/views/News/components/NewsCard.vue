@@ -1,8 +1,7 @@
 <template>
     <div class="news-card">
         <img :src="newInfo.img">
-        <span class="title">{{newInfo.title}}</span>
-        <span class="text">{{newInfo.text}}</span>
+        <div class="title">{{newInfo.title}}</div>
         <span class="date">{{newInfo.creationdate}}</span>
     </div>
 
@@ -44,27 +43,21 @@ export default class NewsCard extends Vue {
 }
 
 img {
-    max-width: 16em;
-    max-height: 10em;
-    padding: 0;
+    position: relative;
+    float: left;
+    width:  16em;
+    height: 10em;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    padding: 0;
 }
 
 .title {
     padding: 1em 1em;
-}
-
-.text {
-    height: 30%;
-    padding: 0 1em;
-    padding-bottom: 1em;
-    margin: 0;
-    text-align: justify;
-    font-size: 0.8em;
-    background: linear-gradient(to bottom, #000000 0%, #F6F3F3 85%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    padding-bottom: 2em;
 }
 
 .text:before {
@@ -73,7 +66,7 @@ img {
 
 .date {
     position: absolute;
-    left: 2em;
+    right: 2em;
     bottom: 2em;
     font-size: 0.5em;
 }

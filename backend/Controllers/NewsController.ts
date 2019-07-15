@@ -23,6 +23,7 @@ class NewsController {
         this.router.get(this.path, this.getAllNews);
         this.router.post(this.path, this.upload.single('img'), this.createNew);
         this.router.delete(this.path, this.deleteNew);
+        this.router.get('/new-by-id', this.getNewById)
     }
 
     getAllNews = async (request: express.Request, response: express.Response) => {
@@ -43,6 +44,10 @@ class NewsController {
 
     deleteNew = async (request: express.Request, response: express.Response) => {
         response.send(await this.newsService.deleteNew(request.query.id))
+    }
+
+    getNewById = async (request: express.Request, response: express.Response) => {
+        response.send(await this.newsService.getNewById(request.query.id))
     }
 }
 

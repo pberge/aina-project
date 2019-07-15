@@ -1,9 +1,9 @@
 <template>
-	<div class="news row">
-		<router-link v-for="(item, i) in news" :key="i" :to="getRoute(item.id)" >
-			<NewsCard :newInfo="item" />
-		</router-link>
-	</div>
+  <div class="news row">
+    <router-link v-for="(item, i) in news" :key="i" :to="getRoute(item.id)">
+      <NewsCard :newInfo="item" />
+    </router-link>
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,26 +13,29 @@ import NewsCard from './components/NewsCard.vue'
 import api from '../../shared/api'
 
 @Component({
-	components: {
-		NewsCard
-	}
+  components: {
+    NewsCard
+  }
 })
 export default class News extends Vue {
-	news: New[] = []
-	
-	async mounted () {
-		this.news = await api.News.getAllNews()
-	}
+  news: New[] = [];
 
-	getRoute(id: string) {
-		return "new-detail/"+ id
-	}
+  async mounted () {
+    this.news = await api.News.getAllNews()
+  }
+
+  getRoute (id: string) {
+    return 'new-detail/' + id
+  }
 }
 </script>
 
 <style scoped>
 .news {
-	justify-content: center;
+  justify-content: center;
 }
 
+a {
+  text-decoration: none;
+}
 </style>
