@@ -33,7 +33,7 @@ export default class Instalations extends Vue {
     ]
     this.outsideImages = [
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563268479/Facilities/P6200063_qdujpm.jpg', description: 'field' },
-      { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563268614/Facilities/P6200038_qbkca2.jpg', description: 'baracoe' },
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563268614/Facilities/P6200038_qbkca2.jpg', description: 'barbacoe' },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563268603/Facilities/P6200044_b2t9jn.jpg', description: 'farm' },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563268557/Facilities/P6200053_syppgl.jpg', description: 'rocquet' },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/v1563269224/Facilities/GOPR7509_2_onihhd.jpg', description: 'stanna' },

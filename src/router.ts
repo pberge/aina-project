@@ -6,6 +6,7 @@ import NewsDetail from './views/NewDetail/NewsDetail.vue'
 import CreateNew from './backoffice/views/CreateNew/CreateNew.vue'
 import NewsList from './backoffice/views/News/News.vue'
 import Facilities from '@/views/Facilities/Facilities.vue'
+import Contact from '@/views/Contact/Contact.vue'
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/facilities',
       name: 'facilities',
       component: Facilities
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
     }
   ]
 })
