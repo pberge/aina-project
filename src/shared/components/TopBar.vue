@@ -2,7 +2,7 @@
   <div class="topbar row">
     <div class="col-xs-3 col-md-5 start-xs">
       <router-link class="row logo-container" to="/">
-        <img class="logo" src="@/assets/logo.png" />
+        <img class="logo" src="@/assets/logoaina.png" />
         <span class="title">AINA</span>
       </router-link>
     </div>
@@ -31,7 +31,7 @@ export default class TopBar extends Vue {
       { to: '/prices', tag: 'Història' },
       { to: '/facilities', tag: 'Instalacions' },
       { to: '/news', tag: 'Notícies' },
-      { to: '/new-detail', tag: 'Calendari' },
+      // { to: '/new-detail', tag: 'Calendari' },
       { to: '/prices', tag: 'Preus' },
       { to: '/contact', tag: 'Contacte' }
     ]
@@ -56,6 +56,7 @@ export default class TopBar extends Vue {
   align-items: center;
   width: fit-content;
   text-decoration: none;
+  padding-left: 2em;
 }
 
 .logo {
@@ -65,9 +66,8 @@ export default class TopBar extends Vue {
 .title {
   text-decoration: none;
   color: #000000;
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 4px;
+  font-size: 2.6em;
+  letter-spacing: 5px;
   margin-left: 1em;
 }
 

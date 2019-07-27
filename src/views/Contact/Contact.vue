@@ -4,11 +4,11 @@
       <div class="row container">
         <div class="item col-xs-3">
             <i class="material-icons icon">phone</i>
-            <span>+376 851434</span>
+            <span class="phone">+376 851434</span>
         </div>
-        <div class="item col-xs-3">
+        <div class="item map col-xs-3" onclick="window.open('https://goo.gl/maps/J2PkqF5rL1pME18H7','new_window');">
             <i class="material-icons icon">location_on</i>
-            <a href="https://goo.gl/maps/J2PkqF5rL1pME18H7" target="blank">Mapa</a>
+            <span>Localització</span>
         </div>
         <div class="item col-xs-3">
             <i class="material-icons icon">mail</i>
@@ -50,21 +50,28 @@ export default class Contact extends Vue {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: bold;
+}
+
+.map:hover {
+    border: 1px solid orange;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .icon {
     font-size: 2em !important;
     margin-bottom: 0.5em;
+    color: black;
 }
-
-/* .map {
-    width: 100%;
-    height: 10em;
-} */
 
 a {
     color:black;
     text-decoration: none;
+}
+
+.phone {
+    font-family: monospace;
 }
 
 </style>
