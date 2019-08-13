@@ -1,31 +1,23 @@
 <template>
   <div class="prices">
-      <span class="title">La casa</span></br>
-      <div class="row">
-          <span>Habitacions de 6 </span><i class="material-icons">person</i>
-      </div>
-        <table>
-            <tr>
-                <th></th>
-                <th>Preu</th>
+    <span class="title">La casa</span>
+    <div class="row">
+      <span>Habitacions de 6</span>
+      <i class="material-icons">person</i>
+    </div>
+    <div class="row">
+        <img class="image col-xs-6" src="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"/>
+        <table class="col-xs-6">
+            <tr class="row">
+                <th class="col-xs-8"></th>
+                <th class="col-xs-4 price">Preu</th>
             </tr>
-            <tr>
-                <td>Pensió complerta</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>Mitja pensió</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Dormir i esmorzar</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Dormir</td>
-                <td>4</td>
+            <tr v-for="(item,i) in laCasaPrices" :key="i" class="row">
+                <td class="col-xs-8">{{item.name}}</td>
+                <td class="col-xs-4 price">{{item.price}} €</td>
             </tr>
         </table>
+    </div>
   </div>
 </template>
 
@@ -33,7 +25,14 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Prices extends Vue {}
+export default class Prices extends Vue {
+  laCasaPrices: any[] = [
+    { name: 'Pensió complerta', price: '31' },
+    { name: 'Mitja pensió', price: '26' },
+    { name: 'Dormir i esmorzar', price: '19' },
+    { name: 'Dormir', price: '16' }
+  ]
+}
 </script>
 
 <style scoped>
@@ -44,27 +43,35 @@ export default class Prices extends Vue {}
 }
 
 .row {
-    /* justify-content: center; */
-    align-items: center;
-    margin: 0;
-    margin-bottom: 1em;
-    opacity: 0.8;
-    font-size: 0.8em;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 1em;
+  opacity: 0.8;
+  font-size: 0.8em;
 }
 
 .material-icons {
-    font-size: 1.1em !important;
+  font-size: 1.1em !important;
 }
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 20em;
+  font-size: 1.2em;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.price {
+    text-align: center;
+}
+
 </style>
