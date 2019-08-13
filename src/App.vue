@@ -83,6 +83,8 @@ body {
   position: absolute;
   top: 5em;
   left: 0;
+  right: 0;
+  margin: 0;
   padding: 1em 2em;
 }
 

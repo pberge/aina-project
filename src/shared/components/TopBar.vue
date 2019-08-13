@@ -28,10 +28,9 @@ export default class TopBar extends Vue {
   mounted () {
     this.menuLinks = [
       { to: '/', tag: 'Portada' },
-      { to: '/prices', tag: 'Història' },
+      { to: '/', tag: 'Història' },
       { to: '/facilities', tag: 'Instalacions' },
       { to: '/news', tag: 'Notícies' },
-      // { to: '/new-detail', tag: 'Calendari' },
       { to: '/prices', tag: 'Preus' },
       { to: '/contact', tag: 'Contacte' }
     ]
