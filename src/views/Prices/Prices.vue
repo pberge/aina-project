@@ -6,8 +6,8 @@
       <i class="material-icons">person</i>
     </div>
     <div class="row">
-        <img class="image col-xs-6" src="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"/>
-        <table class="col-xs-6">
+        <img class="image col-xs-5" src="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"/>
+        <table class="col-xs-5">
             <tr class="row">
                 <th class="col-xs-8"></th>
                 <th class="col-xs-4 price">Preu</th>
@@ -54,10 +54,14 @@ export default class Prices extends Vue {
   font-size: 1.1em !important;
 }
 
+.row {
+    font-size: 0.9em !important;
+}
+
 table {
   border-collapse: collapse;
   width: 20em;
-  font-size: 1.2em;
+  margin-left: 2em;
 }
 
 th,
@@ -72,6 +76,10 @@ tr:nth-child(even) {
 
 .price {
     text-align: center;
+}
+
+.image {
+    max-height: 19em;
 }
 
 </style>
