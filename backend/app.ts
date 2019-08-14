@@ -29,9 +29,9 @@ class App {
     .catch( (error) => console.log("error"))
     
     this.app.use(function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+      res.header("Access-Control-Allow-Origin", "http://localhost:8080")
       res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
       next();
     });
 
@@ -51,7 +51,7 @@ class App {
   }
 
   public listen() {
-    this.app.listen(this.port, () => {
+    this.app.listen(process.env.PORT || this.port, () => {
       console.log(`App listening on the port ${this.port}`);
     });
   }
