@@ -9,7 +9,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node main.js",
+    "start": "node server.ts",
     "be": "nodemon backend/server.ts",
     "build-ts": "tsc",
     "serve-server": "node dist/server.js",
