@@ -4,15 +4,17 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-      <div id="app">
+      <div id="app" >
         <div v-if="isLogged" class="row"> 
           <BackofficeSideBar />
           <BackofficeTopBar />
           <router-view class="backoffice-view"/>
         </div>
         <div v-if="!isLogged"> 
-          <TopBar/>
+          <TopBar />
           <router-view class="view"/>
+        </div>
+        <div class="color-view" v-if="isSideBar" v-on:click="showMenu(false)">
         </div>
       </div>
     </body>
@@ -39,11 +41,17 @@ const appModule = getModule(AppModule, store)
 })
 export default class App extends Vue {
 
-
   get isLogged () {
     return appModule.logged
   }
 
+  get isSideBar () {
+    return appModule.sideBarActive
+  }
+
+  showMenu(value: boolean) {
+    appModule.SideBar(value)
+  }
 
 }
 
@@ -93,6 +101,22 @@ body {
   margin-top: 4em;
   padding: 2em 1em;
   width: 100%;
+}
+
+.sidebar {
+  margin-left: 60%;
+}
+
+.color-view {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.6;
+  transition: 0.3s;
+  z-index: 5;
 }
 
 </style>
