@@ -6,7 +6,7 @@ import {New} from './Models/New'
 // const env = process.env.NODE_ENV || 'development';
 
 class App {
-  public app: express.Application
+  public app: any
   public port: number
  
   constructor(controllers: any, port: number) {

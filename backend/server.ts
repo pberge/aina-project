@@ -1,7 +1,6 @@
 import App from './app'
 import NewsController from './Controllers/NewsController'
 
-
 const app = new App(
   [
     new NewsController(),
