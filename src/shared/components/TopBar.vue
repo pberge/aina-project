@@ -141,7 +141,7 @@ export default class TopBar extends Vue {
   position: fixed;
   text-align: center;
   padding: 1em;
-  z-index: 10;
+  z-index: -10;
   left: -275px;
   top: 0;
   width: 75%;
@@ -153,6 +153,7 @@ export default class TopBar extends Vue {
 .mobile-menu-active {
   left: 0;
   transition: 0.3s;
+  z-index: 10;
 }
 
 .mobile-logo {
