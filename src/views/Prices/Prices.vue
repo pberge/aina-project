@@ -82,4 +82,18 @@ tr:nth-child(even) {
     max-height: 19em;
 }
 
+@media (max-width: 676px) { /*MOBILE*/
+  .image {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+
+  table {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
 </style>
