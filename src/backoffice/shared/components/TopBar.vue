@@ -1,16 +1,49 @@
 <template>
   <div class="topbar row">
     <div class="user">
-        admin@gmail.com
+      {{userName}}
     </div>
+    <i class="material-icons" @click="isModalActive = true">exit_to_app</i>
+    <Modal 
+      v-if="isModalActive"
+      :title="modalTitle"
+      :text="modalText"
+      @action="modalAction"  
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import firebase from 'firebase'
+import Modal from './Modal.vue'
 
-@Component
-export default class TopBar extends Vue {}
+@Component({
+  components: {
+    Modal
+  }
+})
+export default class TopBar extends Vue {
+  modalTitle: string = "Tancar sessió"
+  modalText: string = "Està segur que vol tancar la sessió?"
+
+  isModalActive: boolean = false
+
+  get userName() {
+    return firebase.auth().currentUser.email
+  }
+
+  modalAction(value: string) {
+    if(value === 'ok') {
+      firebase.auth().signOut().then(() => {
+        this.$router.replace('/admin')
+      })
+    }
+    else {
+      this.isModalActive = false
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -30,6 +63,11 @@ export default class TopBar extends Vue {}
 
 .user {
     font-size: 0.8em;
+    margin-right: 1em;
+}
+
+i {
+  cursor: pointer;
 }
 
 </style>

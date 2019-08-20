@@ -25,6 +25,7 @@
     "cloudinary": "^1.14.0",
     "core-js": "^2.6.5",
     "express": "^4.17.1",
+    "firebase": "^6.4.0",
     "flexboxgrid": "^6.3.1",
     "form-data": "^2.4.0",
     "moment": "^2.24.0",

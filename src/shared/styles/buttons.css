@@ -32,3 +32,14 @@
 .no-events {
     pointer-events: none;
 }
+
+.btn-select {
+    border-color: #00bcd4;
+}
+
+.btn-select:hover {
+    background-color: #00bcd4;
+    color: white;
+}
+
+

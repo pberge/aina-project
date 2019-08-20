@@ -11,11 +11,11 @@ export default class AppModule extends VuexModule {
     public logged: boolean = false
     public sideBarActive: boolean = false
 
-    @Mutation setLogged(value: boolean) {this.logged = false}
+    @Mutation setLogged(value: boolean) {this.logged = value}
 
     @Action
-    Login(title: string) {
-        this.context.commit('setLogged', true);
+    Login(value: boolean) {
+        this.context.commit('setLogged', value);
     }
 
     @Mutation setSideBar(value: boolean) {this.sideBarActive = value}
