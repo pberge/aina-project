@@ -19,5 +19,6 @@ export default class SideBar extends Vue {
     position: fixed;
     left: 0;
     top: 0;
+    margin: 0;
 }
 </style>

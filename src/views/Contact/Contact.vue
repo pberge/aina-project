@@ -1,6 +1,5 @@
 <template>
     <div class="contact row">
-        <!-- <img class="image" src="../../assets/contact.jpg"/> -->
         <div class="col-xs-6 row container">
             <div class="item phone col-xs-6">
                 <div class="row" style="justify-content: center;">

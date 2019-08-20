@@ -5,16 +5,19 @@
     </head>
     <body>
       <div id="app" >
-        <div v-if="isLogged" class="row"> 
+        <div v-if="isLogginPage">
+          <router-view class="view"/>
+        </div>
+        <div v-if="isAdmin" class="row"> 
           <BackofficeSideBar />
           <BackofficeTopBar />
           <router-view class="backoffice-view"/>
         </div>
-        <div v-if="!isLogged"> 
+        <div v-if="!isAdmin && !isLogginPage"> 
           <TopBar />
           <router-view class="view"/>
         </div>
-        <div class="color-view" v-if="isSideBar" v-on:click="showMenu(false)">
+        <div class="color-view" v-if="!isAdmin && isSideBar" v-on:click="showMenu(false)">
         </div>
       </div>
     </body>
@@ -41,8 +44,13 @@ const appModule = getModule(AppModule, store)
 })
 export default class App extends Vue {
 
-  get isLogged () {
-    return appModule.logged
+  get isAdmin () {
+    let url = this.$route.meta.requiresAuth
+    return url != null
+  }
+
+  get isLogginPage () {
+    return this.$route.name === 'adminLogin'
   }
 
   get isSideBar () {
