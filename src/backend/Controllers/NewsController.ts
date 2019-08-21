@@ -1,30 +1,26 @@
 import * as express from 'express'
 import { NewImage } from '../Models/NewImage'
 import NewsService from '../Services/NewsService'
-import {
-    JsonController
-} from 'routing-controllers'
 
-const multer = require('multer')
+// const multer = require('multer')
+// const NewsService = require('../Services/NewsService')
 
-@JsonController('/news')
-class NewsController {
-    public path = '/news';
-    public router = express.Router();
-    public newsService: NewsService
-    public upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
+export default class NewsController {
+    // public path = '/news';
+    // public router = express.Router();
+    public newsService: any
+    // public upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
     constructor() {
         this.newsService = new NewsService()
-        this.intializeRoutes();
     }
 
-    public intializeRoutes() {
-        this.router.get(this.path, this.getAllNews);
-        this.router.post(this.path, this.upload.single('img'), this.createNew);
-        this.router.delete(this.path, this.deleteNew);
-        this.router.get('/new-by-id', this.getNewById)
-    }
+    // public intializeRoutes() {
+    //     this.router.get(this.path, this.getAllNews)
+    //     this.router.post(this.path, this.upload.single('img'), this.createNew)
+    //     this.router.delete(this.path, this.deleteNew)
+    //     this.router.get('/new-by-id', this.getNewById)
+    // }
 
     getAllNews = async (request: express.Request, response: express.Response) => {
         response.send(await this.newsService.getNews())
@@ -50,7 +46,3 @@ class NewsController {
         response.send(await this.newsService.getNewById(request.query.id))
     }
 }
-
-export default NewsController;
-
-

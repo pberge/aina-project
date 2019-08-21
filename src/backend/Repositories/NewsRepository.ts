@@ -6,7 +6,7 @@ import unique from "uniqid"
 @EntityRepository(New)
 export default class NewsRepository extends Repository<New>  {
 
-    public async find(): Promise<New[]> {        
+    public async find(): Promise<New[]> {
         return await getConnection().query('SELECT * FROM "news"')
     }
 

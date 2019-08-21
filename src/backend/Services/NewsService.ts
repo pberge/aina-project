@@ -1,11 +1,9 @@
-import { New }  from "../Models/New"
+import { New }  from "..//Models/New"
 import { NewImage } from "../Models/NewImage"
 import NewsRepository from "../Repositories/NewsRepository"
-import { Service } from "typedi"
 import { getCustomRepository } from "typeorm"
 import imageUploader from "../imageUploader"
 
-@Service()
 export default class NewsService {    
 
     public async getNews(): Promise<New[]> {
