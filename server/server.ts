@@ -83,6 +83,3 @@ app.delete('/api/news', deleteNew)
 app.listen(port, () => {
   console.log(`listening on ${port}`)
 })
-
-
-
