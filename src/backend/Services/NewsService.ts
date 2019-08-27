@@ -1,4 +1,4 @@
-import { New }  from "..//Models/New"
+import { New }  from "../Models/New"
 import { NewImage } from "../Models/NewImage"
 import NewsRepository from "../Repositories/NewsRepository"
 import { getCustomRepository } from "typeorm"

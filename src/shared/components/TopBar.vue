@@ -38,7 +38,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import menuLink from '../models/menuLink'
 import AppModule from '../../AppModule'
 import { getModule } from 'vuex-module-decorators'
-const store = require('../../store')
+import store from '../../store'
 const appModule = getModule(AppModule, store)
 
 @Component

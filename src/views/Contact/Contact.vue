@@ -37,7 +37,6 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class Contact extends Vue {
 
     goto (value: string) {
-        console.log("si")
         if(value === 'insta') {
             window.open('https://www.instagram.com/colonies.aina/?hl=es', '_blank')
         }

@@ -1,11 +1,14 @@
-import NewsController from '../src/backend/Controllers/NewsController'
-import { createConnection } from 'typeorm'
-import { New } from '../src/backend/Models/New'
+// import NewsController from '../src/backend/Controllers/NewsController'
+// import { createConnection } from 'typeorm'
+// import { New } from './src/backend/Models/New'
+const newsController = require('./src/backend/Controllers/NewsController.ts')
+const createConnection = require('typeorm')
+const New = require('./src/backend/Models/New')
 
 const express = require("express")
 const port = process.env.PORT || 3000
 const app = express()
-const newsController = new NewsController()
+// const newsController = new NewsController()
 const multer = require('multer')
 const upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
