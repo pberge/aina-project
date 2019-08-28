@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
+    "target": "es6",
+    // "module": "es2015",
     "pretty": true,
     "sourceMap": true,
     "outDir": "dist",

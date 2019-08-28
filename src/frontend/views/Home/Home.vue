@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img class="photo" src="@/assets/home.jpg" />
+    <img class="photo" src="@/frontend/assets/home.jpg" />
     <div class="title-container row">
       <span class="title">{{$t("home.title")}}</span>
     </div>

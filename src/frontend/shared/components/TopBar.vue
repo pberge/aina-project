@@ -4,7 +4,7 @@
       <div class="row container">
         <i class="material-icons mobile-menu-btn" @click="showMenu(true)">menu</i>
         <router-link class="row logo-container" to="/">
-          <img class="logo" src="@/assets/logoaina.png" />
+          <img class="logo" src="@/frontend/assets/logoaina.png" />
           <span class="title">AINA</span>
         </router-link>
       </div>
@@ -12,7 +12,7 @@
     <div 
       class="mobile-menu row" 
       :class="{'mobile-menu-active': isSideBar}">
-      <img class="logo mobile-logo" src="@/assets/logoaina.png" />
+      <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
       <router-link
         class="menu-link"
         :class="{'actual-page': isActualPage(link.to)}"

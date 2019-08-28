@@ -26,9 +26,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import BackofficeSideBar from '@/backoffice/shared/components/SideBar.vue' // @ is an alias to /src
-import BackofficeTopBar from '@/backoffice/shared/components/TopBar.vue' // @ is an alias to /src
-import TopBar from '@/shared/components/TopBar.vue'
+import BackofficeSideBar from '@/frontend/backoffice/shared/components/SideBar.vue' // @ is an alias to /src
+import BackofficeTopBar from '@/frontend/backoffice/shared/components/TopBar.vue' // @ is an alias to /src
+import TopBar from '@/frontend/shared/components/TopBar.vue'
 import { getModule } from 'vuex-module-decorators'
 import AppModule from './AppModule'
 

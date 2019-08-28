@@ -26,7 +26,7 @@ import TextEditor from './components/TextEditor.vue'
 import ImageUploader from './components/ImageUploader.vue'
 import { getModule } from 'vuex-module-decorators'
 import CreateNewModule from './CreateNewModule'
-import Store from '../../../store'
+import Store from '@/frontend/store'
 import New from '../../shared/models/NewModel'
 import api from '../../shared/api'
 import moment from 'moment'
@@ -44,27 +44,27 @@ const createNewState = getModule(CreateNewModule, Store)
 export default class CreateNew extends Vue {
   isLoading: boolean = false
 
-  get titleInput() {
+  get titleInput () {
     return createNewState.title
   }
 
-  set titleInput(title: string) {
+  set titleInput (title: string) {
     createNewState.setTitle(title)
   }
 
-  async createNew() {
+  async createNew () {
     this.isLoading = true
     let item: New = {
       title: createNewState.title,
       text: createNewState.text,
       img: createNewState.img,
       published: false,
-      creationDate: moment().locale("es").format("L")
+      creationDate: moment().locale('es').format('L')
     }
     await api.News.createNew(item)
     this.isLoading = false
-    
-    this.$router.push("news")
+
+    this.$router.push('news')
   }
 }
 </script>

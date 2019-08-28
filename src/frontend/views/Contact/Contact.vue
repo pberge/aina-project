@@ -15,13 +15,13 @@
             </div>
             <div class="item col-xs-6"  v-on:click="goto('insta')">
                 <div class="row" style="justify-content: center;">
-                    <img class="icon" src="../../assets/insta.svg"/>
+                    <img class="icon" src="@/frontend/assets/insta.svg"/>
                 </div>
                 <span class="text">@colonies.aina</span>
             </div>
             <div class="item col-xs-6" v-on:click="goto('fb')">
                 <div class="row" style="justify-content: center;">
-                    <img class="icon" src="../../assets/fb.svg"/>
+                    <img class="icon" src="@/frontend/assets/fb.svg"/>
                 </div>
                 <span class="text">AINA - Casa de Colònies Canillo</span>
             </div>

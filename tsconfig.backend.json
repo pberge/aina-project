@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "exclude": [
+      "src/frontend",
+    ],
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6"
+    }
+}

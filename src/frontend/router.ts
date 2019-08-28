@@ -6,9 +6,9 @@ import NewsDetail from './views/NewDetail/NewsDetail.vue'
 import CreateNew from './backoffice/views/CreateNew/CreateNew.vue'
 import NewsList from './backoffice/views/News/News.vue'
 import Login from './backoffice/views/Login/Login.vue'
-import Facilities from '@/views/Facilities/Facilities.vue'
-import Contact from '@/views/Contact/Contact.vue'
-import Prices from '@/views/Prices/Prices.vue'
+import Facilities from '@/frontend/views/Facilities/Facilities.vue'
+import Contact from '@/frontend/views/Contact/Contact.vue'
+import Prices from '@/frontend/views/Prices/Prices.vue'
 
 import firebase from 'firebase'
 
