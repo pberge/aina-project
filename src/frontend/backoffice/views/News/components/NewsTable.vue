@@ -36,26 +36,25 @@ import Modal from '../../../shared/components/Modal.vue'
 @Component({
   components: {
     Modal
-  },
+  }
 })
 export default class NewsTable extends Vue {
   @Prop() news!: NewModel[]
 
   showDeleteModal: boolean = false
   selectedItem!: NewModel
-  modalTitle: string = "Borrar article"
-  modalText: string = "Està segur que vol borrar aquest article?"
+  modalTitle: string = 'Borrar article'
+  modalText: string = 'Està segur que vol borrar aquest article?'
 
-  openDeleteModal(item: NewModel) {
+  openDeleteModal (item: NewModel) {
     this.showDeleteModal = true
     this.selectedItem = item
   }
 
-  async modalAction(res: string) {
-    if(res === "ok") this.$emit('deleteNew', this.selectedItem.id)
+  async modalAction (res: string) {
+    if (res === 'ok') this.$emit('deleteNew', this.selectedItem.id)
     this.showDeleteModal = false
   }
-
 }
 </script>
 
@@ -75,9 +74,9 @@ table td, table th {
   padding: 8px;
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even) { background-color: #f2f2f2; }
 
-table tr:hover {background-color: #ddd;}
+table tr:hover { background-color: #ddd; }
 
 table th {
   padding: 0.8em;

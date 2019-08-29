@@ -4,11 +4,11 @@
       {{userName}}
     </div>
     <i class="material-icons" @click="isModalActive = true">exit_to_app</i>
-    <Modal 
+    <Modal
       v-if="isModalActive"
       :title="modalTitle"
       :text="modalText"
-      @action="modalAction"  
+      @action="modalAction"
     />
   </div>
 </template>
@@ -24,17 +24,17 @@ import Modal from './Modal.vue'
   }
 })
 export default class TopBar extends Vue {
-  modalTitle: string = "Tancar sessió"
-  modalText: string = "Està segur que vol tancar la sessió?"
+  modalTitle: string = 'Tancar sessió'
+  modalText: string = 'Està segur que vol tancar la sessió?'
 
   isModalActive: boolean = false
 
-  get userName() {
+  get userName () {
     return firebase.auth().currentUser.email
   }
 
-  modalAction(value: string) {
-    if(value === 'ok') {
+  modalAction (value: string) {
+    if (value === 'ok') {
       firebase.auth().signOut().then(() => {
         this.$router.replace('/admin')
       })
@@ -48,22 +48,22 @@ export default class TopBar extends Vue {
 
 <style scoped>
 .topbar {
-    z-index: 1;
-    position:fixed;
-    height: 4em;
-	  margin: 0;
-    left: 14em;
-    right: 0;
-    background-color: white;
-    border-bottom: 1px solid #3a3a3afa;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 1em;
+  z-index: 1;
+  position:fixed;
+  height: 4em;
+  margin: 0;
+  left: 14em;
+  right: 0;
+  background-color: white;
+  border-bottom: 1px solid #3a3a3afa;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em;
 }
 
 .user {
-    font-size: 0.8em;
-    margin-right: 1em;
+  font-size: 0.8em;
+  margin-right: 1em;
 }
 
 i {

@@ -12,42 +12,39 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator"
-import { getModule } from "vuex-module-decorators"
-import CreateNewModule from "../CreateNewModule"
-import Store from "../../../../store"
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import { getModule } from 'vuex-module-decorators'
+import CreateNewModule from '../CreateNewModule'
+import Store from '@/frontend/store'
 
 const createNewState = getModule(CreateNewModule, Store)
 
 @Component({})
 export default class ImageUploader extends Vue {
-
   image: any = {}
-  dataUrl: string = ""
+  dataUrl: string = ''
   reader: any
 
-  mounted() {
+  mounted () {
     this.reader = new FileReader()
     this.reader.onload = (e: any) => {
       this.dataUrl = this.reader.result
     }
   }
 
-  async onImageChange(e: any) {
-    var files = e.target.files || e.dataTransfer.files;
-    if (!files.length){
+  async onImageChange (e: any) {
+    var files = e.target.files || e.dataTransfer.files
+    if (!files.length) {
       return
     }
     this.reader.readAsDataURL(files[0])
     this.image = files[0]
-
   }
 
   @Watch('dataUrl')
-  onDataUrlSet() {
+  onDataUrlSet () {
     createNewState.setImage(this.dataUrl)
   }
-
 }
 </script>
 
@@ -62,17 +59,17 @@ input {
 }
 
 .custom-file-upload {
-    border: 1px solid #00bcd4;
-    border-radius: 3px;
-    padding: 0.5em;
-    cursor: pointer;
-    margin: 0;
-    align-items: center;
+  border: 1px solid #00bcd4;
+  border-radius: 3px;
+  padding: 0.5em;
+  cursor: pointer;
+  margin: 0;
+  align-items: center;
 }
 
 .custom-file-upload:hover {
-    background-color: #00bcd4;
-    color: white;
+  background-color: #00bcd4;
+  color: white;
 }
 
 .image-name {

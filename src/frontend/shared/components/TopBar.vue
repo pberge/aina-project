@@ -9,8 +9,8 @@
         </router-link>
       </div>
     </div>
-    <div 
-      class="mobile-menu row" 
+    <div
+      class="mobile-menu row"
       :class="{'mobile-menu-active': isSideBar}">
       <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
       <router-link
@@ -61,11 +61,11 @@ export default class TopBar extends Vue {
     return appModule.sideBarActive
   }
 
-  showMenu(value: boolean) {
+  showMenu (value: boolean) {
     appModule.SideBar(value)
   }
 
-  isActualPage(page: string) {
+  isActualPage (page: string) {
     return this.$route.path === page
   }
 }

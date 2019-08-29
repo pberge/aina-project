@@ -13,12 +13,12 @@ export default class SideBar extends Vue {
 
 <style scoped>
 .sidebar {
-    width: 14em;
-    height: 100%;
-    background-color: #3a3a3afa;
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 0;
+  width: 14em;
+  height: 100%;
+  background-color: #3a3a3afa;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 0;
 }
 </style>

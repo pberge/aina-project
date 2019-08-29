@@ -10,7 +10,7 @@
             <div class="item col-xs-6" v-on:click="goto('mail')">
                 <div class="row" style="justify-content: center;">
                     <i class="material-icons icon">mail</i>
-                </div>            
+                </div>
                 <span class="text">colonies.aina@andorra.ad</span>
             </div>
             <div class="item col-xs-6"  v-on:click="goto('insta')">
@@ -35,90 +35,89 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class Contact extends Vue {
-
-    goto (value: string) {
-        if(value === 'insta') {
-            window.open('https://www.instagram.com/colonies.aina/?hl=es', '_blank')
-        }
-        else if(value === 'fb') {
-            window.open('https://www.facebook.com/AINA-Casa-de-Col%C3%B2nies-Canillo-626944457391785/', '_blank')
-        }
-        else if(value === 'mail') {
-            window.location.href = "mailto:colonies.aina@andorra.ad?subject=Subject&body=message%20goes%20here"
-        }
+  goto (value: string) {
+    if (value === 'insta') {
+      window.open('https://www.instagram.com/colonies.aina/?hl=es', '_blank')
     }
+    else if (value === 'fb') {
+      window.open('https://www.facebook.com/AINA-Casa-de-Col%C3%B2nies-Canillo-626944457391785/', '_blank')
+    }
+    else if (value === 'mail') {
+      window.location.href = 'mailto:colonies.aina@andorra.ad?subject=Subject&body=message%20goes%20here'
+    }
+  }
 }
 </script>
 
 <style scoped>
 .image {
-    width: 100%;
-    position: relative;
-    margin: 0;
+  width: 100%;
+  position: relative;
+  margin: 0;
 }
 .container {
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 .item {
-    text-align: center;
-    height: 12em;
-    padding-top: 4em;
-    cursor: pointer;
-    border-radius: 3px;
+  text-align: center;
+  height: 12em;
+  padding-top: 4em;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .item:hover {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .icon {
-    margin-bottom: 0.5em;
-    color: black;
-    width: 30px;
-    height: 30px;
-    display: block;
-    font-size: 2em !important;
-    opacity: 0.4;
+  margin-bottom: 0.5em;
+  color: black;
+  width: 30px;
+  height: 30px;
+  display: block;
+  font-size: 2em !important;
+  opacity: 0.4;
 }
 
 a {
-    color:black;
-    text-decoration: none;
+  color:black;
+  text-decoration: none;
 }
 
 .phone {
-    font-family: monospace;
-    cursor: auto;
+  font-family: monospace;
+  cursor: auto;
 }
 
 .text {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .map {
-    border-radius: 3px;
+  border-radius: 3px;
 }
 
 @media (max-width: 947px) {
-    .container {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
+  .container {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 
-    .map {
-        flex-basis: 100%;
-        max-width: 100%;
-        margin-top: 1em;
-    }
+  .map {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: 1em;
+  }
 }
 
 @media (max-width: 676px) { /*MOBILE*/
-    .item {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
+  .item {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 </style>
