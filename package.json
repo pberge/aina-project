@@ -24,6 +24,7 @@
     "class-validator": "^0.9.1",
     "cloudinary": "^1.14.0",
     "core-js": "^2.6.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "firebase": "^6.4.0",
     "flexboxgrid": "^6.3.1",
