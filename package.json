@@ -9,7 +9,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.ts",
+    "start": "ts-node-dev --respawn --transpileOnly ./server.ts",
     "be": "nodemon server.ts",
     "build-ts": "tsc",
     "serve-server": "node dist/server.js",
@@ -36,9 +36,11 @@
     "routing-controllers": "^0.7.7",
     "tiptap": "^1.22.1",
     "tiptap-extensions": "^1.22.1",
+    "ts-node-dev": "^1.0.0-pre.42",
     "typedi": "^0.8.0",
     "typeorm": "^0.2.18",
     "typeorm-typedi-extensions": "^0.2.3",
+    "typescript": "^3.4.3",
     "uniqid": "^5.0.3",
     "vue": "^2.6.10",
     "vue-base64-file-upload": "^1.0.4",
@@ -48,8 +50,7 @@
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.2",
-    "vuex-module-decorators": "^0.9.9",
-    "typescript": "^3.4.3"
+    "vuex-module-decorators": "^0.9.9"
   },
   "devDependencies": {
     "@types/uniqid": "^4.1.3",
