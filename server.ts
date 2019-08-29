@@ -11,8 +11,13 @@ const upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
 app.use(express.static(__dirname + "/dist/"))
 
+//.ENV CONFIG
+const dotenv = require('dotenv')
+dotenv.config()
+
 //CONNECT DB
-if (!process.env.NODE_ENV) {
+if (process.env.NODE_ENV === 'development') {
+  console.log("dev")
   createConnection({
     type: 'postgres',
     host: 'localhost',
@@ -45,7 +50,10 @@ else {
 
 //CORS
 app.use(function(req, res, next) {
-  if(process.env.PORT) res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
+  if(process.env.NODE_ENV !== 'development') {
+    console.log("env")
+    res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
+  }
   else res.header("Access-Control-Allow-Origin", "http://localhost:8080")
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
