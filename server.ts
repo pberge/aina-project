@@ -12,12 +12,11 @@ const upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 app.use(express.static(__dirname + "/dist/"))
 
 //.ENV CONFIG
-const dotenv = require('dotenv')
-dotenv.config()
+require('dotenv').config()
 
 //CONNECT DB
-if (process.env.NODE_ENV == 'development') {
-  console.log("dev")
+console.log(process.env.ENV)
+if (process.env.ENV === 'development') {
   createConnection({
     type: 'postgres',
     host: 'localhost',

@@ -2,7 +2,7 @@ import axios from 'axios'
 import New from './models/NewModel'
 import FormData from 'form-data'
 
-const url = process.env.PORT ? 'https://ainaweb.herokuapp.com/api' : 'http://localhost:3000/api/'
+const url = ( process.env.ENV === 'development' ) ? 'http://localhost:3000/api/' : 'https://ainaweb.herokuapp.com/api'
 
 export default {
   News: {

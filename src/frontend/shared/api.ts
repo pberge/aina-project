@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = ( process.env.NODE_ENV == 'development' ) ? 'http://localhost:3000/api/' : 'https://ainaweb.herokuapp.com/api/'
+const url = ( process.env.ENV === 'development' ) ? 'http://localhost:3000/api/' : 'https://ainaweb.herokuapp.com/api/'
 
 export default {
 
