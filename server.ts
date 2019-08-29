@@ -16,7 +16,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 //CONNECT DB
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV == 'development') {
   console.log("dev")
   createConnection({
     type: 'postgres',
