@@ -6,7 +6,6 @@ export default {
 
   News: {
     async getAllNews (): Promise<any> {
-      console.log(url)
       let a = await axios.get(url + 'news')
 
       return a.data
