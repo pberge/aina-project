@@ -13,9 +13,9 @@ app.use(express.static(__dirname + "/dist/"))
 
 //.ENV CONFIG
 require('dotenv').config()
+console.log(process.env.ENV)
 
 //CONNECT DB
-console.log(process.env.ENV)
 if (process.env.ENV === 'development') {
   createConnection({
     type: 'postgres',
@@ -49,11 +49,10 @@ else {
 
 //CORS
 app.use(function(req, res, next) {
-  if(process.env.NODE_ENV !== 'development') {
-    console.log("env")
-    res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
+  if(process.env.NODE_ENV === 'development') {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8080")
   }
-  else res.header("Access-Control-Allow-Origin", "http://localhost:8080")
+  else res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next();
