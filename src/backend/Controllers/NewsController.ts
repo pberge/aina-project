@@ -8,8 +8,7 @@ export default class NewsController {
     }
 
     getAllNews = async (request: any, response: any) => {
-        //response.send(await this.newsService.getNews())
-        response.send(200)
+        response.send(await this.newsService.getNews())
     }
 
     createNew = async (request: any, response: any) => {
