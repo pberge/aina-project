@@ -77,7 +77,7 @@ let deleteNew = async (req, res) => {
 
 //API ENDPOINTS
 
-app.post('/api/news-post', upload.single('img'), createNew)
+app.post('/api/news-post', createNew)
 
 app.get('/api/news', getAllNews)
 

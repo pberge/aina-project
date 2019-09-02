@@ -19,7 +19,7 @@ export default {
 
       const config = { headers: { 'Content-Type': 'multipart/form-data' } }
 
-      return axios.post(url + 'news-post', data, config)
+      return await axios.post(url + 'news-post', data, config)
     },
     async deleteNew (id: string): Promise<boolean> {
       await axios.delete(url + 'news', { params: { id: id } })
