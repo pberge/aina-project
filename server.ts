@@ -64,6 +64,7 @@ let getAllNews = async (req, res) => {
 }
 
 let createNew = async (req, res) => {
+  console.log("server: "+ req.body)
   res.send(await newsController.createNew(req, res))
 }
 
@@ -77,7 +78,7 @@ let deleteNew = async (req, res) => {
 
 //API ENDPOINTS
 
-app.post('/api/news-post', createNew)
+app.post('/api/news', upload.single('img'), createNew)
 
 app.get('/api/news', getAllNews)
 
