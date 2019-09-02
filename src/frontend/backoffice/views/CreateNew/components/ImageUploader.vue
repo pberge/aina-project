@@ -7,7 +7,6 @@
     </div>
     <input id="file-upload" type="file" v-on:change="onImageChange" accept="image/gif, image/jpeg, image/png" />
     <img :src="dataUrl" />
-
   </div>
 </template>
 
