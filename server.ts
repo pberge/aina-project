@@ -49,7 +49,7 @@ else {
 
 //CORS
 app.use(function(req, res, next) {
-  if(process.env.NODE_ENV === 'development') {
+  if(process.env.ENV === 'development') {
     res.header("Access-Control-Allow-Origin", "http://localhost:8080")
   }
   else res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
