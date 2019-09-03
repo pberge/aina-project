@@ -12,7 +12,7 @@
         <td>{{item.published}}</td>
         <td>{{item.creationdate}}</td>
         <td>
-          <router-link :to="'news/'+item.id">
+          <router-link :to="'new-detail/'+item.id">
             <span class="icon material-icons">search</span>
           </router-link>
           <span class="icon icon-delete material-icons" @click="openDeleteModal(item)">delete</span>
