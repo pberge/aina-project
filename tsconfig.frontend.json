@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "exclude": [
+      "src/backend",
+      "server.ts"
+    ],
+    "compilerOptions": {
+        "module": "es6"
+    }
+  }
