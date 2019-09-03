@@ -13,7 +13,6 @@ export default class NewsController {
 
     createNew = async (request: any, response: any) => {
         try {
-            console.log("controller:" + request.body)
             const newItem: any = {
                 title: request.body.title,
                 text: request.body.text,

@@ -61,10 +61,12 @@ export default class CreateNew extends Vue {
       published: false,
       creationDate: moment().locale('es').format('L')
     }
+    
     await api.News.createNew(item)
     this.isLoading = false
 
     this.$router.push('news')
+    await createNewState.reset()
   }
 }
 </script>

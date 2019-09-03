@@ -35,4 +35,11 @@ export default class CreateNewModule extends VuexModule {
     await this.context.commit('setImg', img)
     return this.img
   }
+
+  @Action
+  async reset () {
+    await this.context.commit('setImg', '')
+    await this.context.commit('setTxt', '')
+    await this.context.commit('setTtl', '')
+  }
 }

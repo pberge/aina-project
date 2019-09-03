@@ -14,9 +14,10 @@ export default class NewsService {
     }
 
     public async createNew(item: NewImage): Promise<New> {
-        let url = await new imageUploader().upload(item.img) //upload image
-        item.img = url
-
+        if(item.img !== '') {
+            let url = await new imageUploader().upload(item.img) //upload image
+            item.img = url
+        }
         let newsRepository = await getCustomRepository(NewsRepository)
         let res = await newsRepository.saveNew(item)
 
@@ -27,7 +28,7 @@ export default class NewsService {
         let newsRepository = await getCustomRepository(NewsRepository)
 
         let item =  await newsRepository.findById(id)
-        await new imageUploader().delete(item.img) //delete image
+        if (item.img != '') await new imageUploader().delete(item.img) //delete image
 
         await newsRepository.deleteNew(id)
         return new New()

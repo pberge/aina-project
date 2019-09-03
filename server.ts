@@ -68,7 +68,7 @@ let getAllNews = async (req, res) => {
 }
 
 let createNew = async (req, res) => {
-  res.send(await newsController.createNew(req, res))
+  res.send(await newsController.createNew(req, res).catch(a => console.log(a)))
 }
 
 let getNewById = async (req, res) => {
