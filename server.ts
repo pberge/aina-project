@@ -15,6 +15,10 @@ app.use(express.static(__dirname + "/dist/"))
 require('dotenv').config()
 console.log(process.env.ENV)
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', reason || reason)
+})
+
 //CONNECT DB
 if (process.env.ENV === 'development') {
   createConnection({
@@ -64,7 +68,6 @@ let getAllNews = async (req, res) => {
 }
 
 let createNew = async (req, res) => {
-  console.log("server: "+ req.body)
   res.send(await newsController.createNew(req, res))
 }
 

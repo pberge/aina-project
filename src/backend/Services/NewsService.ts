@@ -9,6 +9,7 @@ export default class NewsService {
     public async getNews(): Promise<New[]> {
         let newsRepository = await getCustomRepository(NewsRepository)
         let res = await newsRepository.find()
+        
         return res
     }
 

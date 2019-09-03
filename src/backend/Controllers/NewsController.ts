@@ -8,27 +8,32 @@ export default class NewsController {
     }
 
     getAllNews = async (request: any, response: any) => {
-        response.send(await this.newsService.getNews())
+        return await this.newsService.getNews()
     }
 
     createNew = async (request: any, response: any) => {
-        console.log("controller:" + request.body)
-        const newItem: any = {
-            title: request.body.title,
-            text: request.body.text,
-            img: request.body.img,
-            creationDate: request.body.creationDate,
-            published: request.body.published
-        }
+        try {
+            console.log("controller:" + request.body)
+            const newItem: any = {
+                title: request.body.title,
+                text: request.body.text,
+                img: request.body.img,
+                creationDate: request.body.creationDate,
+                published: request.body.published
+            }
 
-        response.send(await this.newsService.createNew(newItem));
+            return await this.newsService.createNew(newItem)
+        }
+        catch(a) {
+            console.log(a)
+        }
     }
 
     deleteNew = async (request: any, response: any) => {
-        response.send(await this.newsService.deleteNew(request.query.id))
+        return await this.newsService.deleteNew(request.query.id)
     }
 
     getNewById = async (request: any, response: any) => {
-        response.send(await this.newsService.getNewById(request.query.id))
+        return await this.newsService.getNewById(request.query.id)
     }
 }
