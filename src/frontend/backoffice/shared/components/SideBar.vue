@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div id="sidebar" class="sidebar">
   </div>
 </template>
 
@@ -7,8 +7,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class SideBar extends Vue {
-}
+export default class SideBar extends Vue { }
 </script>
 
 <style scoped>
