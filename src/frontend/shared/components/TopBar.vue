@@ -49,7 +49,7 @@ export default class TopBar extends Vue {
   isSideMenuActive: boolean = false
 
   mounted () {
-    this.initGesture()
+    this.initGestures()
     this.menuLinks = [
       { to: '/', tag: 'Portada' },
       { to: '/', tag: 'Història' },
@@ -60,14 +60,12 @@ export default class TopBar extends Vue {
     ]
   }
 
-  initGesture () {
+  initGestures () {
     var myElement = document.getElementById('mobile-menu')
     var mc = new Hammer(myElement)
-    // listen to events...
-    mc.on("panleft panright tap press", function(ev) {
+    mc.on("panleft panright tap press", function(ev) { // listen to events...
       if(ev.type === 'panright') appModule.SideBar(true)
       else if(ev.type === 'panleft') appModule.SideBar(false)
-      console.log(ev.type +" gesture detected.")
     })
   }
 
