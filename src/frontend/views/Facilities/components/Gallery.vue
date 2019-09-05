@@ -7,6 +7,7 @@
         :key="i"
         :img="item.img"
         :description="item.description"
+        :onload="item.onload"
       />
     </div>
   </div>
@@ -30,6 +31,7 @@ export default class Gallery extends Vue {
 <style scoped>
 .gallery {
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .title {
@@ -41,5 +43,6 @@ export default class Gallery extends Vue {
 .images-container {
   margin-top: 1em;
   margin-bottom: 2em;
+  justify-content: center;
 }
 </style>

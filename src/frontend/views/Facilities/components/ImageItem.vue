@@ -1,6 +1,6 @@
 <template>
   <div class="image-container">
-    <img class="image" v-bind:src="img"/>
+    <img class="image" v-bind:src="img" @load="onload"/>
     <span class="text">{{$t("facilities."+description)}}</span>
   </div>
 </template>
@@ -12,6 +12,15 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 export default class ImageItem extends Vue {
   @Prop() img: string
   @Prop() description: string
+  @Prop() onload: any
+
+  mounted () {
+    // console.log(this.onload)
+  }
+
+  // onload = () => {
+  //   console.log("loaded")
+  // }
 }
 </script>
 
