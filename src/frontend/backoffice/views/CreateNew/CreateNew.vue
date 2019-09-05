@@ -14,7 +14,7 @@
     </div>
     <div class="buttons-container row end-xs">
       <router-link class="btn btn-cancel" to="/admin/news">Cancel·lar</router-link>
-      <a class="btn btn-ok" @click="createNew">Acceptar</a>
+      <a class="btn btn-ok" :class="{'btn-disabled': isButtonDisabled}" @click="createNew">Acceptar</a>
     </div>
     <Spinner v-if="isLoading"/>
   </div>
@@ -67,6 +67,10 @@ export default class CreateNew extends Vue {
 
     this.$router.push('news')
     await createNewState.reset()
+  }
+
+  get isButtonDisabled () {
+    return createNewState.title == '' || createNewState.text == ''
   }
 }
 </script>

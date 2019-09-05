@@ -91,6 +91,10 @@ export default class TopBar extends Vue {
   isActualPage (page: string) {
     return this.$route.path === page
   }
+
+  beforeDestroy () {
+    window.onscroll = () => {}
+  }
 }
 </script>
 
