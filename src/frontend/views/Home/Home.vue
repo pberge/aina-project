@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <img class="photo" src="@/frontend/assets/home.jpg" />
+    <Spinner id="spinner"/>
+    <img class="photo" src="@/frontend/assets/home.jpg" @load="onload"/>
     <div class="title-container row">
       <span class="title">{{$t("home.title")}}</span>
     </div>
@@ -9,9 +10,18 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Spinner from '../../shared/components/Spinner.vue'
 
-@Component
-export default class Home extends Vue {}
+@Component({
+  components: {
+    Spinner
+  }
+})
+export default class Home extends Vue {
+  onload () {
+    document.getElementById('spinner').classList.add("invisible")
+  }
+}
 </script>
 
 <style scoped>
@@ -32,5 +42,9 @@ export default class Home extends Vue {}
 
 .title {
   padding: 1em;
+}
+
+.invisible {
+  visibility: hidden;
 }
 </style>

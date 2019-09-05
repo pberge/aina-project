@@ -44,6 +44,8 @@ const appModule = getModule(AppModule, store)
 })
 export default class App extends Vue {
 
+  
+
   get isAdmin () {
     let url = this.$route.meta.requiresAuth
     return url != null

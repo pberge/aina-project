@@ -1,5 +1,5 @@
 <template>
-  <div class="topbar row">
+  <div class="topbar row" id="topbar">
     <div class="col-xs-3 col-md-5 start-xs">
       <div class="row container">
         <i class="material-icons mobile-menu-btn" @click="showMenu(true)">menu</i>
@@ -58,7 +58,18 @@ export default class TopBar extends Vue {
       { to: '/prices', tag: 'Preus' },
       { to: '/contact', tag: 'Contacte' }
     ]
+    window.onscroll = () => {this.scrollFunction()}
   }
+
+  scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topbar").style.boxShadow = "0 5px 8px -6px grey";
+    document.getElementById("topbar").style.opacity = "0.9";
+  } else {
+    document.getElementById("topbar").style.boxShadow = "none";
+    document.getElementById("topbar").style.opacity = "1";
+  }
+}
 
   initGestures () {
     var myElement = document.getElementById('mobile-menu')
@@ -89,11 +100,14 @@ export default class TopBar extends Vue {
   height: 5em;
   margin: 0;
   background-color: white;
-  position: absolute;
   left: 0;
   top: 0;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  z-index: 10;
+  opacity: 0.9;
+  
 }
 
 .container {
