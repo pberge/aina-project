@@ -1,0 +1,43 @@
+{
+    "home": {
+        "title": "Colònies populars de Canillo"
+    },
+    "topbar": {
+        "home": "Portada",
+        "history": "História",
+        "facilities": "Instalaciones",
+        "news": "Noticias",
+        "calendar": "Calendari0",
+        "prices": "Precios",
+        "contact": "Contacto"
+    },
+    "facilities": {
+        "house": "La casa",
+        "agora": "Ágora",
+        "bedrooms": "Habitaciones",
+        "bathrooms": "Baños",
+        "monitorroom": "Sala de monitores",
+        "woodroom": "Sala de madera",
+        "pingpongroom": "Sala de ping pong",
+        "field": "El prat",
+        "barbacoe": "Barbacoa",
+        "farm": "La granja",
+        "rocquet": "El Roc del Quet",
+        "stanna": "Fuente de Santa Anna",
+        "orchard": "Huerto",
+        "court": "La pista",
+        "river": "La bassa",
+        "bordes": "Les bordes",
+        "woodhouse": "La casa de madera",
+        "outside": "Exteriores"
+    },
+    "prices": {
+        "house": "La casa",
+        "bedroom6": "Habitaciones de 6",
+        "price": "Precio",
+        "fullboard": "Pensión completa",
+        "halfpension": "Media pensión",
+        "bed&breakfast": "Dormir y desayuno",
+        "sleep": "Dormir"
+    }
+}

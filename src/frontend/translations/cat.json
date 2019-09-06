@@ -5,7 +5,7 @@
     "topbar": {
         "home": "Portada",
         "history": "Història",
-        "instalations": "Instalacions",
+        "facilities": "Instalacions",
         "news": "Notícies",
         "calendar": "Calendari",
         "prices": "Preus",
@@ -28,6 +28,16 @@
         "court": "La pista",
         "river": "La bassa",
         "bordes": "Les bordes",
-        "woodhouse": "La caseta de fusta"
+        "woodhouse": "La caseta de fusta",
+        "outside": "Exteriors"
+    },
+    "prices": {
+        "house": "La casa",
+        "bedroom6": "Habitacions de 6",
+        "price": "Preu",
+        "fullboard": "Pensió complerta",
+        "halfpension": "Mitja pensió",
+        "bed&breakfast": "Dormir i esmorzar",
+        "sleep": "Dormir"
     }
 }

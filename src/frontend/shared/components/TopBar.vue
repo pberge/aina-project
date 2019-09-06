@@ -1,12 +1,23 @@
 <template>
-  <div class="topbar row" id="topbar">
-    <div class="col-xs-3 col-md-5 start-xs">
-      <div class="row container">
-        <i class="material-icons mobile-menu-btn" @click="showMenu(true)">menu</i>
-        <router-link class="row logo-container" to="/">
-          <img class="logo" src="@/frontend/assets/logoaina.png" />
-          <span class="title">AINA</span>
-        </router-link>
+  <div>
+    <div class="topbar row" id="topbar">
+      <div class="col-xs-3 col-md-5 start-xs">
+        <div class="row container">
+          <i class="material-icons mobile-menu-btn" @click="showMenu(true)">menu</i>
+          <router-link class="row logo-container" to="/">
+            <img class="logo" src="@/frontend/assets/logoaina.png" />
+            <span class="title">AINA</span>
+          </router-link>
+        </div>
+      </div>
+      <div class="menu row col-xs-9 col-md-7 end-xs">
+        <router-link
+          class="link col-xs"
+          v-for="(link,i) in menuLinks"
+          :key="i"
+          :to="link.to"
+        >{{$t("topbar." + link.tag)}}</router-link>
+        <LanguageSelector />
       </div>
     </div>
     <div
@@ -21,15 +32,8 @@
         :key="i"
         :to="link.to"
         v-on:click.native="showMenu(false)"
-      >{{link.tag}}</router-link>
-    </div>
-    <div class="menu row col-xs-9 col-md-7 end-xs">
-      <router-link
-        class="link col-xs"
-        v-for="(link,i) in menuLinks"
-        :key="i"
-        :to="link.to"
-      >{{link.tag}}</router-link>
+      >{{$t("topbar." + link.tag)}}</router-link>
+      <MobileLanguageSelector />
     </div>
   </div>
 </template>
@@ -42,8 +46,15 @@ import { getModule } from 'vuex-module-decorators'
 import store from '../../store'
 const appModule = getModule(AppModule, store)
 import Hammer from 'hammerjs'
+import LanguageSelector from './LanguageSelector.vue'
+import MobileLanguageSelector from './MobileLanguageSelector.vue'
 
-@Component
+@Component({
+  components: {
+    LanguageSelector,
+    MobileLanguageSelector
+  }
+})
 export default class TopBar extends Vue {
   menuLinks: menuLink[] = []
   isSideMenuActive: boolean = false
@@ -51,12 +62,12 @@ export default class TopBar extends Vue {
   mounted () {
     this.initGestures()
     this.menuLinks = [
-      { to: '/', tag: 'Portada' },
-      { to: '/', tag: 'Història' },
-      { to: '/facilities', tag: 'Instalacions' },
-      { to: '/news', tag: 'Notícies' },
-      { to: '/prices', tag: 'Preus' },
-      { to: '/contact', tag: 'Contacte' }
+      { to: '/', tag: 'home' },
+      { to: '/', tag: 'history' },
+      { to: '/facilities', tag: 'facilities' },
+      { to: '/news', tag: 'news' },
+      { to: '/prices', tag: 'prices' },
+      { to: '/contact', tag: 'contact' }
     ]
     window.onscroll = () => {this.scrollFunction()}
   }
@@ -109,7 +120,7 @@ export default class TopBar extends Vue {
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 10;
+  z-index: 5;
   opacity: 0.9;
   
 }
@@ -172,7 +183,7 @@ export default class TopBar extends Vue {
   text-align: center;
   padding: 1em;
   z-index: 10;
-  left: -67%;
+  left: -70%;
   top: 0;
   width: 75%;
   bottom: 0;
@@ -195,7 +206,7 @@ export default class TopBar extends Vue {
   font-weight: bold;
 }
 
-@media (max-width: 947px) {
+@media (max-width: 1022px) {
   .title {
     display: none;
   }
@@ -205,7 +216,7 @@ export default class TopBar extends Vue {
   }
 }
 
-@media (max-width: 676px) { /*MOBILE*/
+@media (max-width: 740px) { /*MOBILE*/
   .title {
     display: initial;
   }

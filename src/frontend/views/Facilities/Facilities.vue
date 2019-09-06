@@ -1,9 +1,9 @@
 <template>
   <div class="new-detail">
     <Spinner id="spinner"/>
-    <Gallery title="La Casa" :images="houseImages" />
-    <Gallery title="Les Bordes" :images="bordesImages" />
-    <Gallery title="Exteriors" :images="outsideImages" />
+    <Gallery title="house" :images="houseImages" />
+    <Gallery title="bordes" :images="bordesImages" />
+    <Gallery title="outside" :images="outsideImages" />
   </div>
 </template>
 

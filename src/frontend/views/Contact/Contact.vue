@@ -109,7 +109,6 @@ a {
 .map {
   border-radius: 3px;
   padding: 0;
-  margin-left: 1em;
 }
 
 .invisible {

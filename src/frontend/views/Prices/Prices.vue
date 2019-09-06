@@ -1,8 +1,8 @@
 <template>
   <div class="prices">
-    <span class="title">La casa</span>
+    <span class="title">{{$t("prices.house")}}</span>
     <div class="row">
-      <span>Habitacions de 6</span>
+      <span>{{$t("prices.bedroom6")}}</span>
       <i class="material-icons">person</i>
     </div>
     <div class="row">
@@ -10,10 +10,10 @@
         <table class="col-xs-5">
             <tr class="row">
                 <th class="col-xs-8"></th>
-                <th class="col-xs-4 price">Preu</th>
+                <th class="col-xs-4 price">{{$t("prices.price")}}</th>
             </tr>
             <tr v-for="(item,i) in laCasaPrices" :key="i" class="row">
-                <td class="col-xs-8">{{item.name}}</td>
+                <td class="col-xs-8">{{$t("prices." + item.name)}}</td>
                 <td class="col-xs-4 price">{{item.price}} €</td>
             </tr>
         </table>
@@ -27,10 +27,10 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class Prices extends Vue {
   laCasaPrices: any[] = [
-    { name: 'Pensió complerta', price: '31' },
-    { name: 'Mitja pensió', price: '26' },
-    { name: 'Dormir i esmorzar', price: '19' },
-    { name: 'Dormir', price: '16' }
+    { name: 'fullboard', price: '31' },
+    { name: 'halfpension', price: '26' },
+    { name: 'bed&breakfast', price: '19' },
+    { name: 'sleep', price: '16' }
   ]
 }
 </script>

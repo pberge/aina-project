@@ -3,6 +3,7 @@ import App from './frontend/App.vue'
 import router from './frontend/router'
 import store from './frontend/store'
 import Vuei18n from 'vue-i18n'
+import Esp from '@/frontend/translations/esp.json'
 import Cat from './frontend/translations/cat.json'
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
@@ -21,12 +22,15 @@ firebase.initializeApp(firebaseConfig)
 Vue.use(Vuei18n)
 Vue.config.productionTip = false
 
-let messages = {
-  cat: Cat
+const messages = {
+  cat: Cat,
+  esp: Esp
 }
 
+const locale = 'cat'
+
 export const i18n = new Vuei18n({
-  locale: 'cat',
+  locale,
   fallbackLocale: 'cat',
   messages
 })
