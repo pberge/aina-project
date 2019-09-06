@@ -42,4 +42,10 @@
     color: white;
 }
 
+.btn-disabled {
+    pointer-events: none !important;
+    border: 1px solid grey;
+    color: grey;
+    background-color: #a5a5a55e;
+}
 

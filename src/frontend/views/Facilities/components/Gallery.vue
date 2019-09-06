@@ -1,6 +1,6 @@
 <template>
   <div class="gallery">
-    <span class="title">{{title}}</span>
+    <span class="title">{{$t("facilities."+title)}}</span>
     <div class="row images-container">
       <ImageItem
         v-for="(item, i) in images"

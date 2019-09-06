@@ -44,8 +44,6 @@ const appModule = getModule(AppModule, store)
 })
 export default class App extends Vue {
 
-  
-
   get isAdmin () {
     let url = this.$route.meta.requiresAuth
     return url != null
@@ -97,6 +95,10 @@ body {
   margin: 0;
 }
 
+.row {
+  margin: 0;
+}
+
 .view {
   position: absolute;
   top: 5em;
@@ -121,8 +123,9 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
+
   right: 0;
+  height: 100%;
   background-color: black;
   opacity: 0.6;
   transition: 0.3s;

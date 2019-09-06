@@ -14,6 +14,10 @@ import New from '../../../shared/models/new'
 @Component
 export default class NewsCard extends Vue {
     @Prop() newInfo!: New
+
+    mounted () {
+        if(this.newInfo.img == '') this.newInfo.img = 'https://res.cloudinary.com/ainacloud/image/upload/v1567704022/Default/P6200059_cybiu5.jpg'
+    }
 }
 </script>
 
