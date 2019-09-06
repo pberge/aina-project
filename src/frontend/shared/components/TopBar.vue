@@ -13,6 +13,7 @@
       <div class="menu row col-xs-9 col-md-7 end-xs">
         <router-link
           class="link col-xs"
+          :class="{'actual-page': isActualPage(link.to)}"
           v-for="(link,i) in menuLinks"
           :key="i"
           :to="link.to"
@@ -63,7 +64,7 @@ export default class TopBar extends Vue {
     this.initGestures()
     this.menuLinks = [
       { to: '/', tag: 'home' },
-      { to: '/', tag: 'history' },
+      { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
       { to: '/prices', tag: 'prices' },
@@ -167,7 +168,8 @@ export default class TopBar extends Vue {
 }
 
 .link:hover {
-  color: #f4b41a;
+  /* color: #f4b41a; */
+  color: #AEB63A;
 }
 
 .mobile-menu-btn {
@@ -202,8 +204,7 @@ export default class TopBar extends Vue {
 }
 
 .actual-page {
-  color: #f4b41a;
-  font-weight: bold;
+  color: #AEB63A;
 }
 
 @media (max-width: 1022px) {
