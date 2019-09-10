@@ -17,8 +17,8 @@
         "bedrooms": "Habitacions",
         "bathrooms": "Banys",
         "monitorroom": "Sala de monitors",
-        "woodroom": "Sala de fusta",
-        "pingpongroom": "Sala de ping pong",
+        "woodroom": "Sala Pariatges",
+        "pingpongroom": "Sala Tamarros",
         "field": "El prat",
         "barbacoe": "Barbacoa",
         "farm": "La granja",
@@ -29,11 +29,15 @@
         "river": "La bassa",
         "bordes": "Les bordes",
         "woodhouse": "La caseta de fusta",
-        "outside": "Exteriors"
+        "outside": "Exteriors",
+        "stJordi": "Sala Sant Jordi",
+        "arlequins": "Sala Arlequins",
+        "stGalderic": "Sant Galderic",
+        "livingroom": "Menjador"
     },
     "prices": {
         "house": "La casa",
-        "bedroom6": "Habitacions de 6",
+        "bedroom": "Habitacions de ",
         "price": "Preu",
         "fullboard": "Pensió complerta",
         "halfpension": "Mitja pensió",

@@ -1,30 +1,52 @@
 <template>
   <div class="prices">
-    <span class="title">{{$t("prices.house")}}</span>
-    <div class="row">
-      <span>{{$t("prices.bedroom6")}}</span>
-      <i class="material-icons">person</i>
-    </div>
-    <div class="row">
-        <img class="image col-xs-5" src="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"/>
-        <table class="col-xs-5">
-            <tr class="row">
-                <th class="col-xs-8"></th>
-                <th class="col-xs-4 price">{{$t("prices.price")}}</th>
-            </tr>
-            <tr v-for="(item,i) in laCasaPrices" :key="i" class="row">
-                <td class="col-xs-8">{{$t("prices." + item.name)}}</td>
-                <td class="col-xs-4 price">{{item.price}} €</td>
-            </tr>
-        </table>
-    </div>
+    <ItemPrice
+      :prices="laCasaPrices"
+      peoplePerHab="6"
+      numHabs="1"
+      title="La Casa"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1568100709/Prices/casa.jpg"
+    />
+    <ItemPrice
+      :prices="laBordaPrices"
+      peoplePerHab="12"
+      numHabs="1"
+      title="La Borda"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1568100640/Prices/Borda.jpg"
+    />
+    <ItemPrice
+      :prices="casetaPrices"
+      peoplePerHab="10"
+      numHabs="1"
+      title="La Caseta de fusta"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1568100604/Prices/casetaFusta.jpg"
+    />
+    <ItemPrice
+      :prices="sanSerniPrices"
+      peoplePerHab="16"
+      numHabs="2"
+      title="Casal Sant Serni"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1563209025/Facilities/GOPR7518_huleol.jpg"
+    />
+    <ItemPrice
+      :prices="meritxellPrices"
+      peoplePerHab="16"
+      numHabs="2"
+      title="Casal de Meritxell"
+      img="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import ItemPrice from './components/ItemPrice.vue'
 
-@Component
+@Component({
+  components: {
+    ItemPrice
+  }
+})
 export default class Prices extends Vue {
   laCasaPrices: any[] = [
     { name: 'fullboard', price: '31' },
@@ -32,68 +54,27 @@ export default class Prices extends Vue {
     { name: 'bed&breakfast', price: '19' },
     { name: 'sleep', price: '16' }
   ]
+  laBordaPrices: any[] = [
+    { name: 'fullboard', price: '31' },
+    { name: 'halfpension', price: '26' },
+    { name: 'bed&breakfast', price: '19' },
+    { name: 'sleep', price: '16' }
+  ]
+  casetaPrices: any[] = [
+    { name: 'fullboard', price: '31' },
+    { name: 'halfpension', price: '26' },
+    { name: 'bed&breakfast', price: '19' },
+    { name: 'sleep', price: '16' }
+  ]
+  sanSerniPrices: any[] = [
+    { name: 'sleep', price: '16' }
+  ]
+  meritxellPrices: any[] = [
+    { name: 'sleep', price: '16' }
+  ]
 }
 </script>
 
 <style scoped>
-.title {
-  text-transform: uppercase;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.row {
-  align-items: center;
-  margin: 0;
-  margin-bottom: 1em;
-  opacity: 0.8;
-  font-size: 0.8em;
-}
-
-.material-icons {
-  font-size: 1.1em !important;
-}
-
-.row {
-    font-size: 0.9em !important;
-}
-
-table {
-  border-collapse: collapse;
-  width: 20em;
-  margin-left: 2em;
-}
-
-th,
-td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.price {
-    text-align: center;
-}
-
-.image {
-    max-height: 19em;
-}
-
-@media (max-width: 676px) { /*MOBILE*/
-  .image {
-    flex-basis: 100%;
-    max-width: 100%;
-    margin-bottom: 1em;
-  }
-
-  table {
-    flex-basis: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-}
 
 </style>
