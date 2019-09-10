@@ -106,6 +106,7 @@ body {
   right: 0;
   margin: 0;
   padding: 1em 2em;
+  bottom: 0;
 }
 
 .backoffice-view {
