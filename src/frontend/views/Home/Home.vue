@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Spinner id="spinner"/>
-    <img class="photo" src="@/frontend/assets/home.jpg" @load="onload"/>
+    <img class="photo" src="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1500/v1568109281/Home/P6200071_2_yoc5gd.jpg" @load="onload"/>
     <div class="title-container row">
       <span class="title">{{$t("home.title")}}</span>
     </div>
