@@ -28,7 +28,7 @@
       <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
       <router-link
         class="menu-link"
-        :class="{'actual-page': isActualPage(link.to)}"
+        :class="{'actual-page': isActualPage(link.to), 'hide':!isSideBar}"
         v-for="(link,i) in menuLinks"
         :key="i"
         :to="link.to"
@@ -63,7 +63,7 @@ export default class TopBar extends Vue {
   mounted () {
     this.initGestures()
     this.menuLinks = [
-      { to: '/', tag: 'home' },
+      { to: '/colonies', tag: 'colonies' },
       { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
@@ -189,7 +189,6 @@ export default class TopBar extends Vue {
   top: 0;
   width: 75%;
   bottom: 0;
-  background-color: white;
   transition: 0.3s;
 }
 
@@ -197,6 +196,7 @@ export default class TopBar extends Vue {
   left: 0;
   transition: 0.3s;
   z-index: 10;
+  background-color: white;
 }
 
 .mobile-logo {
@@ -205,6 +205,10 @@ export default class TopBar extends Vue {
 
 .actual-page {
   color: #AEB63A;
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 1022px) {

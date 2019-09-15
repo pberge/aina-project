@@ -9,6 +9,7 @@ import Login from './backoffice/views/Login/Login.vue'
 import Facilities from '@/frontend/views/Facilities/Facilities.vue'
 import Contact from '@/frontend/views/Contact/Contact.vue'
 import Prices from '@/frontend/views/Prices/Prices.vue'
+import Colonies from '@/frontend/views/Colonies/Colonies.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -73,6 +74,11 @@ const router = new Router({
       path: '/prices',
       name: 'prices',
       component: Prices
+    },
+    {
+      path: '/colonies',
+      name: 'colonies',
+      component: Colonies
     }
   ]
 })

@@ -16,8 +16,8 @@ export default class Spinner extends Vue { }
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -(7em/ 2);
-  margin-left: -(7em/ 2);
+  margin-top: -3.5em;
+  margin-left: -3.5em;
   border-radius: 50%;
   border: 3px solid #eaf5fe;
   border-right-color: #4caf50;
@@ -28,6 +28,15 @@ export default class Spinner extends Vue { }
 @keyframes rotateSpinner {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 740px) { /*MOBILE*/
+  .spinner {
+    width: 4em;
+    height: 4em;
+    margin-top: -2em;
+    margin-left: -2em;
   }
 }
 </style>
