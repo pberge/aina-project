@@ -57,6 +57,7 @@ img {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     padding: 0;
+    object-fit: cover;
 }
 
 .title {
