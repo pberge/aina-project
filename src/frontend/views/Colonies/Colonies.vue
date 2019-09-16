@@ -4,18 +4,18 @@
           <div class="container col-md-5 col-xs-5">
             <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/v1568370752/Colonies/frameEstiu2_3_uyz3fw.png">
             <span class="img-content">
-              Colònies a l'estiu
+              {{$t("colonies.summer")}}
             </span>
           </div>
           <div class="container col-md-5 col-xs-5">
             <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/v1568370927/Colonies/hivern2_yjifxp.jpg">
             <span class="img-content">
-              Alberg a l'hivern
+              {{$t("colonies.winter")}}
             </span>
           </div>
         </div>
         <div class="mssn-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et leo et pretium. Etiam mollis elit massa, vel commodo nunc venenatis in. Sed pellentesque lectus id lorem pretium ultricies a eget nunc. In mi est, accumsan nec mauris vel, commodo hendrerit nibh. Sed dignissim sem viverra, varius ex a, finibus tellus. Ut ac scelerisque tellus. Integer molestie, nisi eget viverra malesuada, ipsum nisl gravida libero, sit amet ornare turpis velit at orci. Proin nisl tortor, blandit ut malesuada vitae, vestibulum ac leo. Nunc imperdiet efficitur porttitor. Pellentesque ante magna, vestibulum vitae felis non, tempus accumsan purus. Donec eget bibendum urna. Proin magna mi, sollicitudin eget leo aliquet, porta mattis est. Sed sed facilisis lectus. In luctus dolor sit amet eros suscipit finibus. Curabitur rutrum est vel fringilla pharetra.
+          {{$t("colonies.coloniesText")}}
         </div>
         <Valors />
     </div>
@@ -77,9 +77,24 @@ img {
 @media (max-width: 740px) { /*MOBILE*/
   .container {
     flex-basis: 100%;
-    margin-bottom: 1em;
     max-width: 100%;
+    padding: 0;
   }
+
+  .colonies {
+    margin-top: 1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .img-container {
+    margin: 0;
+  }
+
+  img {
+    margin-left: 0;
+  }
+
 }
 
 </style>

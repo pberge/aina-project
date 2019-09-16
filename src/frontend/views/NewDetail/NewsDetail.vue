@@ -2,7 +2,7 @@
   <div class="new-detail">
     <Spinner v-if="isLoading" />
     <div v-if="!isLoading">
-      <img :src="newItem.img" />
+      <img v-if="newItem.img != null" :src="newItem.img" />
       <div class="title">
         <span>{{newItem.title}}</span>
       </div>
@@ -30,6 +30,10 @@ export default class NewsDetail extends Vue {
     await Api.News.getNewById(this.$route.params.id).then(res => {
       this.newItem = res
       this.isLoading = false
+      if(this.newItem.img != '') {
+        let imgSplit = this.newItem.img.split('upload')
+        this.newItem.img = imgSplit[0] + 'upload/c_scale,q_auto:eco,w_1000' + imgSplit[1]
+      }
     })
   }
 }

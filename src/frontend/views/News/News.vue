@@ -24,8 +24,13 @@ export default class News extends Vue {
   news: New[] = [];
   isLoading: boolean = true
 
-  async mounted () {
+  async created () {
     this.news = await api.News.getAllNews()
+    this.news.sort(function(a,b) {
+      let a1 = a.creationdate.split('/').reverse().join('')
+      let b1 = b.creationdate.split('/').reverse().join('')
+       return b1.localeCompare(a1)
+    })
     this.isLoading = false
   }
 

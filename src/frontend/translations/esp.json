@@ -43,5 +43,20 @@
         "halfpension": "Media pensión",
         "bed&breakfast": "Dormir y desayuno",
         "sleep": "Dormir"
+    },
+    "colonies": {
+        "summer": "Colonias en verano",
+        "winter": "Albergue en invierno",
+        "coloniesText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et leo et pretium. Etiam mollis elit massa, vel commodo nunc venenatis in. Sed pellentesque lectus id lorem pretium ultricies a eget nunc. In mi est, accumsan nec mauris vel, commodo hendrerit nibh. Sed dignissim sem viverra, varius ex a, finibus tellus. Ut ac scelerisque tellus. Integer molestie, nisi eget viverra malesuada, ipsum nisl gravida libero, sit amet ornare turpis velit at orci. Proin nisl tortor, blandit ut malesuada vitae, vestibulum ac leo. Nunc imperdiet efficitur porttitor. Pellentesque ante magna, vestibulum vitae felis non, tempus accumsan purus. Donec eget bibendum urna. Proin magna mi, sollicitudin eget leo aliquet, porta mattis est. Sed sed facilisis lectus. In luctus dolor sit amet eros suscipit finibus. Curabitur rutrum est vel fringilla pharetra.",
+        "country": "Dar a conocer el país",
+        "nature": "Sensibilizar al respecto de la naturaleza y del medio ambiente",
+        "sport": "Iniciar en el deporte, en especial montañismo y esquí de fondo",
+        "culture": "Promover el uso del catalán y conocimiento de nuestro patrimonio cultural",
+        "creativity": "Fomentar la creatividad y desinhibición de los niñoscon trabajos manuales y actividades de expresión oral y corporal",
+        "group": "Enseñar las virtudes y mecanismos del trabajo en grupo",
+        "solidarity": "Potenciar los sentimientos de solidaridad y justicia",
+        "convivence": "Cultivar la convivencia entre personas, culturas y etnias, y luchar contra cualquier tipo de discriminación",
+        "humanValues": "Educar en valores humanos y crear las bases de un pensamiento libre, crítico y ètico",
+        "faith": "Ayudar la fe de cada niño y cada joven"
     }
 }

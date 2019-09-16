@@ -47,4 +47,15 @@ export default class Home extends Vue {
 .invisible {
   visibility: hidden;
 }
+
+@media (max-width: 676px) { /*MOBILE*/
+  .home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .photo {
+    max-width: 100%;
+  }
+}
 </style>

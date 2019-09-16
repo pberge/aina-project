@@ -43,5 +43,20 @@
         "halfpension": "Mitja pensió",
         "bed&breakfast": "Dormir i esmorzar",
         "sleep": "Dormir"
+    },
+    "colonies": {
+        "summer": "Colònies a l'estiu",
+        "winter": "Alberg a l'hivern",
+        "coloniesText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et leo et pretium. Etiam mollis elit massa, vel commodo nunc venenatis in. Sed pellentesque lectus id lorem pretium ultricies a eget nunc. In mi est, accumsan nec mauris vel, commodo hendrerit nibh. Sed dignissim sem viverra, varius ex a, finibus tellus. Ut ac scelerisque tellus. Integer molestie, nisi eget viverra malesuada, ipsum nisl gravida libero, sit amet ornare turpis velit at orci. Proin nisl tortor, blandit ut malesuada vitae, vestibulum ac leo. Nunc imperdiet efficitur porttitor. Pellentesque ante magna, vestibulum vitae felis non, tempus accumsan purus. Donec eget bibendum urna. Proin magna mi, sollicitudin eget leo aliquet, porta mattis est. Sed sed facilisis lectus. In luctus dolor sit amet eros suscipit finibus. Curabitur rutrum est vel fringilla pharetra.",
+        "country": "Fer conèixer i estimar el país",
+        "nature": "Sensibilitzar al respecte de la natura i del medi ambient",
+        "sport": "Iniciar en l'esport, en especial el muntanyisme i l'esquí de fons",
+        "culture": "Promoure l'ús del català i el coneixement del nostre patrimoni cultural",
+        "creativity": "Fomentar la creativitat i desinhibició dels infants amb treballs manuals i activitats d'expressió oral i corporal",
+        "group": "Ensenyar les virtuts i mecanismes del treball de grup",
+        "solidarity": "Potenciar els sentiments de solidaritat i justícia",
+        "convivence": "Cultivar la convivència entre persones, cultures i ètnies, i lluitar contra tot tipus de discriminació",
+        "humanValues": "Educar en valors humans i crear les bases d'un pensament lliure, crític i ètic",
+        "faith": "Ajudar la fe de cada infant i cada jove"
     }
 }

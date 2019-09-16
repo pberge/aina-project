@@ -1,6 +1,6 @@
 <template>
     <div class="news-card">
-        <img :src="newInfo.img">
+        <img :src="image">
         <div class="title">{{newInfo.title}}</div>
         <span class="date">{{newInfo.creationdate}}</span>
     </div>
@@ -14,9 +14,14 @@ import New from '../../../shared/models/new'
 @Component
 export default class NewsCard extends Vue {
     @Prop() newInfo!: New
+    image: string = ''
 
     mounted () {
-        if(this.newInfo.img == '') this.newInfo.img = 'https://res.cloudinary.com/ainacloud/image/upload/v1567704022/Default/P6200059_cybiu5.jpg'
+        if(this.newInfo.img == '') this.image = 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1500/v1567704022/Default/P6200059_cybiu5.jpg'
+        else {
+            let imgSplit = this.newInfo.img.split('upload')
+            this.image = imgSplit[0] + 'upload/c_scale,q_auto:eco,w_1000' + imgSplit[1]
+        }
     }
 }
 </script>
