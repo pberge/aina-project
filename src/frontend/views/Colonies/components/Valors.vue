@@ -7,7 +7,7 @@
                         <font-awesome-icon icon="flag" />
                     </div>
                     <div class="cell-content-back">
-                        {{$t("colonies.country")}}
+                        <span>{{$t("colonies.country")}}</span>
                     </div>
                 </div>
             </div>
@@ -193,6 +193,7 @@ export default class Valors extends Vue {
     color: black;
     opacity: 1;
     transition: .5s ease;
+    padding: 0;
 }
 
 .cell-content-back {
@@ -202,11 +203,38 @@ export default class Valors extends Vue {
     transition: .5s ease;
     line-height : 25px;
     font-size: 0.9em;
+    padding: 0;
 }
 
 .svg-inline--fa {
     height: 1.5em;
     width: 1.5em;
+}
+
+@media (max-width: 740px) { /*MOBILE*/
+    .valors-row {
+        margin-top: 2em;
+    }
+
+    .cell {
+        width: 100%;
+    }
+
+    .cell-content-back {
+        opacity: 1;
+        position: relative;
+        height: min-content;
+        margin-top: 1em;
+    }
+
+    .cell-content-front {
+        position: relative;
+        height: 2em;
+    }
+
+    .cell:hover .cell-content-front {
+        opacity: 1;
+    }
 }
 
 </style>

@@ -128,7 +128,7 @@ export default class TopBar extends Vue {
 
 .container {
   align-items: center;
-  padding-left: 2.5em;
+  padding-left: 1.5em;
 }
 
 .logo-container {
@@ -146,6 +146,7 @@ export default class TopBar extends Vue {
   text-decoration: none;
   color: #000000;
   font-size: 2.6em;
+  font-weight: bold;
   letter-spacing: 5px;
   margin-left: 1em;
 }
@@ -168,8 +169,7 @@ export default class TopBar extends Vue {
 }
 
 .link:hover {
-  /* color: #f4b41a; */
-  color: #AEB63A;
+  color: var(--main-color);
 }
 
 .mobile-menu-btn {
@@ -204,7 +204,7 @@ export default class TopBar extends Vue {
 }
 
 .actual-page {
-  color: #AEB63A;
+  color: var(--main-color);
 }
 
 .hide {

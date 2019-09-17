@@ -13,14 +13,6 @@ export default class ImageItem extends Vue {
   @Prop() img: string
   @Prop() description: string
   @Prop() onload: any
-
-  mounted () {
-    // console.log(this.onload)
-  }
-
-  // onload = () => {
-  //   console.log("loaded")
-  // }
 }
 </script>
 
@@ -43,6 +35,13 @@ export default class ImageItem extends Vue {
   padding: 0.6em;
   background-color: white;
   opacity: 0.6;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  .image-container {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 </style>

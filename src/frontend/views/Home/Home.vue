@@ -42,6 +42,7 @@ export default class Home extends Vue {
 
 .title {
   padding: 1em;
+  font-size: 20px;
 }
 
 .invisible {

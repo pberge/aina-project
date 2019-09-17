@@ -20,7 +20,7 @@ export default class Spinner extends Vue { }
   margin-left: -3.5em;
   border-radius: 50%;
   border: 3px solid #eaf5fe;
-  border-right-color: #4caf50;
+  border-right-color: var(--main-color);
   animation: rotateSpinner 900ms linear infinite;
   z-index: 10;
 }

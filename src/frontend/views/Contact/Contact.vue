@@ -77,28 +77,22 @@ export default class Contact extends Vue {
 .container {
   justify-content: center;
   align-items: center;
-  width: 50%;
 }
 .item {
   text-align: center;
-  height: 12em;
-  padding-top: 4em;
   cursor: pointer;
   border-radius: 3px;
-}
-
-.item:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .icon {
   margin-bottom: 0.5em;
-  color: black;
+  color: var(--main-color);
   width: 30px;
   height: 30px;
   display: block;
   font-size: 2em !important;
-  opacity: 0.4;
 }
 
 a {
@@ -143,6 +137,10 @@ a {
   .item {
     flex-basis: 100%;
     max-width: 100%;
+  }
+
+  .contact {
+    padding: 0;
   }
 }
 

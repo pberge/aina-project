@@ -93,12 +93,13 @@ tr:nth-child(even) {
   .image {
     flex-basis: 100%;
     max-width: 100%;
+    padding: 0;
     margin-bottom: 1em;
   }
 
   table {
     flex-basis: 100%;
-    max-width: 100%;
+    max-width: 95%;
     margin: 0;
   }
 }

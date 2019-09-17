@@ -1,8 +1,10 @@
 <template>
     <div class="news-card">
         <img :src="image">
-        <div class="title">{{newInfo.title}}</div>
-        <span class="date">{{newInfo.creationdate}}</span>
+        <div class="info-container">
+            <span class="title">{{newInfo.title}}</span>
+            <span class="date">{{newInfo.creationdate}}</span>
+        </div>
     </div>
 
 </template>
@@ -65,9 +67,14 @@ img {
     object-fit: cover;
 }
 
+.info-container {
+    text-align: center;
+}
+
 .title {
-    padding: 1em 1em;
-    padding-bottom: 2em;
+    padding: 0em 1em;
+    padding-top: 1em;
+    display: block;
 }
 
 .text:before {
@@ -75,10 +82,19 @@ img {
 }
 
 .date {
-    position: absolute;
-    right: 2em;
-    bottom: 2em;
     font-size: 0.5em;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  .news-card {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  img {
+      width: 100%;
+      height: 13em;
+  }
 }
 
 </style>

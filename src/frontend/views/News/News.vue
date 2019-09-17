@@ -54,4 +54,14 @@ a:visited {
   text-decoration: none;
   color:black; 
 }
+
+@media (max-width: 676px) { /*MOBILE*/
+  .news {
+    padding: 0;
+  }
+
+  a {
+    width: 100%;
+  }
+}
 </style>

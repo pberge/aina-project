@@ -1,5 +1,5 @@
 <template>
-  <div class="new-detail">
+  <div class="facilities">
     <Spinner id="spinner"/>
     <Gallery title="house" :images="houseImages" />
     <Gallery title="bordes" :images="bordesImages" />
@@ -69,5 +69,11 @@ export default class Instalations extends Vue {
 <style scoped>
 .invisible {
   visibility: hidden !important;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  .facilities {
+    padding: 0;
+  }
 }
 </style>
