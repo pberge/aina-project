@@ -16,13 +16,13 @@
           </div>
           <div class="item col-xs-6"  v-on:click="goto('insta')">
               <div class="row" style="justify-content: center;">
-                  <img class="icon" src="@/frontend/assets/insta.svg"/>
+                <font-awesome-icon class="icon" :icon="['fab', 'instagram']"/>
               </div>
               <span class="text">@colonies.aina</span>
           </div>
           <div class="item col-xs-6" v-on:click="goto('fb')">
               <div class="row" style="justify-content: center;">
-                  <img class="icon" src="@/frontend/assets/fb.svg"/>
+                <font-awesome-icon class="icon" :icon="['fab', 'facebook']"/>
               </div>
               <span class="text">AINA - Casa de Colònies Canillo</span>
           </div>
@@ -34,6 +34,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Spinner from '../../shared/components/Spinner.vue'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+          faInstagram,
+          faFacebook
+        } from '@fortawesome/free-brands-svg-icons'
 
 @Component({
   components: {
@@ -41,6 +46,10 @@ import Spinner from '../../shared/components/Spinner.vue'
   }
 })
 export default class Contact extends Vue {
+  created () {
+    library.add(faInstagram, faFacebook)
+  }
+
   loaded () {
     document.getElementById('spinner').classList.add("invisible")
   }
@@ -68,28 +77,22 @@ export default class Contact extends Vue {
 .container {
   justify-content: center;
   align-items: center;
-  width: 50%;
 }
 .item {
   text-align: center;
-  height: 12em;
-  padding-top: 4em;
   cursor: pointer;
   border-radius: 3px;
-}
-
-.item:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .icon {
   margin-bottom: 0.5em;
-  color: black;
+  color: var(--main-color);
   width: 30px;
   height: 30px;
   display: block;
   font-size: 2em !important;
-  opacity: 0.4;
 }
 
 a {
@@ -134,6 +137,10 @@ a {
   .item {
     flex-basis: 100%;
     max-width: 100%;
+  }
+
+  .contact {
+    padding: 0;
   }
 }
 

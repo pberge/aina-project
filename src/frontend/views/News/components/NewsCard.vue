@@ -1,8 +1,10 @@
 <template>
     <div class="news-card">
-        <img :src="newInfo.img">
-        <div class="title">{{newInfo.title}}</div>
-        <span class="date">{{newInfo.creationdate}}</span>
+        <img :src="image">
+        <div class="info-container">
+            <span class="title">{{newInfo.title}}</span>
+            <span class="date">{{newInfo.creationdate}}</span>
+        </div>
     </div>
 
 </template>
@@ -14,9 +16,14 @@ import New from '../../../shared/models/new'
 @Component
 export default class NewsCard extends Vue {
     @Prop() newInfo!: New
+    image: string = ''
 
     mounted () {
-        if(this.newInfo.img == '') this.newInfo.img = 'https://res.cloudinary.com/ainacloud/image/upload/v1567704022/Default/P6200059_cybiu5.jpg'
+        if(this.newInfo.img == '') this.image = 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1500/v1567704022/Default/P6200059_cybiu5.jpg'
+        else {
+            let imgSplit = this.newInfo.img.split('upload')
+            this.image = imgSplit[0] + 'upload/c_scale,q_auto:eco,w_1000' + imgSplit[1]
+        }
     }
 }
 </script>
@@ -57,11 +64,17 @@ img {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     padding: 0;
+    object-fit: cover;
+}
+
+.info-container {
+    text-align: center;
 }
 
 .title {
-    padding: 1em 1em;
-    padding-bottom: 2em;
+    padding: 0em 1em;
+    padding-top: 1em;
+    display: block;
 }
 
 .text:before {
@@ -69,10 +82,19 @@ img {
 }
 
 .date {
-    position: absolute;
-    right: 2em;
-    bottom: 2em;
     font-size: 0.5em;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  .news-card {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  img {
+      width: 100%;
+      height: 13em;
+  }
 }
 
 </style>

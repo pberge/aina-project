@@ -42,9 +42,21 @@ export default class Home extends Vue {
 
 .title {
   padding: 1em;
+  font-size: 20px;
 }
 
 .invisible {
   visibility: hidden;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  .home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .photo {
+    max-width: 100%;
+  }
 }
 </style>

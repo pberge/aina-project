@@ -19,6 +19,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.use(Vuei18n)
 Vue.config.productionTip = false
 

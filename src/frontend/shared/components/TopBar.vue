@@ -28,7 +28,7 @@
       <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
       <router-link
         class="menu-link"
-        :class="{'actual-page': isActualPage(link.to)}"
+        :class="{'actual-page': isActualPage(link.to), 'hide':!isSideBar}"
         v-for="(link,i) in menuLinks"
         :key="i"
         :to="link.to"
@@ -63,7 +63,7 @@ export default class TopBar extends Vue {
   mounted () {
     this.initGestures()
     this.menuLinks = [
-      { to: '/', tag: 'home' },
+      { to: '/colonies', tag: 'colonies' },
       { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
@@ -128,7 +128,7 @@ export default class TopBar extends Vue {
 
 .container {
   align-items: center;
-  padding-left: 2.5em;
+  padding-left: 1.5em;
 }
 
 .logo-container {
@@ -146,6 +146,7 @@ export default class TopBar extends Vue {
   text-decoration: none;
   color: #000000;
   font-size: 2.6em;
+  font-weight: bold;
   letter-spacing: 5px;
   margin-left: 1em;
 }
@@ -168,8 +169,7 @@ export default class TopBar extends Vue {
 }
 
 .link:hover {
-  /* color: #f4b41a; */
-  color: #AEB63A;
+  color: var(--main-color);
 }
 
 .mobile-menu-btn {
@@ -189,7 +189,6 @@ export default class TopBar extends Vue {
   top: 0;
   width: 75%;
   bottom: 0;
-  background-color: white;
   transition: 0.3s;
 }
 
@@ -197,6 +196,7 @@ export default class TopBar extends Vue {
   left: 0;
   transition: 0.3s;
   z-index: 10;
+  background-color: white;
 }
 
 .mobile-logo {
@@ -204,7 +204,11 @@ export default class TopBar extends Vue {
 }
 
 .actual-page {
-  color: #AEB63A;
+  color: var(--main-color);
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 1022px) {

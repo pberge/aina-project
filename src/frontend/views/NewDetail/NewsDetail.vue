@@ -2,15 +2,11 @@
   <div class="new-detail">
     <Spinner v-if="isLoading" />
     <div v-if="!isLoading">
-      <div class="row">
-        <img :src="newItem.img" />
-      </div>
-      <div class="row title">
+      <img v-if="newItem.img != null" :src="newItem.img" />
+      <div class="title">
         <span>{{newItem.title}}</span>
       </div>
-      <div class="row">
-        <div class="text" v-html="newItem.text"></div>
-      </div>
+      <div class="text" v-html="newItem.text"></div>
     </div>
   </div>
 </template>
@@ -34,6 +30,10 @@ export default class NewsDetail extends Vue {
     await Api.News.getNewById(this.$route.params.id).then(res => {
       this.newItem = res
       this.isLoading = false
+      if(this.newItem.img != '') {
+        let imgSplit = this.newItem.img.split('upload')
+        this.newItem.img = imgSplit[0] + 'upload/c_scale,q_auto:eco,w_1000' + imgSplit[1]
+      }
     })
   }
 }
@@ -41,11 +41,16 @@ export default class NewsDetail extends Vue {
 
 <style scoped>
 .new-detail {
-  color: blue;
+  text-align: center;
+  margin: 2em 25%;
+  padding: 0;
+  position: relative;
 }
 
 img {
-  width: 50%;
+  width: 100%;
+  border-radius: 3px;
+  /* max-height: 500px; */
 }
 
 .row {
@@ -60,9 +65,20 @@ img {
 }
 
 .text {
-  width: 50%;
-  border: none;
+  padding: 1em;
   text-align: justify;
   color: black;
+  text-align: center;
+}
+
+@media (max-width: 676px) { /*MOBILE*/
+  img {
+    width: 100%;
+  }
+
+  .new-detail {
+    margin: 0;
+    box-shadow: none;
+  }
 }
 </style>

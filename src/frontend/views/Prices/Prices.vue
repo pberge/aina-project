@@ -76,5 +76,9 @@ export default class Prices extends Vue {
 </script>
 
 <style scoped>
-
+@media (max-width: 676px) { /*MOBILE*/
+  .prices {
+    padding: 0;
+  }
+}
 </style>
