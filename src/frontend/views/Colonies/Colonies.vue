@@ -2,16 +2,16 @@
     <div class="colonies">
         <div class="img-container row">
           <div class="container col-md-5 col-xs-5">
+            <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1000/v1568873654/Colonies/frame_guitarra_2_g7trxs.png">
             <span class="img-title">
               {{$t("colonies.summer")}}
             </span>
-            <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/v1568370752/Colonies/frameEstiu2_3_uyz3fw.png">
           </div>
           <div class="container col-md-5 col-xs-5">
+            <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1000/v1568370927/Colonies/hivern2_yjifxp.jpg">
             <span class="img-title">
               {{$t("colonies.winter")}}
             </span>
-            <img class="" src="https://res.cloudinary.com/ainacloud/image/upload/v1568370927/Colonies/hivern2_yjifxp.jpg">
           </div>
         </div>
         <div class="mssn-text">
@@ -51,20 +51,25 @@ export default class Colonies extends Vue {
 }
 
 img {
-  margin-left: 0.5em;
-  margin-top: 1em;
+  margin-bottom: 2em;
   width: 100%;
+  border-radius: 3px;
 }
 
 .container {
   position: relative;
   margin: 0;
+  margin-left: 0.5em;
+  padding: 0;
+  padding-bottom: 2em;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 3px;
   text-align: center;
   margin-top: 0.5em;
 }
 
 .img-title {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin: 1em;
 }
 
@@ -86,7 +91,8 @@ img {
   .container {
     flex-basis: 100%;
     max-width: 100%;
-    padding: 0;
+    box-shadow: none;
+    margin: 0;
   }
 
   .colonies {

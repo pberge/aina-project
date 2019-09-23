@@ -10,6 +10,7 @@ import Facilities from '@/frontend/views/Facilities/Facilities.vue'
 import Contact from '@/frontend/views/Contact/Contact.vue'
 import Prices from '@/frontend/views/Prices/Prices.vue'
 import Colonies from '@/frontend/views/Colonies/Colonies.vue'
+import History from '@/frontend/views/History/History.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -79,6 +80,11 @@ const router = new Router({
       path: '/colonies',
       name: 'colonies',
       component: Colonies
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: History
     }
   ]
 })
