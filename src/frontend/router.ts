@@ -11,6 +11,7 @@ import Contact from '@/frontend/views/Contact/Contact.vue'
 import Prices from '@/frontend/views/Prices/Prices.vue'
 import Colonies from '@/frontend/views/Colonies/Colonies.vue'
 import History from '@/frontend/views/History/History.vue'
+import NewDetail from './backoffice/views/NewDetail/NewDetail.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -48,7 +49,7 @@ const router = new Router({
     {
       path: '/admin/new-detail/:id',
       name: 'adminNewsDetail',
-      component: NewsDetail,
+      component: NewDetail,
       meta: {
         requiresAuth: true
       }
