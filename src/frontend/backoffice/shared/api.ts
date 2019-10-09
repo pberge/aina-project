@@ -24,6 +24,10 @@ export default {
     async deleteNew (id: string): Promise<boolean> {
       await axios.delete(url + 'news', { params: { id: id } })
       return true
+    },
+    async getNewById (id: string): Promise<any> {
+      let a = await axios.get(url + 'new-by-id', { params: { id: id } })
+      return a.data
     }
   }
 }

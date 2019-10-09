@@ -8,7 +8,7 @@
         <div v-if="isLogginPage">
           <router-view class="view"/>
         </div>
-        <div v-if="isAdmin" class="row"> 
+        <div v-if="isAdmin"> 
           <BackofficeSideBar />
           <BackofficeTopBar />
           <router-view class="backoffice-view"/>
@@ -110,10 +110,12 @@ body {
 }
 
 .backoffice-view {
-  margin-left: 14em;
-  margin-top: 4em;
-  padding: 2em 1em;
-  width: 100%;
+  position: absolute;
+  top: 4em;
+  left: 14em;
+  right: 0;
+  margin: 0;
+  padding: 1em 2em;
 }
 
 .sidebar {
