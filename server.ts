@@ -26,9 +26,9 @@ if (process.env.ENV === 'development') {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: '22019432a',
+    password: '22019432',
     database: 'mylocaldb',
-    entities: [New] 
+    entities: [New]
   })
   .then((conection) => {
     console.log("done")
@@ -43,12 +43,12 @@ else {
     username: 'orcwddhkmmygyp',
     password: 'c6aacea7cfa94e882eccf895abbc2a1d0d32582fd058300efb14d7a981f36035',
     database: 'dv5ac8bgi28je',
-    entities: [New] 
+    entities: [New]
   })
   .then((conection) => {
     console.log("done")
   })
-  .catch( (error) => console.log("error!!!"))
+  .catch( (error) => console.log("error"))
 }
 
 //CORS
