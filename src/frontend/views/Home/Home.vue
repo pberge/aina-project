@@ -2,6 +2,9 @@
   <div class="home">
     <Spinner id="spinner"/>
     <img class="photo" src="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1500/v1568109281/Home/P6200071_2_yoc5gd.jpg" @load="onload"/>
+    <div class="text-container">
+      <span v-html="$t('home.text')"></span>
+    </div>
     <div class="title-container row">
       <span class="title">{{$t("home.title")}}</span>
     </div>
@@ -31,6 +34,11 @@ export default class Home extends Vue {
 
 .photo {
   max-width: 95%;
+}
+
+.text-container {
+  margin-top: 1em;
+  
 }
 
 .title-container {

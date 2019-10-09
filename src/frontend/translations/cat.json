@@ -1,6 +1,7 @@
 {
     "home": {
-        "title": "Colònies populars de Canillo"
+        "title": "Colònies populars de Canillo",
+        "text": "Una casa de tots <br> Una casa bastida per tots <br> Una casa per a tots <br> Una casa sostinguda entre tots... <br><br><u>Si és que hi ha casa d’algú....</u>"
     },
     "topbar": {
         "colonies": "Colònies",
@@ -47,7 +48,9 @@
     "colonies": {
         "summer": "Colònies a l'estiu",
         "winter": "Alberg a l'hivern",
-        "coloniesText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et leo et pretium. Etiam mollis elit massa, vel commodo nunc venenatis in. Sed pellentesque lectus id lorem pretium ultricies a eget nunc. In mi est, accumsan nec mauris vel, commodo hendrerit nibh. Sed dignissim sem viverra, varius ex a, finibus tellus. Ut ac scelerisque tellus. Integer molestie, nisi eget viverra malesuada, ipsum nisl gravida libero, sit amet ornare turpis velit at orci. Proin nisl tortor, blandit ut malesuada vitae, vestibulum ac leo. Nunc imperdiet efficitur porttitor. Pellentesque ante magna, vestibulum vitae felis non, tempus accumsan purus. Donec eget bibendum urna. Proin magna mi, sollicitudin eget leo aliquet, porta mattis est. Sed sed facilisis lectus. In luctus dolor sit amet eros suscipit finibus. Curabitur rutrum est vel fringilla pharetra.",
+        "coloniesText1": "Diu Jesús:<br> Ai d’aquell que escandalitza un nen o nena – que li fa mal – valdria  més que li lliguessin una mola de molí, i el llancessin al fons del mar. La nostra societat materialista engendra molts infants vulnerables.<br><br>Diu Jesús:<br>Deixeu que les nenes i els nens vinguin a Mi. Aquell que acull un infant, m’acull a Mi. Qui dona un vas d’aigua a una nena o a un nen, no quedarà sense recompensa en el Regne del cel. Ens trobem massa nois i noies sense camí.<br><br>AINA neix perquè els monitors, les monitores i tots els ciutadans d’Andorra cantin a ple pulmó Prendre un enfant par la main pour l’emmener vers demain.<br><br>“Què fem dels fills i de les filles durant les vacances escolars d’estiu mentre la mare i el pare treballen unes jornades de 10 hores els 7 dies de la setmana?” El mossèn de Canillo respongué a la queixa d’un pare del Pas de al Casa: “Dels infants en tindrà cura l’Església de Canillo”. El Casal Sant Serni, l’estiu 1976, obria les portes a les Colònies Populars de Canillo amb el lema: “ A l’estiu cap infant sense colònies”. <br><br>Lao Tseu escrivia que “els viatges  més llargs comencen sempre per un primer pas”. El 30 de setembre  de 1979, Any Internacional del Nen@, el copríncep episcopal Joan Marti i Alanis beneïa la primera pedra d’AINA acompanyat  dels infants i dels monitors que feia 3 anys que compartien els valors  sembrats en l’esperit dels colonistes: A d’amistat, I d’il·lusió, Nen de nen i de nena i A d’Andorra, el país.<br><br>Se hace camino al andar, cantava Antonio Machado. El camí et descobreix el camí a seguir. L’equip de monitors i de monitores durant la Pasqua Jove de 1982 varen escriure l’ADN de les colònies d’AINA.",
+        "coloniesText2": "AINA regala com record de  la seva estada a la casa un GPS per continuar el camí emprès:<br><br><b>G</b> de Grup<br><b>P</b> de Pregària<br><b>S</b> de Servei que és l’ànima de l’Amor",
+        "signature": "Mossèn Ramon de Canillo",
         "country": "Fer conèixer i estimar el país",
         "nature": "Sensibilitzar al respecte de la natura i del medi ambient",
         "sport": "Iniciar en l'esport, en especial el muntanyisme i l'esquí de fons",

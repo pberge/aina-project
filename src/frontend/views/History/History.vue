@@ -1,7 +1,6 @@
 <template>
     <div class="history">
       <div class="container">
-        
         <div class="title-container">
           <span class="title">
             {{$t("history.title")}}

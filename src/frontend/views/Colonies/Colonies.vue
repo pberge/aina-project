@@ -14,13 +14,15 @@
             </span>
           </div>
         </div>
-        <div class="mssn-text">
-          {{$t("colonies.coloniesText")}}
+        <div class="mssn-text" v-html="$t('colonies.coloniesText1')">
         </div>
         <div class="ideari-container">
-          <span class="ideari-title">Ideari</span>
+          <!-- <span class="ideari-title">Ideari</span> -->
           <Valors />
         </div>
+        <div class="mssn-text" v-html="$t('colonies.coloniesText2')">
+        </div>
+        <div class="signature">{{$t("colonies.signature")}}</div>
     </div>
 </template>
 
@@ -76,6 +78,7 @@ img {
 .mssn-text {
   margin: 2em 10%;
   text-align: justify;
+  line-height: 1.7;
 }
 
 .ideari-container {
@@ -83,8 +86,9 @@ img {
   text-align: center;
 }
 
-.ideari-title {
-  font-weight: bold;
+.signature {
+  text-align: right;
+  margin: 2em 10%;
 }
 
 @media (max-width: 740px) { /*MOBILE*/
@@ -107,6 +111,10 @@ img {
 
   img {
     margin-left: 0;
+  }
+
+  .mssn-text {
+    margin-top: 0;
   }
 
 }
