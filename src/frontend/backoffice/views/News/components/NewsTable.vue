@@ -15,6 +15,9 @@
           <router-link :to="'new-detail/'+item.id">
             <span class="icon material-icons">search</span>
           </router-link>
+          <router-link :to="'edit-new/'+item.id">
+            <span class="icon material-icons">edit</span>
+          </router-link>
           <span class="icon icon-delete material-icons" @click="openDeleteModal(item)">delete</span>
         </td>
       </tr>

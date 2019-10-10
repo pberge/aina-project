@@ -36,6 +36,24 @@ export default class NewsRepository extends Repository<New>  {
         return new New()
     }
 
+    public async editNew(item: New): Promise<New> {
+        await getConnection()
+        .createQueryBuilder()
+        .update("news")
+        .set({ 
+            title: item.title,
+            text: item.text,
+            creationdate: item.creationDate,
+            img: item.img,
+            id: item.id
+        } as any)
+        .where("id = :id", { id: item.id })
+        .execute()
+
+        console.log("save repository")
+        return item
+    }
+
     public async deleteNew(id: string): Promise<New> {
         await getConnection()
         .createQueryBuilder()

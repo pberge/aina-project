@@ -24,6 +24,25 @@ export default class NewsService {
         return res
     }
 
+    public async editNew(item: New): Promise<New> {
+        let newsRepository = await getCustomRepository(NewsRepository)
+        let old = await newsRepository.findById(item.id) 
+
+        if(old.img !== item.img) {
+            await new imageUploader().delete(old.img) //delete image //falta treure lo de baixar qualitat foto
+            let url = await new imageUploader().upload(item.img) //upload image
+            old.img = url
+        }
+
+        old.title = item.title
+        old.text = item.text
+        old.creationDate = item.creationDate
+
+        let res = await newsRepository.editNew(old)
+
+        return res
+    }
+
     public async deleteNew(id: string): Promise<New> {
         let newsRepository = await getCustomRepository(NewsRepository)
 

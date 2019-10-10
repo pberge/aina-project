@@ -4,6 +4,7 @@ import Home from './views/Home/Home.vue'
 import News from './views/News/News.vue'
 import NewsDetail from './views/NewDetail/NewsDetail.vue'
 import CreateNew from './backoffice/views/CreateNew/CreateNew.vue'
+import EditNew from './backoffice/views/EditNew/EditNew.vue'
 import NewsList from './backoffice/views/News/News.vue'
 import Login from './backoffice/views/Login/Login.vue'
 import Facilities from '@/frontend/views/Facilities/Facilities.vue'
@@ -50,6 +51,14 @@ const router = new Router({
       path: '/admin/new-detail/:id',
       name: 'adminNewsDetail',
       component: NewDetail,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/edit-new/:id',
+      name: 'editNew',
+      component: EditNew,
       meta: {
         requiresAuth: true
       }

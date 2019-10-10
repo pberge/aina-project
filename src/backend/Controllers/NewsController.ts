@@ -28,6 +28,24 @@ export default class NewsController {
         }
     }
 
+    editNew = async (request: any, response: any) => {
+        try {
+            const newItem: any = {
+                id: request.body.id,
+                title: request.body.title,
+                text: request.body.text,
+                img: request.body.img,
+                creationDate: request.body.creationDate,
+                published: request.body.published
+            }
+
+            return await this.newsService.editNew(newItem)
+        }
+        catch(a) {
+            console.log(a)
+        }
+    }
+
     deleteNew = async (request: any, response: any) => {
         return await this.newsService.deleteNew(request.query.id)
     }
