@@ -26,10 +26,11 @@ export default class NewsService {
 
     public async editNew(item: New): Promise<New> {
         let newsRepository = await getCustomRepository(NewsRepository)
-        let old = await newsRepository.findById(item.id) 
-
-        if(old.img !== item.img) {
-            await new imageUploader().delete(old.img) //delete image //falta treure lo de baixar qualitat foto
+        let old = await newsRepository.findById(item.id)
+        let imageSplited = item.img.split("/")
+        let image = "http://res.cloudinary.com/ainacloud/image/upload/" + imageSplited[imageSplited.length-2]+"/"+imageSplited[imageSplited.length-1]
+        if(old.img !== image) {
+            await new imageUploader().delete(old.img) //delete image 
             let url = await new imageUploader().upload(item.img) //upload image
             old.img = url
         }

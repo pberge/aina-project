@@ -73,7 +73,6 @@ export default class EditNew extends Vue {
 
   async saveNew () {
     this.isLoading = true
-    console.log(this.$route.params.id)
     let item: New = {
       id: this.$route.params.id,
       title: editNewModule.title,
@@ -86,7 +85,7 @@ export default class EditNew extends Vue {
     await api.News.saveNew(item)
     this.isLoading = false
 
-    this.$router.push('news')
+    this.$router.replace('/admin/news')
     await editNewModule.reset()
   }
 
