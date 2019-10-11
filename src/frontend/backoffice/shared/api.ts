@@ -28,6 +28,19 @@ export default {
     async getNewById (id: string): Promise<any> {
       let a = await axios.get(url + 'new-by-id', { params: { id: id } })
       return a.data
+    },
+    async saveNew (item: New): Promise<any> {
+      let data: FormData = new FormData()
+      data.append('id', item.id)
+      data.append('title', item.title)
+      data.append('text', item.text)
+      data.append('img', item.img)
+      data.append('published', item.published)
+      data.append('creationDate', item.creationDate)
+
+      const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+
+      return await axios.put(url + 'news', data, config)
     }
   }
 }

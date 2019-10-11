@@ -71,6 +71,11 @@ let createNew = async (req, res) => {
   res.send(await newsController.createNew(req, res).catch(a => console.log(a)))
 }
 
+let editNew = async (req, res) => {
+  console.log("EditNew")
+  res.send(await newsController.editNew(req, res).catch(a => console.log(a)))
+}
+
 let getNewById = async (req, res) => {
   res.send(await newsController.getNewById(req, res))
 }
@@ -82,6 +87,8 @@ let deleteNew = async (req, res) => {
 //API ENDPOINTS
 
 app.post('/api/news', upload.single('img'), createNew)
+
+app.put('/api/news', upload.single('img'), editNew)
 
 app.get('/api/news', getAllNews)
 

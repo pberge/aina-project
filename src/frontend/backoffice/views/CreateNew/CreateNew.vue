@@ -22,8 +22,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import TextEditor from './components/TextEditor.vue'
-import ImageUploader from './components/ImageUploader.vue'
+import TextEditor from '../../shared/components/TextEditor.vue'
+import ImageUploader from '../../shared/components/ImageUploader.vue'
 import { getModule } from 'vuex-module-decorators'
 import CreateNewModule from './CreateNewModule'
 import Store from '@/frontend/store'

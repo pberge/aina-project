@@ -100,12 +100,11 @@ import {
   Underline,
   History
 } from 'tiptap-extensions'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import { getModule } from 'vuex-module-decorators'
-import CreateNewModule from '../CreateNewModule'
-import Store from '../../../../store'
-
-const createNewState = getModule(CreateNewModule, Store)
+import CreateNewModule from '../../views/CreateNew/CreateNewModule'
+import EditNewModule from '../../views/EditNew/EditNewModule'
+import Store from '@/frontend/store'
 
 @Component({
   components: {
@@ -114,28 +113,40 @@ const createNewState = getModule(CreateNewModule, Store)
   }
 })
 export default class TextEditor extends Vue {
-  editor = new Editor({
-    extensions: [
-      new Blockquote(),
-      new BulletList(),
-      new HardBreak(),
-      new Heading({ levels: [1, 2, 3] }),
-      new HorizontalRule(),
-      new ListItem(),
-      new OrderedList(),
-      new TodoItem(),
-      new TodoList(),
-      new Link(),
-      new Bold(),
-      new Italic(),
-      new Strike(),
-      new Underline(),
-      new History()
-    ],
-    onUpdate: ({ getHTML }: any) => {
-      createNewState.setText(getHTML())
-    }
-  });
+  @Prop() isEdition: boolean
+  state: any = this.isEdition ? getModule(EditNewModule, Store) : getModule(CreateNewModule, Store)
+  editor: any
+
+  created() {
+    this.editor = new Editor({
+      extensions: [
+        new Blockquote(),
+        new BulletList(),
+        new HardBreak(),
+        new Heading({ levels: [1, 2, 3] }),
+        new HorizontalRule(),
+        new ListItem(),
+        new OrderedList(),
+        new TodoItem(),
+        new TodoList(),
+        new Link(),
+        new Bold(),
+        new Italic(),
+        new Strike(),
+        new Underline(),
+        new History()
+      ],
+      onUpdate: ({ getHTML }: any) => {
+        this.state.setText(getHTML())
+      }
+    })
+  }
+
+  mounted() {
+    this.editor.setContent(this.state.text)
+  }
+  
+
 }
 </script>
 
