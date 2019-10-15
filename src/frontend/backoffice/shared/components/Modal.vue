@@ -2,7 +2,7 @@
   <div class="modal">
     <div class="title">{{title}}</div>
     <div class="text">{{text}}</div>
-    <div class="buttons-container row end-xs">
+    <div class="buttons-container row end-xs" v-if="!buttonsDisabled">
       <a class="btn btn-cancel" @click="cancel">Cancel·lar</a>
       <a class="btn btn-ok" @click="accept">Acceptar</a>
     </div>
@@ -16,6 +16,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class Modal extends Vue {
   @Prop() title!: string
   @Prop() text!: string
+  @Prop() buttonsDisabled: boolean
 
   cancel () {
     this.$emit('action', 'cancel')

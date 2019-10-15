@@ -1,11 +1,14 @@
 import NewsController from './src/backend/Controllers/NewsController'
-import { createConnection } from 'typeorm'
+import PricesController from './src/backend/Controllers/PricesController'
+import { createConnection, getConnection } from 'typeorm'
 import { New } from './src/backend/Models/New'
+import { Price } from './src/backend/Models/Price'
 
 const express = require("express")
 const port = process.env.PORT || 3000
 const app = express()
 const newsController = new NewsController()
+const pricesController = new PricesController()
 const multer = require('multer')
 const upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
@@ -28,10 +31,22 @@ if (process.env.ENV === 'development') {
     username: 'postgres',
     password: '22019432',
     database: 'mylocaldb',
-    entities: [New]
+    entities: [New, Price]
   })
   .then((conection) => {
     console.log("done")
+    getConnection().query('CREATE TABLE IF NOT EXISTS prices (id character varying(255), name character varying(255), sleep int, bedandbreakfast int, halfpension int, fullboard int);')
+    getConnection().query("Select * from prices where id='1'").then(res => {
+      if(res[0] == null) {
+        getConnection().query("INSERT INTO prices values (1, 'laCasa', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (2, 'laBorda', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (3, 'woodHouse', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (4, 'sanSerni', 16, 0, 0, 0)")
+        getConnection().query("INSERT INTO prices values (5, 'meritxell', 16, 0, 0, 0)")
+      }
+    })
+
+    getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
   })
   .catch( (error) => console.log("error"))
 }
@@ -43,10 +58,22 @@ else {
     username: 'orcwddhkmmygyp',
     password: 'c6aacea7cfa94e882eccf895abbc2a1d0d32582fd058300efb14d7a981f36035',
     database: 'dv5ac8bgi28je',
-    entities: [New]
+    entities: [New, Price]
   })
   .then((conection) => {
     console.log("done")
+    getConnection().query('CREATE TABLE IF NOT EXISTS prices (id character varying(255), name character varying(255), sleep int, bedandbreakfast int, halfpension int, fullboard int);')
+    getConnection().query("Select * from prices where id='1'").then(res => {
+      if(res[0] == null) {
+        getConnection().query("INSERT INTO prices values (1, 'laCasa', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (2, 'laBorda', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (3, 'woodHouse', 16, 19, 26, 31)")
+        getConnection().query("INSERT INTO prices values (4, 'sanSerni', 16, 0, 0, 0)")
+        getConnection().query("INSERT INTO prices values (5, 'meritxell', 16, 0, 0, 0)")
+      }
+    })
+
+    getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
   })
   .catch( (error) => console.log("error"))
 }
@@ -72,7 +99,6 @@ let createNew = async (req, res) => {
 }
 
 let editNew = async (req, res) => {
-  console.log("EditNew")
   res.send(await newsController.editNew(req, res).catch(a => console.log(a)))
 }
 
@@ -82,6 +108,14 @@ let getNewById = async (req, res) => {
 
 let deleteNew = async (req, res) => {
   res.send(await newsController.deleteNew(req, res))
+}
+
+let getAllPrices = async(req, res) => {
+  res.send(await pricesController.getAllPrices(req, res))
+}
+
+let editPrices = async(req, res) => {
+  res.send(await pricesController.editPrices(req, res))
 }
 
 //API ENDPOINTS
@@ -95,6 +129,10 @@ app.get('/api/news', getAllNews)
 app.get('/api/new-by-id', getNewById)
 
 app.delete('/api/news', deleteNew)
+
+app.get('/api/prices', getAllPrices)
+
+app.put('/api/prices', upload.none(), editPrices)
 
 
 // START APP
