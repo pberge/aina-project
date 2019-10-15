@@ -111,7 +111,7 @@ body {
 
 .backoffice-view {
   position: absolute;
-  top: 4em;
+  top: 5em;
   left: 14em;
   right: 0;
   margin: 0;

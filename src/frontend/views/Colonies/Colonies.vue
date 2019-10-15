@@ -17,7 +17,6 @@
         <div class="mssn-text" v-html="$t('colonies.coloniesText1')">
         </div>
         <div class="ideari-container">
-          <!-- <span class="ideari-title">Ideari</span> -->
           <Valors />
         </div>
         <div class="mssn-text" v-html="$t('colonies.coloniesText2')">

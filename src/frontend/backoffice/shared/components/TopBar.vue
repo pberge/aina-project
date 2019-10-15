@@ -1,9 +1,11 @@
 <template>
   <div class="topbar row">
-    <div class="user">
-      {{userName}}
-    </div>
-    <i class="material-icons" @click="isModalActive = true">exit_to_app</i>
+    <img class="logo" src="@/frontend/assets/logoaina.png" />
+      <div class="user">
+        {{userName}}
+      </div>
+      <i class="material-icons" @click="isModalActive = true">exit_to_app</i>
+
     <Modal
       v-if="isModalActive"
       :title="modalTitle"
@@ -52,7 +54,7 @@ export default class TopBar extends Vue {
   position:fixed;
   height: 4em;
   margin: 0;
-  left: 14em;
+  left: 0;
   right: 0;
   background-color: white;
   border-bottom: 1px solid #3a3a3afa;
@@ -68,6 +70,16 @@ export default class TopBar extends Vue {
 
 i {
   cursor: pointer;
+}
+
+.logo {
+  height: 3em;
+  position: fixed;
+  left: 50%;
+}
+
+.user-container {
+  /* left: 50%; */
 }
 
 </style>
