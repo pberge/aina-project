@@ -26,14 +26,14 @@
       peoplePerHab="16"
       numHabs="2"
       title="Casal Sant Serni"
-      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1563209025/Facilities/GOPR7518_huleol.jpg"
+      img="https://res.cloudinary.com/ainacloud/image/upload/v1571303274/Prices/Entrada_SanSerni_gxr4kr.jpg"
     />
     <ItemPrice
       :prices="meritxellPrices"
       peoplePerHab="16"
       numHabs="2"
       title="Casal de Meritxell"
-      img="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1571297714/Prices/Meritxell.jpg"
     />
   </div>
 </template>
@@ -51,19 +51,19 @@ export default class Prices extends Vue {
   laCasaPrices: any[] = [
     { name: 'fullboard', price: '31' },
     { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
+    { name: 'bedandbreakfast', price: '19' },
     { name: 'sleep', price: '16' }
   ]
   laBordaPrices: any[] = [
     { name: 'fullboard', price: '31' },
     { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
+    { name: 'bedandbreakfast', price: '19' },
     { name: 'sleep', price: '16' }
   ]
   casetaPrices: any[] = [
     { name: 'fullboard', price: '31' },
     { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
+    { name: 'bedandbreakfast', price: '19' },
     { name: 'sleep', price: '16' }
   ]
   sanSerniPrices: any[] = [
