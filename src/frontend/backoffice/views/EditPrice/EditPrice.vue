@@ -202,7 +202,7 @@ export default class EditPrice extends Vue {
     }
 
     async savePrices() {
-        let res = [this.laCasaPrices, this.laCasaPrices, this.casetaPrices, this.sanSerniPrices, this.meritxellPrices]
+        let res = [this.laCasaPrices, this.laBordaPrices, this.casetaPrices, this.sanSerniPrices, this.meritxellPrices]
         await api.Prices.editPrices(res)
         this.isModalActive = true
         setTimeout(() => {

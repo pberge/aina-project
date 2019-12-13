@@ -41,6 +41,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import ItemPrice from './components/ItemPrice.vue'
+import api from '../../shared/api'
 
 @Component({
   components: {
@@ -48,30 +49,41 @@ import ItemPrice from './components/ItemPrice.vue'
   }
 })
 export default class Prices extends Vue {
-  laCasaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bedandbreakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  laBordaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bedandbreakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  casetaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bedandbreakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  sanSerniPrices: any[] = [
-    { name: 'sleep', price: '16' }
-  ]
-  meritxellPrices: any[] = [
-    { name: 'sleep', price: '16' }
-  ]
+
+  laCasaPrices: any[] = []
+  laBordaPrices: any[] = []
+  casetaPrices: any[] = []
+  sanSerniPrices: any[] = []
+  meritxellPrices: any[] = []
+
+  async created() {
+    var data = await api.Prices.getPrices()
+
+    this.laCasaPrices = [
+      { name: 'fullboard', price: data[0].fullboard },
+      { name: 'halfpension', price: data[0].halfpension },
+      { name: 'bedandbreakfast', price: data[0].bedandbreakfast },
+      { name: 'sleep', price: data[0].sleep }
+    ]
+    this.laBordaPrices = [
+      { name: 'fullboard', price: data[1].fullboard },
+      { name: 'halfpension', price: data[1].halfpension },
+      { name: 'bedandbreakfast', price: data[1].bedandbreakfast },
+      { name: 'sleep', price: data[1].sleep }
+    ]
+    this.casetaPrices = [
+      { name: 'fullboard', price: data[2].fullboard },
+      { name: 'halfpension', price: data[2].halfpension },
+      { name: 'bedandbreakfast', price: data[2].bedandbreakfast },
+      { name: 'sleep', price: data[2].sleep }
+    ]
+    this.sanSerniPrices = [
+      { name: 'sleep', price: data[3].sleep }
+    ]
+    this.meritxellPrices = [
+      { name: 'sleep', price: data[4].sleep }
+    ]
+  }
 }
 </script>
 

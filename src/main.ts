@@ -5,6 +5,7 @@ import store from './frontend/store'
 import Vuei18n from 'vue-i18n'
 import Esp from '@/frontend/translations/esp.json'
 import Cat from './frontend/translations/cat.json'
+import Fr from '@/frontend/translations/fr.json'
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -29,7 +30,8 @@ Vue.config.productionTip = false
 
 const messages = {
   cat: Cat,
-  esp: Esp
+  esp: Esp,
+  fr: Fr
 }
 
 const locale = 'cat'
