@@ -70,12 +70,11 @@ img {
 }
 
 .img-title {
-  /* font-weight: bold; */
   margin: 1em;
 }
 
 .mssn-text {
-  margin: 2em 10%;
+  margin: 2em 20%;
   text-align: justify;
   line-height: 1.7;
 }
@@ -114,6 +113,7 @@ img {
 
   .mssn-text {
     margin-top: 0;
+    margin: 2em 10%;
   }
 
 }

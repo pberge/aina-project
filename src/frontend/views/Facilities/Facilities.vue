@@ -37,7 +37,8 @@ export default class Instalations extends Vue {
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1563209290/Facilities/GOPR7523_v7qwaq.jpg', description: 'pingpongroom', onload: this.imageLoaded },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1563268675/Facilities/GOPR7515_d0hnf7.jpg', description: 'woodroom', onload: this.imageLoaded },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1568102657/Facilities/P9090042_drx1q5.jpg', description: 'stGalderic', onload: this.imageLoaded },
-      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1568102624/Facilities/P9090049_bliiqo.jpg', description: 'livingroom', onload: this.imageLoaded }
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1568102624/Facilities/P9090049_bliiqo.jpg', description: 'livingroom', onload: this.imageLoaded },
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1571302435/Facilities/Arlequins_o0wvkr.jpg', description: 'arlequins', onload: this.imageLoaded }
     ]
     this.outsideImages = [
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1563268479/Facilities/P6200063_qdujpm.jpg', description: 'field', onload: this.imageLoaded },
@@ -52,7 +53,9 @@ export default class Instalations extends Vue {
     this.bordesImages = [
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1563268465/Facilities/P6200056_wzrqhy.jpg', description: 'bordes', onload: this.imageLoaded },
       { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1563268708/Facilities/DSCF0472_riqio5.jpg', description: 'woodhouse', onload: this.imageLoaded },
-      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1568107966/Facilities/P9090031_2_z8xgur.jpg', description: 'stJordi', onload: this.imageLoaded }
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1571302954/Facilities/SalaBlava_vicw8a.jpg', description: 'stJordi', onload: this.imageLoaded },
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1571303905/Facilities/Entrada_SanSerni_2_zkkdyf.jpg', description: 'sanSerni', onload: this.imageLoaded },
+      { img: 'https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_500/v1571304108/Facilities/Meritxell_exterior_2_scbkhs.jpg', description: 'meritxell', onload: this.imageLoaded }
     ]
   }
 

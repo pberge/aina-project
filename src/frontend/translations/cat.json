@@ -1,7 +1,7 @@
 {
     "home": {
         "title": "Colònies populars de Canillo",
-        "text": "Una casa de tots <br> Una casa bastida per tots <br> Una casa per a tots <br> Una casa sostinguda entre tots... <br><br><u>Si és que hi ha casa d’algú....</u>"
+        "text": "Una casa de tots <br> Una casa bastida per tots <br> Una casa per a tots <br> Una casa sostinguda entre tots... <br><br><u>Si és que hi ha casa d’algú...</u>"
     },
     "topbar": {
         "colonies": "Colònies",
@@ -34,7 +34,9 @@
         "stJordi": "Sala Sant Jordi",
         "arlequins": "Sala Arlequins",
         "stGalderic": "Sant Galderic",
-        "livingroom": "Menjador"
+        "livingroom": "Menjador",
+        "sanSerni": "Casal Sant Serni",
+        "meritxell": "Borda de Meritxell"
     },
     "prices": {
         "house": "La casa",

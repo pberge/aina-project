@@ -8,6 +8,7 @@
             <div class="dropdown-content">
                 <a @click="setLocale('cat')">Català</a>
                 <a @click="setLocale('esp')">Castellano</a>
+                <a @click="setLocale('fr')">Français</a>
             </div>
         </div>
     </div>
@@ -37,6 +38,7 @@ export default class LanguageSelector extends Vue {
     setFlag() {
         if (this.$i18n.locale == 'cat') this.flag = 'flagAnd'
         else if (this.$i18n.locale == 'esp') this.flag = 'flagSpain'
+        else if (this.$i18n.locale == 'fr') this.flag = 'flagFrance'
     }
 
 }

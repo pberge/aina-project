@@ -13,6 +13,12 @@ export default {
       let a = await axios.get(url + 'new-by-id', { params: { id: id } })
       return a.data
     }
+  },
+  Prices: {
+    async getPrices (): Promise<any> {
+      let a = await axios.get(url + 'prices')
+      return a.data
+    }
   }
 
 }
