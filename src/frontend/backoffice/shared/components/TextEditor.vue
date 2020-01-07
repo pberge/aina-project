@@ -143,7 +143,7 @@ export default class TextEditor extends Vue {
   }
 
   async mounted() {
-    await this.state.reset()
+    if(!this.isEdition) await this.state.reset()
     this.editor.setContent(this.state.text)
   }
   
