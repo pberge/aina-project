@@ -30,6 +30,8 @@ export default class ImageUploader extends Vue {
     this.dataUrl = ''
     this.image = {}
 
+    this.state.reset()
+
     if(this.state.img != '') this.dataUrl = this.state.img
     
     this.reader = new FileReader()
