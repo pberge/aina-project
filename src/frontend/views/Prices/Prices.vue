@@ -60,25 +60,25 @@ export default class Prices extends Vue {
     var data = await api.Prices.getPrices()
 
     this.laCasaPrices = [
-      { name: 'fullboard', price: data[0].fullboard },
-      { name: 'halfpension', price: data[0].halfpension },
-      { name: 'bedandbreakfast', price: data[0].bedandbreakfast },
-      { name: 'sleep', price: data[0].sleep }
-    ]
-    this.laBordaPrices = [
       { name: 'fullboard', price: data[1].fullboard },
       { name: 'halfpension', price: data[1].halfpension },
       { name: 'bedandbreakfast', price: data[1].bedandbreakfast },
       { name: 'sleep', price: data[1].sleep }
     ]
+    this.laBordaPrices = [
+      { name: 'fullboard', price: data[3].fullboard },
+      { name: 'halfpension', price: data[3].halfpension },
+      { name: 'bedandbreakfast', price: data[3].bedandbreakfast },
+      { name: 'sleep', price: data[3].sleep }
+    ]
     this.casetaPrices = [
-      { name: 'fullboard', price: data[2].fullboard },
-      { name: 'halfpension', price: data[2].halfpension },
-      { name: 'bedandbreakfast', price: data[2].bedandbreakfast },
-      { name: 'sleep', price: data[2].sleep }
+      { name: 'fullboard', price: data[0].fullboard },
+      { name: 'halfpension', price: data[0].halfpension },
+      { name: 'bedandbreakfast', price: data[0].bedandbreakfast },
+      { name: 'sleep', price: data[0].sleep }
     ]
     this.sanSerniPrices = [
-      { name: 'sleep', price: data[3].sleep }
+      { name: 'sleep', price: data[2].sleep }
     ]
     this.meritxellPrices = [
       { name: 'sleep', price: data[4].sleep }

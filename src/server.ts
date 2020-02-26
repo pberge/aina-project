@@ -25,12 +25,12 @@ process.on('unhandledRejection', (reason, promise) => {
 //CONNECT DB
 if (process.env.ENV === 'development') {
   createConnection({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: '22019432',
-    database: 'mylocaldb',
+    type: 'mariadb',
+    host: '127.0.0.1',
+    port: 3306,
+    username: 'root',
+    password: 'mariadb',
+    database: 'aina',
     entities: [New, Price]
   })
   .then((conection) => {
@@ -48,16 +48,16 @@ if (process.env.ENV === 'development') {
 
     getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
   })
-  .catch( (error) => console.log("error"))
+  .catch( (error) => console.log("error", error))
 }
 else {
   createConnection({
-    type: 'postgres',
-    host: 'ec2-54-217-219-235.eu-west-1.compute.amazonaws.com',
-    port: 5432,
-    username: 'orcwddhkmmygyp',
-    password: 'c6aacea7cfa94e882eccf895abbc2a1d0d32582fd058300efb14d7a981f36035',
-    database: 'dv5ac8bgi28je',
+    type: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    username: 'ai1217_aina',
+    password: 'brlbuEx3TaG26dLh',
+    database: 'ai1217_aina',
     entities: [New, Price]
   })
   .then((conection) => {
@@ -75,7 +75,7 @@ else {
 
     getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
   })
-  .catch( (error) => console.log("error"))
+  .catch( (error) => console.log("error production", error))
 }
 
 //CORS
@@ -83,7 +83,7 @@ app.use(function(req, res, next) {
   if(process.env.ENV === 'development') {
     res.header("Access-Control-Allow-Origin", "http://localhost:8080")
   }
-  else res.header("Acces-Control-Allow-Origin", "https://ainaweb.herokuapp.com")
+  else res.header("Acces-Control-Allow-Origin", "https://www.aina.ad")
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next();

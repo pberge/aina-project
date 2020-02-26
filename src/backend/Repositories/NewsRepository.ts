@@ -7,7 +7,7 @@ import unique from "uniqid"
 export default class NewsRepository extends Repository<New>  {
 
     public async find(): Promise<New[]> {
-        return await getConnection().query('SELECT * FROM "news"')
+        return await getConnection().query('SELECT * FROM news')
     }
 
     public async findById(id: string): Promise<New> {        
@@ -29,7 +29,7 @@ export default class NewsRepository extends Repository<New>  {
         .into("news")
         .values([
             {   id: unique(), title: item.title, text: item.text, img: item.img,
-                creationdate: item.creationDate, published: item.published 
+                creationdate: item.creationDate, published: item.published ? 1 : 0
             }
         ])
         .execute()

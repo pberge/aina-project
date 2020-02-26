@@ -6,7 +6,7 @@ import unique from "uniqid"
 export default class PricesRepository extends Repository<Price>  {
 
     public async find(): Promise<Price[]> {
-        return await getConnection().query('SELECT * FROM "prices"')
+        return await getConnection().query('SELECT * FROM prices')
     }
 
     public async editPrice(item: Price): Promise<Price> {
