@@ -1,8 +1,8 @@
-import NewsController from './src/backend/Controllers/NewsController'
-import PricesController from './src/backend/Controllers/PricesController'
+import NewsController from './backend/Controllers/NewsController'
+import PricesController from './backend/Controllers/PricesController'
 import { createConnection, getConnection } from 'typeorm'
-import { New } from './src/backend/Models/New'
-import { Price } from './src/backend/Models/Price'
+import { New } from './backend/Models/New'
+import { Price } from './backend/Models/Price'
 
 const express = require("express")
 const port = process.env.PORT || 3000
@@ -138,4 +138,4 @@ app.put('/api/prices', upload.none(), editPrices)
 // START APP
 app.listen(port, () => {
   console.log(`listening on ${port}`)
-})
+});

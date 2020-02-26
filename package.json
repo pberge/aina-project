@@ -9,7 +9,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "ts-node-dev --respawn --transpileOnly ./server.ts",
+    "start": "ts-node-dev --respawn --transpileOnly ./dist/server.js",
     "be": "nodemon server.ts",
     "build-ts": "tsc",
     "serve-server": "node dist/server.js",
