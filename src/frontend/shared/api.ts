@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'https://ainaweb.herokuapp.com/api/'
+const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'http://aina.ad:3000/api/'
 
 export default {
 
@@ -13,5 +13,12 @@ export default {
       let a = await axios.get(url + 'new-by-id', { params: { id: id } })
       return a.data
     }
+  },
+  Prices: {
+    async getPrices (): Promise<any> {
+      let a = await axios.get(url + 'prices')
+      return a.data
+    }
   }
+
 }

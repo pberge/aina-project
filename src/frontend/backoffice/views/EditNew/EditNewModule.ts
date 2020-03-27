@@ -4,10 +4,10 @@ import Store from '@/frontend/store'
 @Module({
   dynamic: true,
   store: Store,
-  name: 'CreateNewModule',
+  name: 'EditNewModule',
   namespaced: true
 })
-export default class CreateNewModule extends VuexModule {
+export default class EditNewModule extends VuexModule {
   public title: string = ''
   public text: string = ''
   public img: any = {}
@@ -31,9 +31,9 @@ export default class CreateNewModule extends VuexModule {
   }
 
   @Action
-  setImage (img: any) {
-    this.context.commit('setImg', img)
-    return img
+  async setImage (img: any) {
+    await this.context.commit('setImg', img)
+    return this.img
   }
 
   @Action

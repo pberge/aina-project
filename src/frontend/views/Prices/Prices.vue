@@ -26,14 +26,14 @@
       peoplePerHab="16"
       numHabs="2"
       title="Casal Sant Serni"
-      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1563209025/Facilities/GOPR7518_huleol.jpg"
+      img="https://res.cloudinary.com/ainacloud/image/upload/v1571303274/Prices/Entrada_SanSerni_gxr4kr.jpg"
     />
     <ItemPrice
       :prices="meritxellPrices"
       peoplePerHab="16"
       numHabs="2"
       title="Casal de Meritxell"
-      img="https://res.cloudinary.com/ainacloud/image/upload/v1563209025/Facilities/GOPR7518_huleol.jpg"
+      img="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_700/v1571297714/Prices/Meritxell.jpg"
     />
   </div>
 </template>
@@ -41,6 +41,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import ItemPrice from './components/ItemPrice.vue'
+import api from '../../shared/api'
 
 @Component({
   components: {
@@ -48,30 +49,45 @@ import ItemPrice from './components/ItemPrice.vue'
   }
 })
 export default class Prices extends Vue {
-  laCasaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  laBordaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  casetaPrices: any[] = [
-    { name: 'fullboard', price: '31' },
-    { name: 'halfpension', price: '26' },
-    { name: 'bed&breakfast', price: '19' },
-    { name: 'sleep', price: '16' }
-  ]
-  sanSerniPrices: any[] = [
-    { name: 'sleep', price: '16' }
-  ]
-  meritxellPrices: any[] = [
-    { name: 'sleep', price: '16' }
-  ]
+
+  laCasaPrices: any[] = []
+  laBordaPrices: any[] = []
+  casetaPrices: any[] = []
+  sanSerniPrices: any[] = []
+  meritxellPrices: any[] = []
+
+  async created() {
+    var data = await api.Prices.getPrices()
+    var laCasa = data.find(e => e.id == 1)
+    this.laCasaPrices = [
+      { name: 'fullboard', price: laCasa.fullboard },
+      { name: 'halfpension', price: laCasa.halfpension },
+      { name: 'bedandbreakfast', price: laCasa.bedandbreakfast },
+      { name: 'sleep', price: laCasa.sleep }
+    ]
+    var borda = data.find(e => e.id == 2)
+    this.laBordaPrices = [
+      { name: 'fullboard', price: borda.fullboard },
+      { name: 'halfpension', price: borda.halfpension },
+      { name: 'bedandbreakfast', price: borda.bedandbreakfast },
+      { name: 'sleep', price: borda.sleep }
+    ]
+    var fusta = data.find(e => e.id == 3)
+    this.casetaPrices = [
+      { name: 'fullboard', price: fusta.fullboard },
+      { name: 'halfpension', price: fusta.halfpension },
+      { name: 'bedandbreakfast', price: fusta.bedandbreakfast },
+      { name: 'sleep', price: fusta.sleep }
+    ]
+    var serni = data.find(e => e.id == 4)
+    this.sanSerniPrices = [
+      { name: 'sleep', price: serni.sleep }
+    ]
+    var meri = data.find(e => e.id == 5)
+    this.meritxellPrices = [
+      { name: 'sleep', price: meri.sleep }
+    ]
+  }
 }
 </script>
 

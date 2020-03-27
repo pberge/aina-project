@@ -2,8 +2,8 @@
     <div class="login">
         <img class="logo" src="@/frontend/assets/logoaina.png"/>
         <h1>AINA Casa de colònies</h1>
-        <input type="text" name="username" v-model="username" placeholder="Username" /></br>
-        <input type="password" name="password" v-model="password" placeholder="Password" /></br>
+        <input type="text" name="username" v-model="username" placeholder="Username" /><br/>
+        <input type="password" name="password" v-model="password" placeholder="Password" /><br/>
         <div class="btn-container">
             <a class="btn btn-select" v-on:click="login()">Inicia sessió</a> 
         </div>  

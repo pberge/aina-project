@@ -11,15 +11,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue, Watch, Prop } from 'vue-property-decorator'
 import { getModule } from 'vuex-module-decorators'
-import CreateNewModule from '../CreateNewModule'
+import CreateNewModule from '../../views/CreateNew/CreateNewModule'
+import EditNewModule from '../../views/EditNew/EditNewModule'
 import Store from '@/frontend/store'
-
-const createNewState = getModule(CreateNewModule, Store)
 
 @Component({})
 export default class ImageUploader extends Vue {
+  @Prop() isEdition: boolean
+  state: any = this.isEdition ? getModule(EditNewModule, Store) : getModule(CreateNewModule, Store)
+
   image: any = {}
   dataUrl: string = ''
   reader: any
@@ -27,6 +29,10 @@ export default class ImageUploader extends Vue {
   mounted () {
     this.dataUrl = ''
     this.image = {}
+
+    if(!this.isEdition) this.state.reset()
+
+    if(this.state.img != '') this.dataUrl = this.state.img
     
     this.reader = new FileReader()
     this.reader.onload = (e: any) => {
@@ -45,7 +51,7 @@ export default class ImageUploader extends Vue {
 
   @Watch('dataUrl')
   onDataUrlSet () {
-    createNewState.setImage(this.dataUrl)
+    this.state.setImage(this.dataUrl)
   }
 }
 </script>
