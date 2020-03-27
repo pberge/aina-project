@@ -7,6 +7,7 @@ import { Price } from './backend/Models/Price'
 const express = require("express")
 const port = process.env.PORT || 3000
 const app = express()
+const cors = require("cors")
 const newsController = new NewsController()
 const pricesController = new PricesController()
 const multer = require('multer')
@@ -79,15 +80,7 @@ else {
 }
 
 //CORS
-app.use(function(req, res, next) {
-  if(process.env.ENV === 'development') {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080")
-  }
-  else res.header("Acces-Control-Allow-Origin", "https://www.aina.ad")
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  next();
-});
+app.use(cors())
 
 //CONTROLLER FUNCTIONS
 let getAllNews = async (req, res) => {

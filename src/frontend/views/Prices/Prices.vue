@@ -58,30 +58,34 @@ export default class Prices extends Vue {
 
   async created() {
     var data = await api.Prices.getPrices()
-
+    var laCasa = data.find(e => e.id == 1)
     this.laCasaPrices = [
-      { name: 'fullboard', price: data[1].fullboard },
-      { name: 'halfpension', price: data[1].halfpension },
-      { name: 'bedandbreakfast', price: data[1].bedandbreakfast },
-      { name: 'sleep', price: data[1].sleep }
+      { name: 'fullboard', price: laCasa.fullboard },
+      { name: 'halfpension', price: laCasa.halfpension },
+      { name: 'bedandbreakfast', price: laCasa.bedandbreakfast },
+      { name: 'sleep', price: laCasa.sleep }
     ]
+    var borda = data.find(e => e.id == 2)
     this.laBordaPrices = [
-      { name: 'fullboard', price: data[3].fullboard },
-      { name: 'halfpension', price: data[3].halfpension },
-      { name: 'bedandbreakfast', price: data[3].bedandbreakfast },
-      { name: 'sleep', price: data[3].sleep }
+      { name: 'fullboard', price: borda.fullboard },
+      { name: 'halfpension', price: borda.halfpension },
+      { name: 'bedandbreakfast', price: borda.bedandbreakfast },
+      { name: 'sleep', price: borda.sleep }
     ]
+    var fusta = data.find(e => e.id == 3)
     this.casetaPrices = [
-      { name: 'fullboard', price: data[0].fullboard },
-      { name: 'halfpension', price: data[0].halfpension },
-      { name: 'bedandbreakfast', price: data[0].bedandbreakfast },
-      { name: 'sleep', price: data[0].sleep }
+      { name: 'fullboard', price: fusta.fullboard },
+      { name: 'halfpension', price: fusta.halfpension },
+      { name: 'bedandbreakfast', price: fusta.bedandbreakfast },
+      { name: 'sleep', price: fusta.sleep }
     ]
+    var serni = data.find(e => e.id == 4)
     this.sanSerniPrices = [
-      { name: 'sleep', price: data[2].sleep }
+      { name: 'sleep', price: serni.sleep }
     ]
+    var meri = data.find(e => e.id == 5)
     this.meritxellPrices = [
-      { name: 'sleep', price: data[4].sleep }
+      { name: 'sleep', price: meri.sleep }
     ]
   }
 }

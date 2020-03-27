@@ -3,7 +3,7 @@ import New from './models/NewModel'
 // import Price from './models/Price'
 import FormData from 'form-data'
 
-const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'https://ainaweb.herokuapp.com/api/'
+const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'http://aina.ad:3000/api/'
 
 export default {
   News: {
