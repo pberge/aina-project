@@ -68,7 +68,8 @@ export default class TopBar extends Vue {
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
       { to: '/prices', tag: 'prices' },
-      { to: '/contact', tag: 'contact' }
+      { to: '/contact', tag: 'contact' },
+      { to: '/donacions', tag: 'donacions' },
     ]
     window.onscroll = () => {this.scrollFunction()}
   }

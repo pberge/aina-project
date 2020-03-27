@@ -13,6 +13,7 @@ import Contact from '@/frontend/views/Contact/Contact.vue'
 import Prices from '@/frontend/views/Prices/Prices.vue'
 import Colonies from '@/frontend/views/Colonies/Colonies.vue'
 import History from '@/frontend/views/History/History.vue'
+import Donacions from '@/frontend/views/Donacions/Donacions.vue'
 import NewDetail from './backoffice/views/NewDetail/NewDetail.vue'
 import firebase from 'firebase'
 
@@ -104,6 +105,11 @@ const router = new Router({
       path: '/history',
       name: 'history',
       component: History
+    },
+    {
+      path: '/donacions',
+      name: 'donacions',
+      component: Donacions
     }
   ]
 })
