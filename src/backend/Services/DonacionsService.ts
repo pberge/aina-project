@@ -1,5 +1,5 @@
 import { Donacio }  from "../Models/donacio"
-import { DonacioImage } from "../Models/donacioImage"
+import { DonacioImage } from "../Models/DonacioImage"
 import DonacionsRepository from "../Repositories/DonacionsRepository"
 import { getCustomRepository } from "typeorm"
 import imageUploader from "../imageUploader"
