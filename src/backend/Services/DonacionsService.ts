@@ -1,4 +1,4 @@
-import { Donacio }  from "../Models/donacio"
+import { Donacio }  from "../Models/Donacio"
 import { DonacioImage } from "../Models/DonacioImage"
 import DonacionsRepository from "../Repositories/DonacionsRepository"
 import { getCustomRepository } from "typeorm"

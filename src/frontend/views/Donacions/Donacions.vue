@@ -33,7 +33,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import DonacionsCard from './components/DonacionsCard.vue'
 import Spinner from '../../shared/components/Spinner.vue'
-import Donacio from '../../shared/models/donacio'
+import Donacio from '../../shared/models/Donacio'
 import api from '../../shared/api'
 import { Double } from 'typeorm'
 
