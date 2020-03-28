@@ -8,6 +8,7 @@ import Cat from './frontend/translations/cat.json'
 import Fr from '@/frontend/translations/fr.json'
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
+import VueCurrencyInput from 'vue-currency-input'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAKcFg04dQS3wJd353eMnitMz0Z9yXL60Q',
@@ -26,6 +27,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(Vuei18n)
+Vue.use(VueCurrencyInput)
 Vue.config.productionTip = false
 
 const messages = {
@@ -48,3 +50,4 @@ new Vue({
   i18n,
   render: h => h(App)
 }).$mount('#app')
+

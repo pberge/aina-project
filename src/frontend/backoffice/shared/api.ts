@@ -1,6 +1,6 @@
 import axios from 'axios'
 import New from './models/NewModel'
-// import Price from './models/Price'
+import Donacio from './models/DonacioModel'
 import FormData from 'form-data'
 
 const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'http://aina.ad:3000/api/'
@@ -99,5 +99,43 @@ export default {
       await axios.put(url + 'prices', dataMeritxell, config)
 
     }
-  }
+  },
+  Donacions: {
+    async getAllDonacions (): Promise<Donacio[]> {
+      return axios.get(url + 'donacions')
+    },
+    async createDonacio (item: Donacio): Promise<Donacio> {
+      let data: FormData = new FormData()
+      data.append('descripcio', item.descripcio)
+      data.append('img', item.img)
+      data.append('nomColaborador', item.nomColaborador)
+      data.append('imgColaborador', item.imgColaborador)
+      data.append('esportColaborador', item.esportColaborador)
+
+      const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+
+      return await axios.post(url + 'donacions', data, config)
+    },
+    async deleteDonacio (id: string): Promise<boolean> {
+      await axios.delete(url + 'donacions', { params: { id: id } })
+      return true
+    },
+    async getDonacioById (id: string): Promise<any> {
+      let a = await axios.get(url + 'donacio-by-id', { params: { id: id } })
+      return a.data
+    },
+    async saveDonacio (item: Donacio): Promise<any> {
+      let data: FormData = new FormData()
+      data.append('id', item.id)
+      data.append('descripcio', item.descripcio)
+      data.append('img', item.img)
+      data.append('nomColaborador', item.nomColaborador)
+      data.append('imgColaborador', item.img)
+      data.append('esportColaborador', item.esportColaborador)
+
+      const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+
+      return await axios.put(url + 'donacions', data, config)
+    }
+  },
 }

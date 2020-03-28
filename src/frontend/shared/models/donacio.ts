@@ -1,8 +1,8 @@
-export default interface objecteDonacio {
-    //id: string
+export default interface Donacio {
+    id: number
     img: string
     descripcio: string
-    nomcolaborador: string
     imgColaborador: string
+    nomColaborador: string
     esportColaborador: string
 }

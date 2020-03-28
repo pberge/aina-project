@@ -15,6 +15,9 @@ import Colonies from '@/frontend/views/Colonies/Colonies.vue'
 import History from '@/frontend/views/History/History.vue'
 import Donacions from '@/frontend/views/Donacions/Donacions.vue'
 import NewDetail from './backoffice/views/NewDetail/NewDetail.vue'
+import DonacionsList from './backoffice/views/Donacions/Donacions.vue'
+import CreateDonacio from './backoffice/views/CreateDonacio/CreateDonacio.vue'
+import EditDonacio from './backoffice/views/EditDonacio/EditDonacio.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -110,6 +113,30 @@ const router = new Router({
       path: '/donacions',
       name: 'donacions',
       component: Donacions
+    },
+    {
+      path: '/admin/donacions',
+      name: 'donacionsList',
+      component: DonacionsList,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/edit-donacio/:id',
+      name: 'editDonacio',
+      component: EditDonacio,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/create-donacio',
+      name: 'createDonacio',
+      component: CreateDonacio,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })

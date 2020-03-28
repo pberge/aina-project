@@ -7,6 +7,9 @@
       <router-link class="item" to="/admin/prices" :class="{'item-active': isActive('/admin/prices')}">
         <i class="material-icons">euro</i>Preus
       </router-link >
+      <router-link class="item" to="/admin/donacions" :class="{'item-active': isActive('/admin/donacions')}">
+        <i class="material-icons">local_hospital</i>JuntsPerAndorra
+      </router-link >
     </div>
   </div>
 </template>

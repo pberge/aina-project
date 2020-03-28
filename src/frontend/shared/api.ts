@@ -19,6 +19,12 @@ export default {
       let a = await axios.get(url + 'prices')
       return a.data
     }
+  },
+  Donacions: {
+    async getAllDonacions (): Promise<any> {
+      let a = await axios.get(url + 'donacions')
+      return a.data
+    }
   }
 
 }

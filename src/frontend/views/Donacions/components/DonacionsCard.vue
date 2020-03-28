@@ -1,13 +1,14 @@
 <template>
     <div class="donacions-card">
         <img class="image" :src="image">
+        <span class="title">{{info.descripcio}}</span>
         <div class="row">
             <div class="player-holder">
-                <img class="colaboradorImage" src="https://res.cloudinary.com/ainacloud/image/upload/c_scale,q_auto:eco,w_1500/v1567704022/Default/P6200059_cybiu5.jpg" />
+                <img class="colaboradorImage" :src="info.imgColaborador" />
             </div>
             <div class="info-container col-xs-9">
-                <span class="title">{{info.title}}</span>
-                <span class="colaborador">{{info.colaborador}}</span>
+                <span class="colaborador">{{info.nomColaborador}}</span>
+                <span class="esport" style="display:block;">{{info.esportColaborador}}</span>
             </div>
         </div>
     </div>
@@ -44,7 +45,6 @@ export default class DonacionsCard extends Vue {
     font-size: 1em;
     transition: 0.3s;
     border-radius: 3px;
-    cursor: pointer;
     position: relative;
     padding-bottom: 0.5em;
 }
@@ -67,12 +67,15 @@ export default class DonacionsCard extends Vue {
 
 .info-container {
     text-align: left;
-    padding-top: 1em;
+    padding: 12px 12px;
 }
 
 .title {
-    padding: 0em 0em;
+    padding: 0.5em 0em;
     display: block;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 15px;
 }
 
 .text:before {
@@ -80,7 +83,11 @@ export default class DonacionsCard extends Vue {
 }
 
 .colaborador {
-    padding: 0em 0em;
+    padding-top: 0.7em;
+}
+
+.esport {
+    padding: 0em 0;
 }
 
 .player-holder{
@@ -101,7 +108,7 @@ export default class DonacionsCard extends Vue {
     height: 50px;
     border-radius: 50%;
     width: 50px;
-    margin-top:0.8em;
+    margin-top:0.5em;
     display: inline-block;
     border-radius: 50%;
     background-size: cover;

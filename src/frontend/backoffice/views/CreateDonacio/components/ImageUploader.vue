@@ -13,31 +13,41 @@
 <script lang="ts">
 import { Component, Vue, Watch, Prop } from 'vue-property-decorator'
 import { getModule } from 'vuex-module-decorators'
-import CreateNewModule from '../../views/CreateNew/CreateNewModule'
-import EditNewModule from '../../views/EditNew/EditNewModule'
+import CreateDonacioModule from '../CreateDonacioModule'
 import Store from '@/frontend/store'
 
 @Component({})
 export default class ImageUploader extends Vue {
   @Prop() isEdition: boolean
   @Prop() type: string
-  state: any = this.isEdition ? getModule(EditNewModule, Store) : getModule(CreateNewModule, Store)
+  state: any = this.isEdition ? null : getModule(CreateDonacioModule, Store)
 
   image: any = {}
   dataUrl: string = ''
   reader: any
 
   mounted () {
+    console.log(this.type)
     this.dataUrl = ''
     this.image = {}
 
     if(!this.isEdition) this.state.reset()
 
-    if(this.state.img != '') this.dataUrl = this.state.img
-    
-    this.reader = new FileReader()
-    this.reader.onload = (e: any) => {
-      this.dataUrl = this.reader.result
+    if(this.type == "object") {
+      if(this.state.img != '') this.dataUrl = this.state.img
+      
+      this.reader = new FileReader()
+      this.reader.onload = (e: any) => {
+        this.dataUrl = this.reader.result
+      }
+    }
+    else {
+      if(this.state.imgColaborador != '') this.dataUrl = this.state.imgColaborador
+      
+      this.reader = new FileReader()
+      this.reader.onload = (e: any) => {
+        this.dataUrl = this.reader.result
+      }
     }
   }
 
@@ -52,7 +62,9 @@ export default class ImageUploader extends Vue {
 
   @Watch('dataUrl')
   onDataUrlSet () {
-    this.state.setImage(this.dataUrl)
+    console.log(this.type)
+    if(this.type == "object") this.state.setImage(this.dataUrl)
+    else this.state.setImageColaborador(this.dataUrl)
   }
 }
 </script>
