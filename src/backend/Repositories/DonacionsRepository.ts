@@ -1,5 +1,5 @@
 import { Donacio } from "../Models/Donacio"
-import { DonacioImage } from "../Models/donacioImage"
+import { DonacioImage } from "../Models/DonacioImage"
 import { Repository, EntityRepository, getConnection } from "typeorm";
 import unique from "uniqid"
 
