@@ -3,27 +3,52 @@
       <div class="infoContainer">
         <div class="pageTitle">#JuntsPerAndorra</div>
         <div class="pageDescription">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet pharetra orci. Proin viverra dapibus velit, vel scelerisque sapien gravida lobortis. Sed congue tortor a ante dignissim lacinia. Etiam vulputate, sem non finibus consectetur, augue odio mollis turpis, ut porttitor velit lacus sit amet turpis. Maecenas nulla elit, ultricies malesuada orci sed, bibendum fringilla nulla. Etiam lorem sem, mollis vel lacus sit amet, pharetra finibus nibh. Sed non enim eros. Nunc eget mauris nisl. Mauris posuere commodo augue, vel pulvinar diam porta et. Nunc rutrum lobortis ipsum ut laoreet. Quisque tristique tristique lorem sed pharetra. In nec nibh eleifend, accumsan magna vel, consectetur dolor. Phasellus id enim ultricies orci blandit imperdiet.
+          <span v-html="$t('donacions.text1')"></span>
         </div>
       </div>
       <div class="paymentLayout">
-          <a class="btn btn-select" @click="showPaymentLayout">Participa</a>
+          <a class="btn btn-select" @click="showPaymentLayout">{{$t('donacions.participa')}}</a>
           
           <div class="participa" :class="{ 'hide': !isPaymenyLayoutShown}">
-            <div>
-              <div class="participaTitle">Fes un ingrés solidari al següent número de compte:</div>
-              <span class="formTitle">Aportació</span>
-              <currency-input v-model="donacio"/>
-            </div>
-            <div id="paypal-button-container" class="paypal-container" >
-              
-            </div>
+              <div class="row">
+                <span class="number col-xs-1">1</span><span class="col-xs-11 instruccio">{{$t('donacions.instruccio1')}}</span>
+              </div>
+              <div class="banc-account">
+                AD10 0003 1101 1022 8331 1508
+              </div>
+              <div class="row">
+                <span class="number col-xs-1">2</span><span class="col-xs-11 instruccio">{{$t('donacions.instruccio2')}}</span>
+              </div>
+              <div class="email">
+                  <a style="color: dimgrey;" href="mailto:juntsperandorra@gmail.com">juntsperandorra@gmail.com</a>
+                </div>
+              <div class="row">
+                <span class="number col-xs-1">3</span><span class="col-xs-11 instruccio">{{$t('donacions.instruccio3')}}</span>
+              </div>
+              <div class="row">
+                <span class="number col-xs-1">4</span><span class="col-xs-11 instruccio">{{$t('donacions.instruccio4')}}</span>
+              </div>
           </div>
       </div>
-      <div>
-        <div class="objectsTitle">Objectes del sorteig</div>
+      <div class="pageDescription footerinfo" style="text-align:center">
+          <span v-html="$t('donacions.text2')"></span>
+      </div>
+      <div class="logo">
+        <img style="width:10em" src="./logo1.png">
+      </div>
+      <div style="text-align:center">
+        Pere, Isidre i Jaume
+      </div>
+      <div class="objectes-container">
+        <div class="objectsTitle">{{$t('donacions.objectes')}}</div>
         <div class="donacions row">
             <DonacionsCard v-for="(item, i) in donacions" :key="i" :info="item"/>
+        </div>
+      </div>
+      <div class="texts-container">
+        <div class="objectsTitle">{{$t('donacions.texts')}}</div>
+        <div class="texts">
+            <TextCard v-for="(item, i) in texts" :key="i" :text="item"/>
         </div>
       </div>
     </div>
@@ -32,52 +57,33 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import DonacionsCard from './components/DonacionsCard.vue'
+import TextCard from './components/TextCard.vue'
 import Spinner from '../../shared/components/Spinner.vue'
 import Donacio from '../../shared/models/Donacio'
+import Text from '../../shared/models/text'
 import api from '../../shared/api'
 import { Double } from 'typeorm'
 
 @Component({
   components: {
     Spinner,
-    DonacionsCard
+    DonacionsCard,
+    TextCard
   }
 })
 export default class Donacions extends Vue {
   donacions: Donacio[] = [];
+  texts: Text[] = []
   isPaymenyLayoutShown: boolean = false
   payments: InnerHTML
   donacio: Double = 0
 
   async created() {
     this.donacions = await api.Donacions.getAllDonacions()
+    this.texts = await api.Texts.getAllTexts()
+    console.log(this.texts)
   }
   
-  mounted () {
-    //this.renderPaypal()
-  }
-
-  /*renderPaypal() {
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        // This function sets up the details of the transaction, including the amount and line item details.
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '0.01'
-            }
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        // This function captures the funds from the transaction.
-        return actions.order.capture().then(function(details) {
-          // This function shows a transaction success message to your buyer.
-          alert('Transaction completed by ' + details.payer.name.given_name);
-        });
-      }
-    }).render('#paypal-button-container')
-  }*/
 
   showPaymentLayout () {
     this.isPaymenyLayoutShown = !this.isPaymenyLayoutShown
@@ -89,6 +95,7 @@ export default class Donacions extends Vue {
 <style scoped>
 .donacions {
   margin-top: 1em;
+  font-family: sans-serif;
 }
 
 .infoContainer {
@@ -103,10 +110,33 @@ export default class Donacions extends Vue {
   text-align:center;
 }
 
+.logo {
+  width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .pageDescription {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  line-height: 40px;
+}
+
+.number{
+  font-size: 24px;
+    font-weight: bold;
+}
+
+.instruccio {
+  text-align:left;
+  margin-bottom: 1em;
+  line-height: 33px;
 }
 
 .paymentLayout {
@@ -114,11 +144,21 @@ export default class Donacions extends Vue {
   margin-bottom: 3em;
 }
 
+.banc-account {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .objectsTitle {
   font-weight: bold;
   font-size: 1.5em;
   margin-bottom: 1em;
   text-align:center;
+}
+
+.objectes-container {
+  margin-top: 5em;
 }
 
 .img-container {
@@ -151,6 +191,10 @@ img {
 .participa {
   margin-top: 3em;
   padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  max-width: 35em;
 }
 
 .participaTitle {
@@ -171,6 +215,10 @@ input {
   border-radius: 3px;
 }
 
+.texts-container {
+  margin: 5em 0;
+}
+
 
 @media (max-width: 740px) { /*MOBILE*/
   .container {
@@ -178,6 +226,14 @@ input {
     max-width: 100%;
     box-shadow: none;
     margin: 0;
+  }
+
+  .paymentLayout {
+    margin-bottom: 1em;
+  }
+
+  .footerinfo {
+    margin-bottom: 2em;
   }
 
   .colonies {
@@ -197,6 +253,10 @@ input {
   .mssn-text {
     margin-top: 0;
     margin: 2em 10%;
+  }
+
+  .texts-container {
+    margin: 3em 0;
   }
 
 }

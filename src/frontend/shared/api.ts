@@ -25,6 +25,12 @@ export default {
       let a = await axios.get(url + 'donacions')
       return a.data
     }
+  },
+  Texts: {
+    async getAllTexts (): Promise<any> {
+      let a = await axios.get(url + 'texts')
+      return a.data
+    }
   }
 
 }

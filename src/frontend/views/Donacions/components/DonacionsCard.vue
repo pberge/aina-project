@@ -88,6 +88,7 @@ export default class DonacionsCard extends Vue {
 
 .esport {
     padding: 0em 0;
+    font-size: 14px;
 }
 
 .player-holder{

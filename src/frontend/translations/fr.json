@@ -153,5 +153,18 @@
         "2018-text": "Enregistrement du disque de chansons Plantem cantant",
         "2019-title": "Première d’Entre Muntanyes, racines de l’arbre",
         "2019-text": "Première du documentaire Entre Muntanyes, racines de l’arbre. "
+    },
+    "donacions": {
+        "text1": "Junts per Andorra est un projet solidaire destiné à collecter des fonds pour aider le Ministère de la Santé à combattre le COVID-19. Des sportifs reconnus et des célébrités résidant en Andorre nous ont offert des objets personnels pour organiser un tirage au sort. <br/>Tu veux participer au tirage au sort? C’est très simple! ",
+        "text2": "Ce projet a été crée par les moniteurs d’AINA, en collaboration avec l’association GOLSOLIDARI.",
+
+        "instruccio1": "Fais une donation (minimum 10 euros) au Ministère de la Santé",
+        "instruccio2": "Envoie une copie du reçu du virement bancaire à cette adresse e-mail :",
+        "instruccio3": "Dans ce même e-mail, tu peux envoyer un texte, un poème ou une phrase pour les affectés de COVID-19 qui pourra être vu sur notre site web.",
+        "instruccio4": "Tu as intégré le tirage au sort! Quand le confinement sera terminé, nous ferons le tirage au sort et te remettrons ce que tu auras gagné!",
+        "objectes": "Objets du tirage au sort",
+        "texts" : "Messages pour les affectés",
+        "participa": "Participe"
     }
 }
+

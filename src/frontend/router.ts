@@ -18,6 +18,9 @@ import NewDetail from './backoffice/views/NewDetail/NewDetail.vue'
 import DonacionsList from './backoffice/views/Donacions/Donacions.vue'
 import CreateDonacio from './backoffice/views/CreateDonacio/CreateDonacio.vue'
 import EditDonacio from './backoffice/views/EditDonacio/EditDonacio.vue'
+import TextsList from './backoffice/views/Texts/Texts.vue'
+import CreateText from './backoffice/views/CreateText/CreateText.vue'
+
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -134,6 +137,22 @@ const router = new Router({
       path: '/admin/create-donacio',
       name: 'createDonacio',
       component: CreateDonacio,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/texts',
+      name: 'textsList',
+      component: TextsList,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/create-text',
+      name: 'createText',
+      component: CreateText,
       meta: {
         requiresAuth: true
       }

@@ -46,8 +46,8 @@ export default class DonaciosRepository extends Repository<Donacio>  {
         .update("donacions")
         .set({ 
             id: item.id,  
-            descripcio: item.descripcio, 
-            img: item.img,
+            text: item.descripcio, 
+            autor: item.img,
             imgColaborador: item.imgColaborador, 
             nomColaborador: item.nomColaborador
         } as any)

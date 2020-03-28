@@ -53,4 +53,26 @@ export default class DonacionsController {
     getDonacioById = async (request: any, response: any) => {
         return await this.donacionsService.getDonacioById(request.query.id)
     }
+
+    getAllTexts = async (request: any, response: any) => {
+        return await this.donacionsService.getTexts()
+    }
+
+    createText = async (request: any, response: any) => {
+        try {
+            const textItem: any = {
+                autor: request.body.autor,
+                text: request.body.text
+            }
+
+            return await this.donacionsService.createText(textItem)
+        }
+        catch(a) {
+            console.log(a)
+        }
+    }
+
+    deleteText = async (request: any, response: any) => {
+        return await this.donacionsService.deleteText(request.query.id)
+    }
 }

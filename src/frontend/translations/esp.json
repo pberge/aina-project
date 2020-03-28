@@ -152,5 +152,18 @@
         "2018-text": "Grabación del disco de canciones 'Plantem cantant'",
         "2019-title": "Estrena de 'Entre Muntanyes, arrels de l'arbre'",
         "2019-text": "Estrena del documental 'Entre Muntanyes, arrels de l'arbre'"
+    },
+    "donacions": {
+        "text1": "Junts per Andorra es un proyecto solidario destinado a recaudar fondos para ayudar al Ministerio de Salud a combatir el COVID-19. Deportistas reconocidos y famosos residentes en el país nos han ofrecido objetos personales para sortear entre las personas que hagan un donativo. <br/> Quieres entrar en el sorteo? ¡Muy fácil!",
+        "text2": "Este proyecto está impulsado por los monitores de AINA, en colaboración con la asociación GOLSOLIDARI.",
+
+        "instruccio1": "Haz un donativo (mínimo 10 euros) para el Ministerio de Salud ",
+        "instruccio2": "Envía una copia del recibo del ingreso a este e-mail: ",
+        "instruccio3": "En este mismo e-mail, puedes enviar un texto, un poema o una frase para los afectados por COVID-19 que se podrá ver en nuestra web.",
+        "instruccio4": "¡Ya estás dentro del sorteo! ¡Cuando acabe el confinamiento haremos el sorteo y te haremos llegar el objeto que hayas ganado!",
+        "objectes": "Objetos a sortear",
+        "texts" : "Textos a las personas afectadas",
+        "participa": "Participa"
     }
 }
+

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import New from './models/NewModel'
 import Donacio from './models/DonacioModel'
+import Text from './models/TextModel'
 import FormData from 'form-data'
 
 const url = ( process.env.NODE_ENV === 'development' ) ? 'http://localhost:3000/api/' : 'http://aina.ad:3000/api/'
@@ -138,4 +139,32 @@ export default {
       return await axios.put(url + 'donacions', data, config)
     }
   },
+  Texts : {
+    async getAllTexts (): Promise<Text[]> {
+      return axios.get(url + 'texts')
+    },
+    async createText (item: Text): Promise<Text> {
+      console.log(item)
+      let data: FormData = new FormData()
+      data.append('text', item.text)
+      data.append('autor', item.autor)
+
+      const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+
+      return await axios.post(url + 'texts', data, config)
+    },
+    async deleteText (id: string): Promise<boolean> {
+      await axios.delete(url + 'texts', { params: { id: id } })
+      return true
+    },
+    async saveText (item: Text): Promise<any> {
+      let data: FormData = new FormData()
+      data.append('text', item.text)
+      data.append('autor', item.autor)
+
+      const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+
+      return await axios.put(url + 'texts', data, config)
+    }
+  }
 }

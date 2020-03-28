@@ -1,6 +1,9 @@
 import { Donacio }  from "../Models/Donacio"
 import { DonacioImage } from "../Models/DonacioImage"
+import { Text }  from "../Models/Text"
+import { TextImage } from "../Models/TextImage"
 import DonacionsRepository from "../Repositories/DonacionsRepository"
+import TextsRepository from "../Repositories/TextsRepository"
 import { getCustomRepository } from "typeorm"
 import imageUploader from "../imageUploader"
 
@@ -71,5 +74,38 @@ export default class donacionsService {
 
         let item =  await donacionsRepository.findById(id)
         return item
+    }
+
+    public async getTexts(): Promise<Text[]> {
+        let textsRepository = await getCustomRepository(TextsRepository)
+        let res = await textsRepository.find()
+        
+        return res
+    }
+
+    public async createText(item: TextImage): Promise<Text> {
+        let textsRepository = await getCustomRepository(TextsRepository)
+        let res = await textsRepository.saveText(item)
+
+        return res
+    }
+
+    public async editText(item: Text): Promise<Text> {
+        let textsRepository = await getCustomRepository(TextsRepository)
+        let old = await textsRepository.findById(item.id)
+
+        old.autor = item.autor
+        old.text = item.text
+
+        let res = await textsRepository.editText(old)
+
+        return res
+    }
+
+    public async deleteText(id: string): Promise<Text> {
+        let textsRepository = await getCustomRepository(TextsRepository)
+
+        await textsRepository.deleteText(id)
+        return new Text()
     }
 }

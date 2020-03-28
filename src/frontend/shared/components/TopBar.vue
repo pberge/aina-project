@@ -64,12 +64,12 @@ export default class TopBar extends Vue {
     this.initGestures()
     this.menuLinks = [
       { to: '/colonies', tag: 'colonies' },
+      { to: '/donacions', tag: 'donacions' },
       { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
       { to: '/prices', tag: 'prices' },
-      { to: '/contact', tag: 'contact' },
-      { to: '/donacions', tag: 'donacions' },
+      { to: '/contact', tag: 'contact' }
     ]
     window.onscroll = () => {this.scrollFunction()}
   }

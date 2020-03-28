@@ -5,6 +5,7 @@ import { createConnection, getConnection } from 'typeorm'
 import { New } from './backend/Models/New'
 import { Price } from './backend/Models/Price'
 import { Donacio } from './backend/Models/Donacio'
+import { Text } from './backend/Models/Text'
 
 const express = require("express")
 const port = process.env.PORT || 3000
@@ -35,7 +36,7 @@ if (process.env.ENV === 'development') {
     username: 'root',
     password: 'mariadb',
     database: 'aina',
-    entities: [New, Price, Donacio]
+    entities: [New, Price, Donacio, Text]
   })
   .then((conection) => {
     console.log("done")
@@ -52,6 +53,7 @@ if (process.env.ENV === 'development') {
 
     getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
     getConnection().query('CREATE TABLE IF NOT EXISTS donacions (descripcio character varying(255), img character varying(255), id character varying(255), imgColaborador character varying(255),nomColaborador character varying(255), esportColaborador character varying(255));')
+    getConnection().query('CREATE TABLE IF NOT EXISTS texts (autor character varying(255), text character varying(255), id character varying(255));')
   })
   .catch( (error) => console.log("error", error))
 }
@@ -63,7 +65,7 @@ else {
     username: 'ai1217_aina',
     password: 'brlbuEx3TaG26dLh',
     database: 'ai1217_aina',
-    entities: [New, Price, Donacio]
+    entities: [New, Price, Donacio, Text]
   })
   .then((conection) => {
     console.log("done")
@@ -80,6 +82,7 @@ else {
 
     getConnection().query('CREATE TABLE IF NOT EXISTS news (title character varying(255), text character varying(5000), img character varying(255), id character varying(255), published boolean, creationdate character varying(255));')
     getConnection().query('CREATE TABLE IF NOT EXISTS donacions (descripcio character varying(255), img character varying(255), id character varying(255), imgColaborador character varying(255),nomColaborador character varying(255), esportColaborador character varying(255));')
+    getConnection().query('CREATE TABLE IF NOT EXISTS texts (autor character varying(255), text character varying(255), id character varying(255));')
   })
   .catch( (error) => console.log("error production", error))
 }
@@ -136,6 +139,18 @@ let deleteDonacio = async (req, res) => {
   res.send(await donacionsController.deleteDonacio(req, res))
 }
 
+let getAllTexts = async (req, res) => {
+  res.send(await donacionsController.getAllTexts(req, res))
+}
+
+let createText = async (req, res) => {
+  res.send(await donacionsController.createText(req, res).catch(a => console.log(a)))
+}
+
+let deleteText = async (req, res) => {
+  res.send(await donacionsController.deleteText(req, res).catch(a => console.log(a)))
+}
+
 //API ENDPOINTS
 
 app.post('/api/news', upload.single('img'), createNew)
@@ -161,6 +176,12 @@ app.get('/api/donacions', getAllDonacions)
 app.get('/api/donacio-by-id', getDonacioById)
 
 app.delete('/api/donacions', deleteDonacio)
+
+app.get('/api/texts', getAllTexts)
+
+app.post('/api/texts', upload.single('img'), createText)
+
+app.delete('/api/texts', deleteText)
 
 
 // START APP

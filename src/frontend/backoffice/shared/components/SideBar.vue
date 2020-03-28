@@ -10,6 +10,9 @@
       <router-link class="item" to="/admin/donacions" :class="{'item-active': isActive('/admin/donacions')}">
         <i class="material-icons">local_hospital</i>JuntsPerAndorra
       </router-link >
+      <router-link class="item" to="/admin/texts" :class="{'item-active': isActive('/admin/texts')}">
+        <i class="material-icons">local_hospital</i>Texts
+      </router-link >
     </div>
   </div>
 </template>
