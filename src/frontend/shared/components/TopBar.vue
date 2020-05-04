@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="menu row col-xs-9 col-md-7 end-xs">
+        <a class="link" href="http://aina.ad/inscripcions/">{{$t("topbar.preinscripcions")}}</a>
         <router-link
           class="link col-xs"
           :class="{'actual-page': isActualPage(link.to)}"
@@ -26,6 +27,7 @@
       id="mobile-menu"
       :class="{'mobile-menu-active': isSideBar}">
       <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
+      <a class="menu-link" href="http://aina.ad/inscripcions/">{{$t("topbar.preinscripcions")}}</a>
       <router-link
         class="menu-link"
         :class="{'actual-page': isActualPage(link.to), 'hide':!isSideBar}"
@@ -64,7 +66,7 @@ export default class TopBar extends Vue {
     this.initGestures()
     this.menuLinks = [
       { to: '/colonies', tag: 'colonies' },
-      { to: '/donacions', tag: 'donacions' },
+      { to: '/juntsperandorra', tag: 'donacions' },
       { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },

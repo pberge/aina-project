@@ -1,6 +1,9 @@
 <template>
     <div>
       <div class="infoContainer">
+        <div class="logo-campanya">
+          <img src="./logo.png"/>
+        </div>
         <div class="pageTitle">#JuntsPerAndorra</div>
         <div class="pageDescription">
           <span v-html="$t('donacions.text1')"></span>
@@ -15,6 +18,8 @@
               </div>
               <div class="banc-account">
                 AD10 0003 1101 1022 8331 1508
+                <div class="banc-title">Canillo, AD100</div>
+                <div class="banc-title">Aina Casa de Colònies</div>
               </div>
               <div class="row">
                 <span class="number col-xs-1">2</span><span class="col-xs-11 instruccio">{{$t('donacions.instruccio2')}}</span>
@@ -98,14 +103,27 @@ export default class Donacions extends Vue {
   font-family: sans-serif;
 }
 
+.banc-title {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
 .infoContainer {
   text-align: justify;
   margin-bottom: 2em;
 }
 
+.logo-campanya {
+  width: 220px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .pageTitle { 
   font-weight: bold;
-  font-size: 1.5em;
+  margin-top: -65px;  
+  font-size: 19px;
   margin-bottom: 1em;
   text-align:center;
 }
@@ -226,6 +244,10 @@ input {
     max-width: 100%;
     box-shadow: none;
     margin: 0;
+  }
+
+  .pageTitle {
+        margin-top: -65px;
   }
 
   .paymentLayout {

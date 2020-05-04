@@ -11,6 +11,7 @@
                 <span class="esport" style="display:block;">{{info.esportColaborador}}</span>
             </div>
         </div>
+        <div class="line"></div>
     </div>
 
 </template>
@@ -120,12 +121,18 @@ export default class DonacionsCard extends Vue {
   .donacions-card {
     margin: 0;
     max-width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
   }
 
   .image {
       width: 100%;
       height: 13em;
+  }
+
+  .line {
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
   }
 }
 

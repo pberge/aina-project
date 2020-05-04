@@ -53,7 +53,6 @@ export default class MobileLanguageSelector extends Vue {
 }
 
 .list {
-    margin-top: 3em;
     width: 100%;
     font-size: 16px;
     border: none;
