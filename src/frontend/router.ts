@@ -116,7 +116,10 @@ const router = new Router({
     {
       path: '/juntsperandorra',
       name: 'donacions',
-      component: Donacions
+      component: Donacions,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/admin/donacions',

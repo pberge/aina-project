@@ -66,7 +66,6 @@ export default class TopBar extends Vue {
     this.initGestures()
     this.menuLinks = [
       { to: '/colonies', tag: 'colonies' },
-      { to: '/juntsperandorra', tag: 'donacions' },
       { to: '/history', tag: 'history' },
       { to: '/facilities', tag: 'facilities' },
       { to: '/news', tag: 'news' },
