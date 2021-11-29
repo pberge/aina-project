@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="menu row col-xs-9 col-md-7 end-xs">
+        <a class="link col-xs" href="http://www.aina.ad/inscripcions" target="_blank">{{$t("topbar.preinscripcions")}}</a>
         <router-link
           class="link col-xs"
           :class="{'actual-page': isActualPage(link.to)}"
@@ -26,6 +27,7 @@
       id="mobile-menu"
       :class="{'mobile-menu-active': isSideBar}">
       <img class="logo mobile-logo" src="@/frontend/assets/logoaina.png" />
+      <a class="menu-link" href="http://www.aina.ad/inscripcions" target="_blank">{{$t("topbar.preinscripcions")}}</a>
       <router-link
         class="menu-link"
         :class="{'actual-page': isActualPage(link.to), 'hide':!isSideBar}"

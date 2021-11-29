@@ -8,12 +8,14 @@ const express = require("express")
 const port = process.env.PORT || 3000
 const app = express()
 const cors = require("cors")
+var history = require('connect-history-api-fallback');
 const newsController = new NewsController()
 const pricesController = new PricesController()
 const multer = require('multer')
 const upload = multer({limits: { fieldSize: 25 * 1024 * 1024 }})
 
 app.use(express.static(__dirname + "/dist/"))
+app.use(history())
 
 //.ENV CONFIG
 require('dotenv').config()
